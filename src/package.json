@@ -1,0 +1,28 @@
+{
+  "name": "@yca/rest-admin",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yc-angular/rest-admin.git"
+  },
+  "author": {
+    "name": "Yu Chen",
+    "email": "yu.chen@live.ie"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yc-angular/rest-admin.git/issues"
+  },
+  "main": "yca-rest-admin.umd.js",
+  "module": "yca-rest-admin.js",
+  "jsnext:main": "yca-rest-admin.js",
+  "typings": "yca-rest-admin.d.ts",
+  "peerDependencies": {
+    "@yca/auth": "^1.0.0",
+    "@yct/utils": "^0.1.0",
+    "primeng": "^4.2.0-rc.1"
+  }
+}
