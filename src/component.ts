@@ -81,18 +81,18 @@ import * as lodash from 'lodash';
             <tbody>
               <tr *ngFor="let col of getEditorCols()">
                 <td style="padding: 16px 16px 16px 8px; white-space: nowrap;vertical-align: top;">{{ col.header }}</td>
-                <td *ngIf="col.editor.type == 'text'" style="width: 100%;"><input [disabled]="col.editor.disabled" style="width: 100%;" pInputText [(ngModel)]="selected[col.field]" /></td>
-                <td *ngIf="col.editor.type == 'chip'" style="width: 100%;"><p-chips [(ngModel)]="selected[col.field]"></p-chips></td>
-                <td *ngIf="col.editor.type == 'textArea'" style="width: 100%;"><textarea style="width: 100%; height: 100px" pInputTextarea [(ngModel)]="selected[col.field]"></textarea></td>
-                <td *ngIf="col.editor.type == 'enum'" style="width: 100%;">
+                <td *ngIf="!col.editor.hidden && col.editor.type == 'text'" style="width: 100%;"><input [disabled]="col.editor.disabled" style="width: 100%;" pInputText [(ngModel)]="selected[col.field]" /></td>
+                <td *ngIf="!col.editor.hidden && col.editor.type == 'chip'" style="width: 100%;"><p-chips [(ngModel)]="selected[col.field]"></p-chips></td>
+                <td *ngIf="!col.editor.hidden && col.editor.type == 'textArea'" style="width: 100%;"><textarea style="width: 100%; height: 100px" pInputTextarea [(ngModel)]="selected[col.field]"></textarea></td>
+                <td *ngIf="!col.editor.hidden && col.editor.type == 'enum'" style="width: 100%;">
                   <p-dropdown [disabled]="col.editor.disabled" [placeholder]="col.editor.placeholder" (onChange)="onChange(col.editor.onChange)" [style]="{ 'width': '100%' }"
                     [options]="col.editor.options" [(ngModel)]="selected[col.field]"></p-dropdown>
                 </td>
-                <td *ngIf="col.editor.type == 'ref'" style="width: 100%;">
+                <td *ngIf="!col.editor.hidden && col.editor.type == 'ref'" style="width: 100%;">
                   <p-dropdown [disabled]="col.editor.disabled" [placeholder]="col.editor.placeholder" (onChange)="onChange(col.editor.onChange)" [style]="{ 'width': '100%' }"
                     [options]="getRefOptions(col)" [(ngModel)]="selected[col.field]"></p-dropdown>
                 </td>
-                <td *ngIf="col.editor.type == 'datetime'" style="width: 100%;">
+                <td *ngIf="!col.editor.hidden && col.editor.type == 'datetime'" style="width: 100%;">
                   <p-calendar [defaultDate]="now" 
                     selectOtherMonths="true" 
                     monthNavigator="true" 
@@ -103,10 +103,10 @@ import * as lodash from 'lodash';
                     hourFormat="24"
                     styleClass="ui-column-filter"></p-calendar>
                 </td>
-                <td *ngIf="col.editor.type == 'logs'" style="width: 100%;">
+                <td *ngIf="!col.editor.hidden && col.editor.type == 'logs'" style="width: 100%;">
                   <pre>{{ col.editor.logs(selected[col.field]) }}</pre>
                 </td>
-                <td *ngIf="col.editor.type == 'pickList'" style="width: 100%;">
+                <td *ngIf="!col.editor.hidden && col.editor.type == 'pickList'" style="width: 100%;">
                   <p-pickList [source]="col.editor.pickListSource" [target]="selected[col.field]">
                       <ng-template let-item pTemplate="item">
                           <div class="ui-helper-clearfix">
@@ -115,14 +115,14 @@ import * as lodash from 'lodash';
                       </ng-template>
                   </p-pickList>
                 </td>
-                <td *ngIf="col.editor.type == 'image'" style="width: 100%;">
+                <td *ngIf="!col.editor.hidden && col.editor.type == 'image'" style="width: 100%;">
                   <label>
                     <img style="width:100%" *ngIf="selected[col.field]" [src]="selected[col.field]" />
                     <span *ngIf="!selected[col.field]">上传</span>
                     <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
                   </label>
                 </td>
-                <td *ngIf="col.editor.type == 'images'" style="width: 100%;">
+                <td *ngIf="!col.editor.hidden && col.editor.type == 'images'" style="width: 100%;">
                   <div *ngFor="let image of selected[col.field]; let i = index">
                     <label>
                       <img style="width:100%" [src]="image" />
@@ -541,6 +541,7 @@ export interface IParamsColEditor {
   onChange?: () => void;
   placeholder?: string;
   disabled?: boolean;
+  hidden?: boolean;
   logs?: (item: any) => string;
   upload?: (file: Blob) => Promise<string>;
   display?: (item: any) => string;
