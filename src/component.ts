@@ -153,7 +153,7 @@ import * as lodash from 'lodash';
         </div>
       </p-footer>
     </p-dialog>
-    <p-confirmDialog header="操作确认" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+    <p-confirmDialog header="操作确认" icon="fa fa-exclamation-triangle" width="425"></p-confirmDialog>
     <p-growl [value]="msgs"></p-growl>
 </div>
 `,
@@ -274,6 +274,9 @@ export class RestAdminComponent implements OnInit {
             this.selected[col.field] = this.selected[col.field] || [];
             (col.editor as any).pickListSource = lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
             break;
+          case 'images':
+            this.selected[col.field] = this.selected[col.field] || [];
+            break;
         }
       }
     }
@@ -291,6 +294,9 @@ export class RestAdminComponent implements OnInit {
           case 'pickList':
             this.selected[col.field] = this.selected[col.field] || [];
             (col.editor as any).pickListSource = lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
+            break;
+          case 'images':
+            this.selected[col.field] = this.selected[col.field] || [];
             break;
         }
       }
