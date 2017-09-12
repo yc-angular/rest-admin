@@ -14,7 +14,8 @@ import {
   MultiSelectModule,
   CalendarModule,
   SliderModule,
-  ChipsModule
+  ChipsModule,
+  PickListModule
 } from 'primeng/primeng';
 import { RestAdminComponent } from './component';
 
@@ -37,7 +38,8 @@ export * from './component';
     MultiSelectModule,
     CalendarModule,
     SliderModule,
-    ChipsModule
+    ChipsModule,
+    PickListModule
   ],
   declarations: [
     RestAdminComponent
