@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ConfirmationService, Message, LazyLoadEvent, SelectItem, DataTable } from 'primeng/primeng';
 import { Auth } from '@yca/auth';
 import { fetch } from '@yct/utils';
+import * as lodash from 'lodash';
 
 @Component({
   selector: 'yca-rest-admin',
@@ -13,8 +14,8 @@ import { fetch } from '@yct/utils';
     </div>
     <div class="ui-toolbar-group-right">
       <button *ngFor="let b of params.customButtons" [class]="b.class" type="button" pButton [icon]="b.icon" (click)="b.handler(self)" [label]="b.label"></button>
-      <button *ngIf="!params.hideAdd" class="ui-button-success" type="button" pButton icon="fa-plus" (click)="add()" label="添加"></button>
-      <button *ngIf="!params.hideExport" type="button" pButton icon="fa-file-o" iconPos="left" label="导出CSV" (click)="exportCSV(dt)"></button>
+      <button *ngIf="!params.hideAdd" class="ui-button-success" type="button" pButton icon="fa-plus" (click)="add()"></button>
+      <button *ngIf="!params.hideExport" type="button" pButton icon="fa-file-o" iconPos="left" label="CSV" (click)="exportCSV(dt)"></button>
     </div>
   </p-toolbar>
   <p-dataTable #dt [value]="data.docs" scrollable="true" selectionMode="single" [(selection)]="selected" (onRowSelect)="select($event)"
@@ -23,25 +24,25 @@ import { fetch } from '@yct/utils';
       <div style="display: flex; align-items: center; justify-content: space-between">
         <p-multiSelect [options]="columnOptions" [(ngModel)]="params.cols"></p-multiSelect>
 
-        <div *ngIf="!params.hideCount" style="padding: 0 8px;white-space: nowrap;">共{{ data?.total }}条</div>
+        <div *ngIf="!params.hideCount" style="padding: 0 8px;white-space: nowrap;"><i class="fa fa-database" aria-hidden="true"></i> {{ data?.total }}</div>
 
         <div style="flex: 0 0 200px">
-          <div style="padding-bottom: 8px">每页条数：{{ params.rows === 100 ? '全部' : params.rows }}</div>
+          <div style="padding-bottom: 8px"><i class="fa fa-th-list" aria-hidden="true"></i> {{ params.rows === 100 ? '' : params.rows }}</div>
           <p-slider [(ngModel)]="params.rows" animate="true" [min]="5" (onSlideEnd)="reload()"></p-slider>
         </div>
       </div>
     </p-header>
     <p-column *ngFor="let col of getDisplayCols()" [field]="col.field" [header]="col.header" [style]="col.style" [sortable]="col.sortable" [filter]="col.filter" [filterMatchMode]="col.filter ? col.filter.mode : null">
-      <template *ngIf="col.display && col.display.type == 'enum'" let-data="rowData" pTemplate="body">
+      <ng-template *ngIf="col.display && col.display.type == 'enum'" let-data="rowData" pTemplate="body">
         <span>{{ col.display.map(data[col.field]) }}</span>
-      </template>
+      </ng-template>
 
-      <template *ngIf="col.filter && col.filter.type == 'multiple'" pTemplate="filter">
+      <ng-template *ngIf="col.filter && col.filter.type == 'multiple'" pTemplate="filter">
             <p-multiSelect [options]="col.filter.options" [defaultLabel]="col.filter.placeholder" (onChange)="dt.filter($event.value,col.field,col.filter.mode)" styleClass="ui-column-filter"></p-multiSelect>
-        </template>
-      <template *ngIf="col.filter && col.filter.type == 'datetime-range'" pTemplate="filter">
+        </ng-template>
+      <ng-template *ngIf="col.filter && col.filter.type == 'datetime-range'" pTemplate="filter">
           <div style="padding-top: 8px; display: flex; align-items: center; justify-content: center">
-            <div>从：</div>
+            <div><i class="fa fa-circle" aria-hidden="true"></i></div>
             <p-calendar [defaultDate]="col.filter.fr" 
             selectOtherMonths="true" 
             monthNavigator="true" 
@@ -53,7 +54,7 @@ import { fetch } from '@yct/utils';
             styleClass="ui-column-filter"></p-calendar>
           </div>
           <div style="display: flex; align-items: center; justify-content: center">
-            <div>至：</div>
+            <div><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
             <p-calendar [defaultDate]="col.filter.to" 
             selectOtherMonths="true" 
             monthNavigator="true" 
@@ -68,7 +69,7 @@ import { fetch } from '@yct/utils';
           <div style="text-align: center;padding-top: 12px">
             <button class="ui-button-secondary" pButton type="button" label="筛选" (click)="addDatetimeFilterRange(col)"></button>
           </div>
-        </template>
+        </ng-template>
     </p-column>
 
     </p-dataTable>
@@ -79,7 +80,7 @@ import { fetch } from '@yct/utils';
           <table class="table">
             <tbody>
               <tr *ngFor="let col of getEditorCols()">
-                <td style="padding: 16px 16px 16px 8px; white-space: nowrap;">{{ col.header }}</td>
+                <td style="padding: 16px 16px 16px 8px; white-space: nowrap;vertical-align: top;">{{ col.header }}</td>
                 <td *ngIf="col.editor.type == 'text'" style="width: 100%;"><input [disabled]="col.editor.disabled" style="width: 100%;" pInputText [(ngModel)]="selected[col.field]" /></td>
                 <td *ngIf="col.editor.type == 'chip'" style="width: 100%;"><p-chips [(ngModel)]="selected[col.field]"></p-chips></td>
                 <td *ngIf="col.editor.type == 'textArea'" style="width: 100%;"><textarea style="width: 100%; height: 100px" pInputTextarea [(ngModel)]="selected[col.field]"></textarea></td>
@@ -105,9 +106,18 @@ import { fetch } from '@yct/utils';
                 <td *ngIf="col.editor.type == 'logs'" style="width: 100%;">
                   <pre>{{ col.editor.logs(selected[col.field]) }}</pre>
                 </td>
+                <td *ngIf="col.editor.type == 'pickList'" style="width: 100%;">
+                  <p-pickList [source]="col.editor.pickListSource" [target]="selected[col.field]">
+                      <ng-template let-item pTemplate="item">
+                          <div class="ui-helper-clearfix">
+                              <div>{{ col.editor.display(item) }}</div>
+                          </div>
+                      </ng-template>
+                  </p-pickList>
+                </td>
                 <td *ngIf="col.editor.type == 'image'" style="width: 100%;">
                   <label>
-                    <img *ngIf="selected[col.field]" [src]="selected[col.field]" />
+                    <img style="width:100%" *ngIf="selected[col.field]" [src]="selected[col.field]" />
                     <span *ngIf="!selected[col.field]">上传</span>
                     <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
                   </label>
@@ -115,7 +125,7 @@ import { fetch } from '@yct/utils';
                 <td *ngIf="col.editor.type == 'images'" style="width: 100%;">
                   <div *ngFor="let image of selected[col.field]; let i = index">
                     <label>
-                      <img [src]="image" />
+                      <img style="width:100%" [src]="image" />
                       <input (change)="onFilesChange($event, col, i)" type="file" style="display: none;" />
                     </label>
                     <div style="padding: 8px">
@@ -136,14 +146,14 @@ import { fetch } from '@yct/utils';
       </div>
       <p-footer>
         <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-          <button *ngIf="!params.hideDelete" class="ui-button-danger" style="float: left" type="button" pButton icon="fa-trash" (click)="delete()" label="删除"></button>
-          <button *ngIf="!params.hideCancel" class="ui-button-secondary" type="button" pButton icon="fa-close" (click)="cancel()" label="取消"></button>
-          <button *ngIf="!params.hideSave" class="ui-button-info" type="button" pButton icon="fa-check" (click)="save()" label="保存"></button>
+          <button *ngIf="!params.hideDelete" class="ui-button-danger" style="float: left" type="button" pButton icon="fa-trash" (click)="delete()"></button>
+          <button *ngIf="!params.hideCancel" class="ui-button-secondary" type="button" pButton icon="fa-close" (click)="cancel()"></button>
+          <button *ngIf="!params.hideSave" class="ui-button-info" type="button" pButton icon="fa-check" (click)="save()"></button>
           <button *ngFor="let b of params.editorButtons" [class]="b.class" type="button" pButton [icon]="b.icon" (click)="b.handler(self)" [label]="b.label"></button>
         </div>
       </p-footer>
     </p-dialog>
-    <p-confirmDialog header="操作确认" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+    <p-confirmDialog header="操作确认" icon="fa fa-exclamation-triangle" width="425"></p-confirmDialog>
     <p-growl [value]="msgs"></p-growl>
 </div>
 `,
@@ -252,11 +262,22 @@ export class RestAdminComponent implements OnInit {
     if (this.params.preEdit)
       this.params.preEdit(this);
     for (let col of this.params.cols) {
-      if (col.editor && col.editor.type === 'datetime') {
-        this.selected[col.field] = new Date(this.selected[col.field]);
-      }
-      if (col.editor && col.editor.type === 'chip') {
-        this.selected[col.field] = this.selected[col.field] || [];
+      if (col.editor) {
+        switch (col.editor.type) {
+          case 'datetime':
+            this.selected[col.field] = new Date(this.selected[col.field]);
+            break;
+          case 'chip':
+            this.selected[col.field] = this.selected[col.field] || [];
+            break;
+          case 'pickList':
+            this.selected[col.field] = this.selected[col.field] || [];
+            (col.editor as any).pickListSource = lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
+            break;
+          case 'images':
+            this.selected[col.field] = this.selected[col.field] || [];
+            break;
+        }
       }
     }
     this.showModal = true;
@@ -267,7 +288,21 @@ export class RestAdminComponent implements OnInit {
     this.selected = {};
     if (this.params.preEdit)
       this.params.preEdit(this);
+    for (let col of this.params.cols) {
+      if (col.editor) {
+        switch (col.editor.type) {
+          case 'pickList':
+            this.selected[col.field] = this.selected[col.field] || [];
+            (col.editor as any).pickListSource = lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
+            break;
+          case 'images':
+            this.selected[col.field] = this.selected[col.field] || [];
+            break;
+        }
+      }
+    }
     this.showModal = true;
+    if (this.params.onShow) this.params.onShow.bind(this)();
   }
 
   edit(item: any): void {
@@ -284,7 +319,7 @@ export class RestAdminComponent implements OnInit {
   }
 
   getEditorCols(): IParamsCol[] {
-    return this.params.cols.filter(x => x.editor);
+    return this.params.cols.filter(x => x.editor && !x.editor.hidden);
   }
 
   onChange(fn: Function): void {
@@ -309,10 +344,7 @@ export class RestAdminComponent implements OnInit {
     }
     let params: any = {};
     for (let key of Object.keys(this.selected)) {
-      switch (this.selected[key]) {
-        default:
-          params[key] = this.selected[key];
-      }
+      params[key] = this.selected[key];
     }
     if (this.params.preSave) this.params.preSave(params);
     fetch(method, url, params, { Authorization: `Bearer ${this.auth.jwt}` }, !this.params.formdata)
@@ -501,7 +533,7 @@ export interface IParamsEditorButton {
 }
 
 export interface IParamsColEditor {
-  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'image' | 'images';
+  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'image' | 'images' | 'pickList';
   ref?: {
     label: ((x: any) => string) | String,
     path: string
@@ -510,8 +542,10 @@ export interface IParamsColEditor {
   onChange?: () => void;
   placeholder?: string;
   disabled?: boolean;
-  logs?: (x: any) => string;
-  upload?: (x: any) => Promise<string>;
+  hidden?: boolean;
+  logs?: (item: any) => string;
+  upload?: (file: Blob) => Promise<string>;
+  display?: (item: any) => string;
 }
 
 export interface IParamsColFilter {

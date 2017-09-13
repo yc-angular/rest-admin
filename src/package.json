@@ -1,6 +1,6 @@
 {
   "name": "@yca/rest-admin",
-  "version": "1.0.1",
+  "version": "1.0.13",
   "repository": {
     "type": "git",
     "url": "https://github.com/yc-angular/rest-admin.git"
@@ -23,6 +23,7 @@
   "peerDependencies": {
     "@yca/auth": "^1.0.0",
     "@yct/utils": "^0.1.0",
-    "primeng": "^4.2.0-rc.1"
+    "primeng": "^4.2.0-rc.1",
+    "lodash": "^4.17.4"
   }
 }
