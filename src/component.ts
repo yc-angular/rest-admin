@@ -171,8 +171,8 @@ export class RestAdminComponent implements OnInit {
   now: Date = new Date();
   refs: any = {};
 
-  width = window.screen.width;
-  height = window.screen.height;
+  width = window.innerWidth;
+  height = window.innerHeight;
 
   constructor(
     public confirmationService: ConfirmationService,
