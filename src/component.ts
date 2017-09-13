@@ -74,75 +74,73 @@ import * as lodash from 'lodash';
 
     </p-dataTable>
 
-    <p-dialog [header]="params.title.edit" [(visible)]="showModal" modal="modal" width="800" responsive="true">
-      <div style="height: 400px; overflow: scroll">
-        <div *ngIf="selected" class="table-responsive">
-          <table class="table">
-            <tbody>
-              <tr *ngFor="let col of getEditorCols()">
-                <td style="padding: 16px 16px 16px 8px; white-space: nowrap;vertical-align: top;">{{ col.header }}</td>
-                <td *ngIf="col.editor.type == 'text'" style="width: 100%;"><input [disabled]="col.editor.disabled" style="width: 100%;" pInputText [(ngModel)]="selected[col.field]" /></td>
-                <td *ngIf="col.editor.type == 'chip'" style="width: 100%;"><p-chips [(ngModel)]="selected[col.field]"></p-chips></td>
-                <td *ngIf="col.editor.type == 'textArea'" style="width: 100%;"><textarea style="width: 100%; height: 100px" pInputTextarea [(ngModel)]="selected[col.field]"></textarea></td>
-                <td *ngIf="col.editor.type == 'enum'" style="width: 100%;">
-                  <p-dropdown [disabled]="col.editor.disabled" [placeholder]="col.editor.placeholder" (onChange)="onChange(col.editor.onChange)" [style]="{ 'width': '100%' }"
-                    [options]="col.editor.options" [(ngModel)]="selected[col.field]"></p-dropdown>
-                </td>
-                <td *ngIf="col.editor.type == 'ref'" style="width: 100%;">
-                  <p-dropdown [disabled]="col.editor.disabled" [placeholder]="col.editor.placeholder" (onChange)="onChange(col.editor.onChange)" [style]="{ 'width': '100%' }"
-                    [options]="getRefOptions(col)" [(ngModel)]="selected[col.field]"></p-dropdown>
-                </td>
-                <td *ngIf="col.editor.type == 'datetime'" style="width: 100%;">
-                  <p-calendar [defaultDate]="now" 
-                    selectOtherMonths="true" 
-                    monthNavigator="true" 
-                    yearNavigator="true" 
-                    yearRange="2016:2020"
-                    [(ngModel)]="selected[col.field]" 
-                    showTime="showTime" 
-                    hourFormat="24"
-                    styleClass="ui-column-filter"></p-calendar>
-                </td>
-                <td *ngIf="col.editor.type == 'logs'" style="width: 100%;">
-                  <pre>{{ col.editor.logs(selected[col.field]) }}</pre>
-                </td>
-                <td *ngIf="col.editor.type == 'pickList'" style="width: 100%;">
-                  <p-pickList [source]="col.editor.pickListSource" [target]="selected[col.field]">
-                      <ng-template let-item pTemplate="item">
-                          <div class="ui-helper-clearfix">
-                              <div>{{ col.editor.display(item) }}</div>
-                          </div>
-                      </ng-template>
-                  </p-pickList>
-                </td>
-                <td *ngIf="col.editor.type == 'image'" style="width: 100%;">
+    <p-dialog [header]="params.title.edit" [(visible)]="showModal" modal="modal" [width]="width" [height]="height" responsive="true">
+      <div *ngIf="selected" class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr *ngFor="let col of getEditorCols()">
+              <td style="padding: 16px 16px 16px 8px; white-space: nowrap;vertical-align: top;">{{ col.header }}</td>
+              <td *ngIf="col.editor.type == 'text'" style="width: 100%;"><input [disabled]="col.editor.disabled" style="width: 100%;" pInputText [(ngModel)]="selected[col.field]" /></td>
+              <td *ngIf="col.editor.type == 'chip'" style="width: 100%;"><p-chips [(ngModel)]="selected[col.field]"></p-chips></td>
+              <td *ngIf="col.editor.type == 'textArea'" style="width: 100%;"><textarea pInputTextarea style="width: 100%; height: 100px" [(ngModel)]="selected[col.field]"></textarea></td>
+              <td *ngIf="col.editor.type == 'enum'" style="width: 100%;">
+                <p-dropdown [disabled]="col.editor.disabled" [placeholder]="col.editor.placeholder" (onChange)="onChange(col.editor.onChange)" [style]="{ 'width': '100%' }"
+                  [options]="col.editor.options" [(ngModel)]="selected[col.field]"></p-dropdown>
+              </td>
+              <td *ngIf="col.editor.type == 'ref'" style="width: 100%;">
+                <p-dropdown [disabled]="col.editor.disabled" [placeholder]="col.editor.placeholder" (onChange)="onChange(col.editor.onChange)" [style]="{ 'width': '100%' }"
+                  [options]="getRefOptions(col)" [(ngModel)]="selected[col.field]"></p-dropdown>
+              </td>
+              <td *ngIf="col.editor.type == 'datetime'" style="width: 100%;">
+                <p-calendar [defaultDate]="now" 
+                  selectOtherMonths="true" 
+                  monthNavigator="true" 
+                  yearNavigator="true" 
+                  yearRange="2016:2020"
+                  [(ngModel)]="selected[col.field]" 
+                  showTime="showTime" 
+                  hourFormat="24"
+                  styleClass="ui-column-filter"></p-calendar>
+              </td>
+              <td *ngIf="col.editor.type == 'logs'" style="width: 100%;">
+                <pre>{{ col.editor.logs(selected[col.field]) }}</pre>
+              </td>
+              <td *ngIf="col.editor.type == 'pickList'" style="width: 100%;">
+                <p-pickList [source]="col.editor.pickListSource" [target]="selected[col.field]">
+                    <ng-template let-item pTemplate="item">
+                        <div class="ui-helper-clearfix">
+                            <div>{{ col.editor.display(item) }}</div>
+                        </div>
+                    </ng-template>
+                </p-pickList>
+              </td>
+              <td *ngIf="col.editor.type == 'image'" style="width: 100%;">
+                <label>
+                  <img style="width:100%" *ngIf="selected[col.field]" [src]="selected[col.field]" />
+                  <span *ngIf="!selected[col.field]">上传</span>
+                  <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
+                </label>
+              </td>
+              <td *ngIf="col.editor.type == 'images'" style="width: 100%;">
+                <div *ngFor="let image of selected[col.field]; let i = index">
                   <label>
-                    <img style="width:100%" *ngIf="selected[col.field]" [src]="selected[col.field]" />
-                    <span *ngIf="!selected[col.field]">上传</span>
-                    <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
+                    <img style="width:100%" [src]="image" />
+                    <input (change)="onFilesChange($event, col, i)" type="file" style="display: none;" />
                   </label>
-                </td>
-                <td *ngIf="col.editor.type == 'images'" style="width: 100%;">
-                  <div *ngFor="let image of selected[col.field]; let i = index">
-                    <label>
-                      <img style="width:100%" [src]="image" />
-                      <input (change)="onFilesChange($event, col, i)" type="file" style="display: none;" />
-                    </label>
-                    <div style="padding: 8px">
-                      <a (click)="selected[col.field].splice(i, 1)">删除</a>
-                    </div>
+                  <div style="padding: 8px">
+                    <a (click)="selected[col.field].splice(i, 1)">删除</a>
                   </div>
-                  <div>                    
-                    <label>
-                      <a>添加</a>
-                      <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
-                    </label>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                </div>
+                <div>                    
+                  <label>
+                    <a>添加</a>
+                    <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <p-footer>
         <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
@@ -172,6 +170,9 @@ export class RestAdminComponent implements OnInit {
   columnOptions: SelectItem[];
   now: Date = new Date();
   refs: any = {};
+
+  width = window.screen.width;
+  height = window.screen.height;
 
   constructor(
     public confirmationService: ConfirmationService,
