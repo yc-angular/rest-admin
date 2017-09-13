@@ -33,14 +33,14 @@ import * as lodash from 'lodash';
       </div>
     </p-header>
     <p-column *ngFor="let col of getDisplayCols()" [field]="col.field" [header]="col.header" [style]="col.style" [sortable]="col.sortable" [filter]="col.filter" [filterMatchMode]="col.filter ? col.filter.mode : null">
-      <template *ngIf="col.display && col.display.type == 'enum'" let-data="rowData" pTemplate="body">
+      <ng-template *ngIf="col.display && col.display.type == 'enum'" let-data="rowData" pTemplate="body">
         <span>{{ col.display.map(data[col.field]) }}</span>
-      </template>
+      </ng-template>
 
-      <template *ngIf="col.filter && col.filter.type == 'multiple'" pTemplate="filter">
+      <ng-template *ngIf="col.filter && col.filter.type == 'multiple'" pTemplate="filter">
             <p-multiSelect [options]="col.filter.options" [defaultLabel]="col.filter.placeholder" (onChange)="dt.filter($event.value,col.field,col.filter.mode)" styleClass="ui-column-filter"></p-multiSelect>
-        </template>
-      <template *ngIf="col.filter && col.filter.type == 'datetime-range'" pTemplate="filter">
+        </ng-template>
+      <ng-template *ngIf="col.filter && col.filter.type == 'datetime-range'" pTemplate="filter">
           <div style="padding-top: 8px; display: flex; align-items: center; justify-content: center">
             <div><i class="fa fa-circle" aria-hidden="true"></i></div>
             <p-calendar [defaultDate]="col.filter.fr" 
@@ -69,7 +69,7 @@ import * as lodash from 'lodash';
           <div style="text-align: center;padding-top: 12px">
             <button class="ui-button-secondary" pButton type="button" label="筛选" (click)="addDatetimeFilterRange(col)"></button>
           </div>
-        </template>
+        </ng-template>
     </p-column>
 
     </p-dataTable>
@@ -302,6 +302,7 @@ export class RestAdminComponent implements OnInit {
       }
     }
     this.showModal = true;
+    if (this.params.onShow) this.params.onShow.bind(this)();
   }
 
   edit(item: any): void {
