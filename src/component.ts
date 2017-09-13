@@ -74,7 +74,7 @@ import * as lodash from 'lodash';
 
     </p-dataTable>
 
-    <p-dialog [header]="params.title.edit" [(visible)]="showModal" modal="modal" [width]="width" [height]="height" responsive="true">
+    <p-dialog [header]="params.title.edit" [(visible)]="showModal" modal="modal" [width]="width" [height]="height" [resizable]="false">
       <div *ngIf="selected" class="table-responsive">
         <table class="table">
           <tbody>
