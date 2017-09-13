@@ -281,6 +281,8 @@ export class RestAdminComponent implements OnInit {
         }
       }
     }
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
     this.showModal = true;
     if (this.params.onShow) this.params.onShow.bind(this)();
   }
@@ -302,13 +304,10 @@ export class RestAdminComponent implements OnInit {
         }
       }
     }
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
     this.showModal = true;
     if (this.params.onShow) this.params.onShow.bind(this)();
-  }
-
-  edit(item: any): void {
-    this.selected = JSON.parse(JSON.stringify(item));
-    this.showModal = true;
   }
 
   getDisplayCols(): IParamsCol[] {
