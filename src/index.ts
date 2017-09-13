@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   InputTextModule,
+  InputTextareaModule,
   ButtonModule,
   DataTableModule,
   PaginatorModule,
@@ -27,6 +28,7 @@ export * from './component';
     FormsModule,
     ReactiveFormsModule,
     InputTextModule,
+    InputTextareaModule,
     ButtonModule,
     DataTableModule,
     PaginatorModule,
