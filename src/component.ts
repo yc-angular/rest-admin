@@ -105,6 +105,9 @@ import * as lodash from 'lodash';
               <td *ngIf="col.editor.type == 'logs'" style="width: 100%;">
                 <pre>{{ col.editor.logs(selected[col.field]) }}</pre>
               </td>
+              <td *ngIf="col.editor.type == 'custom'" style="width: 100%;">
+                <a href (click)="onCustomClick(col.editor.custom.onClick, selected, col.field)">{{ col.editor.custom.display(selected[col.field]) }}</a>
+              </td>
               <td *ngIf="col.editor.type == 'pickList'" style="width: 100%;">
                 <p-pickList [source]="col.editor.pickListSource" [target]="selected[col.field]">
                     <ng-template let-item pTemplate="item">
@@ -480,6 +483,14 @@ export class RestAdminComponent implements OnInit {
         .catch(console.error);
     }
   }
+
+  onCustomClick(fn, selected, key) {
+    fn(selected[key])
+      .then(v => {
+        selected[key] = v;
+      })
+      .catch(console.error);
+  }
 }
 
 export interface IParams {
@@ -533,10 +544,14 @@ export interface IParamsEditorButton {
 }
 
 export interface IParamsColEditor {
-  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'image' | 'images' | 'pickList';
+  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'image' | 'images' | 'pickList' | 'custom';
   ref?: {
     label: ((x: any) => string) | String,
     path: string
+  };
+  custom?: {
+    display: (item: any) => string;
+    onClick: (item: any) => Promise<any>;
   };
   options?: any;
   onChange?: () => void;
