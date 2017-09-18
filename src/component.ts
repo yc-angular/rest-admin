@@ -106,7 +106,7 @@ import * as lodash from 'lodash';
                 <pre>{{ col.editor.logs(selected[col.field]) }}</pre>
               </td>
               <td *ngIf="col.editor.type == 'custom'" style="width: 100%;">
-                <a href (click)="onCustomClick(col.editor.custom.onClick, selected, col.field)">{{ col.editor.custom.display(selected[col.field]) }}</a>
+                <div style="cursor: pointer" (click)="onCustomClick(col.editor.custom.onClick, selected, col.field)">{{ col.editor.custom.display(selected[col.field]) }}</div>
               </td>
               <td *ngIf="col.editor.type == 'pickList'" style="width: 100%;">
                 <p-pickList [source]="col.editor.pickListSource" [target]="selected[col.field]">
