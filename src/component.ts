@@ -118,27 +118,58 @@ import * as lodash from 'lodash';
                 </p-pickList>
               </td>
               <td *ngIf="col.editor.type == 'image'" style="width: 100%;">
-                <label>
-                  <img style="width:100%" *ngIf="selected[col.field]" [src]="selected[col.field]" />
-                  <span *ngIf="!selected[col.field]">上传</span>
+                <label style="cursor: pointer;" *ngIf="!selected[col.field]">
+                  <i class="fa fa-upload" aria-hidden="true"></i>
                   <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
                 </label>
-              </td>
-              <td *ngIf="col.editor.type == 'images'" style="width: 100%;">
-                <div *ngFor="let image of selected[col.field]; let i = index">
-                  <label>
-                    <img style="width:100%" [src]="image" />
-                    <input (change)="onFilesChange($event, col, i)" type="file" style="display: none;" />
-                  </label>
-                  <div style="padding: 8px">
-                    <a (click)="selected[col.field].splice(i, 1)">删除</a>
+                <div *ngIf="selected[col.field]">
+                  <div style="width: 300px;background: black;cursor: pointer;" (click)="viewImage(selected[col.field])">
+                    <div style="width: 300px;height: 200px;background-size: contain;background-repeat: no-repeat;background-position: center center;" [ngStyle]="{'background-image': 'url(' + selected[col.field] + ')'}"></div>
+                  </div>
+                  <div style="background: silver;width: 300px;padding: 5px">
+                    <label style="cursor: pointer;">
+                      <i class="fa fa-upload" aria-hidden="true" style="margin: 0px 5px;"></i>
+                      <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
+                    </label>
+                    <label style="cursor: pointer;" (click)="viewImage(selected[col.field])">
+                      <i class="fa fa-eye" aria-hidden="true" style="margin: 0px 5px;"></i>
+                    </label>
+                    <label style="cursor: pointer;" (click)="selected[col.field] = null">
+                      <i class="fa fa-trash" aria-hidden="true" style="margin: 0px 5px;"></i>
+                    </label>
                   </div>
                 </div>
-                <div>                    
-                  <label>
-                    <a>添加</a>
-                    <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
-                  </label>
+              </td>
+              <td *ngIf="col.editor.type == 'images'" style="width: 100%;">
+                <label style="cursor: pointer;" *ngIf="!selected[col.field] || !selected[col.field].length">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+                </label>
+                <div *ngIf="selected[col.field] && selected[col.field].length">
+                  <div style="width: 300px;background: black;cursor: pointer;" (click)="viewImage(selected[col.field][selectedIndex[col.field]])">
+                    <div style="width: 300px;height: 200px;background-size: contain;background-repeat: no-repeat;background-position: center center;" [ngStyle]="{'background-image': 'url(' + selected[col.field][selectedIndex[col.field]] + ')'}"></div>
+                  </div>
+                  <div style="display: flex;width: 300px;overflow: scroll;background: antiquewhite;padding: 1px;">
+                    <div *ngFor="let image of selected[col.field]; let j = index" (click)="selectedIndex[col.field] = j" style="margin: 0 1px;width: 60px;background: black;cursor: pointer;">
+                      <div style="width: 60px;height: 40px;background-size: contain;background-repeat: no-repeat;background-position: center center;" [ngStyle]="{'background-image': 'url(' + selected[col.field][j] + ')'}"></div>
+                    </div>
+                  </div>
+                  <div style="background: silver;width: 300px;padding: 5px;">
+                    <label style="cursor: pointer;">
+                      <i class="fa fa-upload" aria-hidden="true" style="margin: 0px 5px;"></i>
+                      <input (change)="onFilesChange($event, col, selectedIndex[col.field])" type="file" style="display: none;" />
+                    </label>
+                    <label style="cursor: pointer;" (click)="viewImage(selected[col.field][selectedIndex[col.field]])">
+                      <i class="fa fa-eye" aria-hidden="true" style="margin: 0px 5px;"></i>
+                    </label>
+                    <label style="cursor: pointer;" (click)="selected[col.field].splice(selectedIndex[col.field], 1);selectedIndex[col.field] = selectedIndex[col.field] - 1">
+                      <i class="fa fa-trash" aria-hidden="true" style="margin: 0px 5px;"></i>
+                    </label>
+                    <label style="cursor: pointer;">
+                      <i class="fa fa-plus" aria-hidden="true" style="margin: 0px 5px;"></i>
+                      <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+                    </label>
+                  </div>
                 </div>
               </td>
             </tr>
@@ -155,7 +186,7 @@ import * as lodash from 'lodash';
       </p-footer>
     </p-dialog>
     <p-confirmDialog header="操作确认" icon="fa fa-exclamation-triangle" width="425"></p-confirmDialog>
-    <p-growl [value]="msgs"></p-growl>
+    <p-growl [life]="2000" [(value)]="msgs"></p-growl>
 </div>
 `,
   providers: [ConfirmationService]
@@ -168,6 +199,7 @@ export class RestAdminComponent implements OnInit {
   lastFilters: any;
   lastEvent: any;
   selected: any;
+  selectedIndex: any = {};
   showModal: boolean;
   msgs: Message[] = [];
   columnOptions: SelectItem[];
@@ -280,6 +312,7 @@ export class RestAdminComponent implements OnInit {
             break;
           case 'images':
             this.selected[col.field] = this.selected[col.field] || [];
+            this.selectedIndex[col.field] = 0;
             break;
         }
       }
@@ -303,6 +336,7 @@ export class RestAdminComponent implements OnInit {
             break;
           case 'images':
             this.selected[col.field] = this.selected[col.field] || [];
+            this.selectedIndex[col.field] = 0;
             break;
         }
       }
@@ -362,15 +396,15 @@ export class RestAdminComponent implements OnInit {
           }), JSON.stringify({}));
         }
         this.cancel();
-        this.msgs.push({
+        this.msgs = [...this.msgs, {
           severity: 'success', summary: '保存成功'
-        });
+        }];
       })
       .catch(error => {
         console.error(error);
-        this.msgs.push({
+        this.msgs = [...this.msgs, {
           severity: 'error', summary: '保存失败', detail: error.data.message
-        });
+        }];
       });
   }
 
@@ -381,16 +415,16 @@ export class RestAdminComponent implements OnInit {
         fetch('DELETE', `${this.params.api}/${this.selected._id}`, null, { Authorization: `Bearer ${this.auth.jwt}` })
           .then(res => {
             this.cancel();
-            this.msgs.push({
+            this.msgs = [...this.msgs, {
               severity: 'success', summary: '删除成功'
-            });
+            }];
             this.loadData(this.lastOptions, this.lastFilters);
           })
           .catch(error => {
             console.error(error);
-            this.msgs.push({
+            this.msgs = [...this.msgs, {
               severity: 'error', summary: '删除失败', detail: error.data.message
-            });
+            }];
           });
       }
     });
@@ -479,9 +513,14 @@ export class RestAdminComponent implements OnInit {
       col.editor.upload(e.target.files[0])
         .then(url => {
           this.selected[col.field][index] = url;
+          this.selectedIndex[col.field] = index;
         })
         .catch(console.error);
     }
+  }
+
+  viewImage(url) {
+    window.open(url, '_blank');
   }
 
   onCustomClick(fn, selected, key) {
