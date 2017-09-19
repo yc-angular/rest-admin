@@ -118,11 +118,27 @@ import * as lodash from 'lodash';
                 </p-pickList>
               </td>
               <td *ngIf="col.editor.type == 'image'" style="width: 100%;">
-                <label>
-                  <img style="width:100%" *ngIf="selected[col.field]" [src]="selected[col.field]" />
-                  <span *ngIf="!selected[col.field]">上传</span>
+                <label *ngIf="!selected[col.field]">
+                  <i class="fa fa-upload" aria-hidden="true"></i>
                   <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
                 </label>
+                <div *ngIf="selected[col.field]">
+                  <div style="width: 300px;background: black;cursor: pointer;" (click)="viewImage(selected[col.field])">
+                    <div style="width: 300px;height: 200px;background-size: contain;background-repeat: no-repeat;background-image: url({{selected[col.field]}});background-position: center center;"></div>
+                  </div>
+                  <div style="background: silver;width: 300px;padding: 5px">
+                    <label style="cursor: pointer;">
+                      <i class="fa fa-upload" aria-hidden="true" style="margin: 0px 5px;"></i>
+                      <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
+                    </label>
+                    <label style="cursor: pointer;" (click)="viewImage(selected[col.field])">
+                      <i class="fa fa-eye" aria-hidden="true" style="margin: 0px 5px;"></i>
+                    </label>
+                    <label style="cursor: pointer;" (click)="selected[col.field] = null">
+                      <i class="fa fa-trash" aria-hidden="true" style="margin: 0px 5px;"></i>
+                    </label>
+                  </div>
+                </div>
               </td>
               <td *ngIf="col.editor.type == 'images'" style="width: 100%;">
                 <div *ngFor="let image of selected[col.field]; let i = index">
@@ -482,6 +498,10 @@ export class RestAdminComponent implements OnInit {
         })
         .catch(console.error);
     }
+  }
+
+  viewImage(url) {
+    window.open(url, '_blank');
   }
 
   onCustomClick(fn, selected, key) {
