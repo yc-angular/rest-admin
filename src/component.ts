@@ -186,7 +186,7 @@ import * as lodash from 'lodash';
       </p-footer>
     </p-dialog>
     <p-confirmDialog header="操作确认" icon="fa fa-exclamation-triangle" width="425"></p-confirmDialog>
-    <p-growl [value]="msgs"></p-growl>
+    <p-growl [life]="2000" [(value)]="msgs"></p-growl>
 </div>
 `,
   providers: [ConfirmationService]
@@ -396,15 +396,15 @@ export class RestAdminComponent implements OnInit {
           }), JSON.stringify({}));
         }
         this.cancel();
-        this.msgs.push({
+        this.msgs = [...this.msgs, {
           severity: 'success', summary: '保存成功'
-        });
+        }];
       })
       .catch(error => {
         console.error(error);
-        this.msgs.push({
+        this.msgs = [...this.msgs, {
           severity: 'error', summary: '保存失败', detail: error.data.message
-        });
+        }];
       });
   }
 
@@ -415,16 +415,16 @@ export class RestAdminComponent implements OnInit {
         fetch('DELETE', `${this.params.api}/${this.selected._id}`, null, { Authorization: `Bearer ${this.auth.jwt}` })
           .then(res => {
             this.cancel();
-            this.msgs.push({
+            this.msgs = [...this.msgs, {
               severity: 'success', summary: '删除成功'
-            });
+            }];
             this.loadData(this.lastOptions, this.lastFilters);
           })
           .catch(error => {
             console.error(error);
-            this.msgs.push({
+            this.msgs = [...this.msgs, {
               severity: 'error', summary: '删除失败', detail: error.data.message
-            });
+            }];
           });
       }
     });
