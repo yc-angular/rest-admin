@@ -118,7 +118,7 @@ import * as lodash from 'lodash';
                 </p-pickList>
               </td>
               <td *ngIf="col.editor.type == 'image'" style="width: 100%;">
-                <label *ngIf="!selected[col.field]">
+                <label style="cursor: pointer;" *ngIf="!selected[col.field]">
                   <i class="fa fa-upload" aria-hidden="true"></i>
                   <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
                 </label>
@@ -141,20 +141,35 @@ import * as lodash from 'lodash';
                 </div>
               </td>
               <td *ngIf="col.editor.type == 'images'" style="width: 100%;">
-                <div *ngFor="let image of selected[col.field]; let i = index">
-                  <label>
-                    <img style="width:100%" [src]="image" />
-                    <input (change)="onFilesChange($event, col, i)" type="file" style="display: none;" />
-                  </label>
-                  <div style="padding: 8px">
-                    <a (click)="selected[col.field].splice(i, 1)">删除</a>
+                <label style="cursor: pointer;" *ngIf="!selected[col.field] || !selected[col.field].length">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+                </label>
+                <div *ngIf="selected[col.field] && selected[col.field].length">
+                  <div style="width: 300px;background: black;cursor: pointer;" (click)="viewImage(selected[col.field][selectedIndex[col.field]])">
+                    <div style="width: 300px;height: 200px;background-size: contain;background-repeat: no-repeat;background-position: center center;" [ngStyle]="{'background-image': 'url(' + selected[col.field][selectedIndex[col.field]] + ')'}"></div>
                   </div>
-                </div>
-                <div>                    
-                  <label>
-                    <a>添加</a>
-                    <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
-                  </label>
+                  <div style="display: flex;width: 300px;overflow: scroll;background: antiquewhite;padding: 1px;">
+                    <div *ngFor="let image of selected[col.field]; let j = index" (click)="selectedIndex[col.field] = j" style="margin: 0 1px;width: 60px;background: black;cursor: pointer;">
+                      <div style="width: 60px;height: 40px;background-size: contain;background-repeat: no-repeat;background-position: center center;" [ngStyle]="{'background-image': 'url(' + selected[col.field][j] + ')'}"></div>
+                    </div>
+                  </div>
+                  <div style="background: silver;width: 300px;padding: 5px;">
+                    <label style="cursor: pointer;">
+                      <i class="fa fa-upload" aria-hidden="true" style="margin: 0px 5px;"></i>
+                      <input (change)="onFilesChange($event, col, selectedIndex[col.field])" type="file" style="display: none;" />
+                    </label>
+                    <label style="cursor: pointer;" (click)="viewImage(selected[col.field][selectedIndex[col.field]])">
+                      <i class="fa fa-eye" aria-hidden="true" style="margin: 0px 5px;"></i>
+                    </label>
+                    <label style="cursor: pointer;" (click)="selected[col.field].splice(selectedIndex[col.field], 1);selectedIndex[col.field] = selectedIndex[col.field] - 1">
+                      <i class="fa fa-trash" aria-hidden="true" style="margin: 0px 5px;"></i>
+                    </label>
+                    <label style="cursor: pointer;">
+                      <i class="fa fa-plus" aria-hidden="true" style="margin: 0px 5px;"></i>
+                      <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+                    </label>
+                  </div>
                 </div>
               </td>
             </tr>
@@ -184,6 +199,7 @@ export class RestAdminComponent implements OnInit {
   lastFilters: any;
   lastEvent: any;
   selected: any;
+  selectedIndex: any = {};
   showModal: boolean;
   msgs: Message[] = [];
   columnOptions: SelectItem[];
@@ -296,6 +312,7 @@ export class RestAdminComponent implements OnInit {
             break;
           case 'images':
             this.selected[col.field] = this.selected[col.field] || [];
+            this.selectedIndex[col.field] = 0;
             break;
         }
       }
@@ -319,6 +336,7 @@ export class RestAdminComponent implements OnInit {
             break;
           case 'images':
             this.selected[col.field] = this.selected[col.field] || [];
+            this.selectedIndex[col.field] = 0;
             break;
         }
       }
@@ -495,6 +513,7 @@ export class RestAdminComponent implements OnInit {
       col.editor.upload(e.target.files[0])
         .then(url => {
           this.selected[col.field][index] = url;
+          this.selectedIndex[col.field] = index;
         })
         .catch(console.error);
     }
