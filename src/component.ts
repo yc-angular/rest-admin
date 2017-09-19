@@ -124,7 +124,7 @@ import * as lodash from 'lodash';
                 </label>
                 <div *ngIf="selected[col.field]">
                   <div style="width: 300px;background: black;cursor: pointer;" (click)="viewImage(selected[col.field])">
-                    <div style="width: 300px;height: 200px;background-size: contain;background-repeat: no-repeat;background-image: url({{selected[col.field]}});background-position: center center;"></div>
+                    <div style="width: 300px;height: 200px;background-size: contain;background-repeat: no-repeat;background-position: center center;" [ngStyle]="{'background-image': 'url(' + selected[col.field] + ')'}"></div>
                   </div>
                   <div style="background: silver;width: 300px;padding: 5px">
                     <label style="cursor: pointer;">
