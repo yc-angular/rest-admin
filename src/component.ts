@@ -47,7 +47,7 @@ import * as lodash from 'lodash';
             selectOtherMonths="true" 
             monthNavigator="true" 
             yearNavigator="true" 
-            yearRange="2016:2020"
+            [yearRange]="col.filter.yearRange || '2016:2020'"
             [(ngModel)]="col.filter.fr" 
             showTime="showTime" 
             hourFormat="24"
@@ -59,7 +59,7 @@ import * as lodash from 'lodash';
             selectOtherMonths="true" 
             monthNavigator="true" 
             yearNavigator="true" 
-            yearRange="2016:2020"
+            [yearRange]="col.filter.yearRange || '2016:2020'"
             [(ngModel)]="col.filter.to" 
             showTime="showTime" 
             hourFormat="24" 
@@ -96,7 +96,7 @@ import * as lodash from 'lodash';
                   selectOtherMonths="true" 
                   monthNavigator="true" 
                   yearNavigator="true" 
-                  yearRange="2016:2020"
+                  [yearRange]="col.editor.datetime ? col.editor.datetime.yearRange : '2016:2020'"
                   [(ngModel)]="selected[col.field]" 
                   showTime="showTime" 
                   hourFormat="24"
@@ -598,6 +598,9 @@ export interface IParamsColEditor {
   disabled?: boolean;
   hidden?: boolean;
   logs?: (item: any) => string;
+  datetime?: {
+    yearRange: string;
+  };
   upload?: (file: Blob) => Promise<string>;
   display?: (item: any) => string;
 }
@@ -609,6 +612,7 @@ export interface IParamsColFilter {
   options?: any;
   fr?: any;
   to?: any;
+  yearRange?: string;
 }
 
 export interface IParamsColDisplay {
