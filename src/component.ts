@@ -346,11 +346,8 @@ export class RestAdminComponent implements OnInit {
   }
 
   onCustomClick(fn, selected, key) {
-    fn(selected[key])
-      .then(v => {
-        selected[key] = v;
-      })
-      .catch(console.error);
+    if (!fn) return;
+    fn(selected, key);
   }
 }
 
@@ -411,8 +408,8 @@ export interface IParamsColEditor {
     path: string
   };
   custom?: {
-    display: (item: any) => string;
-    onClick: (item: any) => Promise<any>;
+    display: (selected: any, key: string) => string;
+    onClick: (selected: any, key: string) => Promise<any>;
   };
   options?: any;
   onChange?: () => void;
