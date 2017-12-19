@@ -5,7 +5,7 @@
     </div>
     <div class="ui-toolbar-group-right">
       <button *ngFor="let b of params.customButtons" [class]="b.class" type="button" pButton [icon]="b.icon" (click)="b.handler(self)"
-        [label]="b.label" [hidden]="b.when && !when(self)"></button>
+        [label]="b.label" [hidden]="b.when && !b.when(self)"></button>
       <button *ngIf="!params.hideAdd" class="ui-button-success" type="button" pButton icon="fa-plus" (click)="add()"></button>
       <button *ngIf="!params.hideExport" type="button" pButton icon="fa-file-o" iconPos="left" label="CSV" (click)="exportCSV(dt)"></button>
     </div>
@@ -196,7 +196,7 @@
         <button *ngIf="!params.hideCancel" class="ui-button-secondary" type="button" pButton icon="fa-close" (click)="cancel()"></button>
         <button *ngIf="!params.hideSave" class="ui-button-info" type="button" pButton icon="fa-check" (click)="save()"></button>
         <button *ngFor="let b of params.editorButtons" [class]="b.class" type="button" pButton [icon]="b.icon" (click)="b.handler(self)"
-          [label]="b.label" [hidden]="b.when && !when(self)"></button>
+          [label]="b.label" [hidden]="b.when && !b.when(self)"></button>
       </div>
     </p-footer>
   </p-dialog>
