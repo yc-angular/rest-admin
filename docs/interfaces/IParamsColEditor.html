@@ -1,0 +1,1780 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>yca-rest-admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">yca-rest-admin</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../index.html">yca-rest-admin</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                                <li class="link">
+                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse "
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/RestAdminModule.html" >RestAdminModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/RestAdminComponent.html" >RestAdminComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/IPaginateData.html" >IPaginateData</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/IParams.html" >IParams</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/IParamsCol.html" >IParamsCol</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/IParamsColDisplay.html" >IParamsColDisplay</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/IParamsColEditor.html"  data-type="entity-link" class="active" >IParamsColEditor</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/IParamsColFilter.html" >IParamsColFilter</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/IParamsCustomButton.html" >IParamsCustomButton</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/IParamsEditorButton.html" >IParamsEditorButton</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../index.html">yca-rest-admin</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse "
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/RestAdminModule.html" >RestAdminModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/RestAdminComponent.html" >RestAdminComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/IPaginateData.html" >IPaginateData</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/IParams.html" >IParams</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/IParamsCol.html" >IParamsCol</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/IParamsColDisplay.html" >IParamsColDisplay</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/IParamsColEditor.html"  data-type="entity-link" class="active" >IParamsColEditor</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/IParamsColFilter.html" >IParamsColFilter</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/IParamsCustomButton.html" >IParamsCustomButton</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/IParamsEditorButton.html" >IParamsEditorButton</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>IParamsColEditor</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/component.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Editor</p>
+
+            </p>
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#custom">custom</a>
+                                </li>
+                                <li>
+                                        <a href="#datetime">datetime</a>
+                                </li>
+                                <li>
+                                        <a href="#disabled">disabled</a>
+                                </li>
+                                <li>
+                                        <a href="#display">display</a>
+                                </li>
+                                <li>
+                                        <a href="#hidden">hidden</a>
+                                </li>
+                                <li>
+                                        <a href="#logs">logs</a>
+                                </li>
+                                <li>
+                                        <a href="#onChange">onChange</a>
+                                </li>
+                                <li>
+                                        <a href="#options">options</a>
+                                </li>
+                                <li>
+                                        <a href="#placeholder">placeholder</a>
+                                </li>
+                                <li>
+                                        <a href="#ref">ref</a>
+                                </li>
+                                <li>
+                                        <a href="#type">type</a>
+                                </li>
+                                <li>
+                                        <a href="#upload">upload</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="custom"></a>
+                                        <b>custom</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>custom:     <code>literal type</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>literal type</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="784" class="link-to-prism">src/component.ts:784</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Need this if type is &#39;custom&#39;</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="datetime"></a>
+                                        <b>datetime</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>datetime:     <code>literal type</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>literal type</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="748" class="link-to-prism">src/component.ts:748</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Need this if type is &#39;datetime&#39;</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="disabled"></a>
+                                        <b>disabled</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>disabled:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="718" class="link-to-prism">src/component.ts:718</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Set as disabled</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="display"></a>
+                                        <b>display</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>display:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="763" class="link-to-prism">src/component.ts:763</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Need this when type is &#39;pickList&#39;</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="hidden"></a>
+                                        <b>hidden</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>hidden:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="723" class="link-to-prism">src/component.ts:723</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Hide column while editing</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="logs"></a>
+                                        <b>logs</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>logs:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="743" class="link-to-prism">src/component.ts:743</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Need this if type is &#39;logs&#39;</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="onChange"></a>
+                                        <b>onChange</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>onChange:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="708" class="link-to-prism">src/component.ts:708</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>On field changed</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="options"></a>
+                                        <b>options</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>options:     <code>Array&lt;literal type&gt;</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>Array&lt;literal type&gt;</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="728" class="link-to-prism">src/component.ts:728</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Need this if type is &#39;enum&#39;</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="placeholder"></a>
+                                        <b>placeholder</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>placeholder:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="713" class="link-to-prism">src/component.ts:713</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Placeholder</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="ref"></a>
+                                        <b>ref</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>ref:     <code>literal type</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>literal type</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="769" class="link-to-prism">src/component.ts:769</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Need this if type is &#39;ref&#39;</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="type"></a>
+                                        <b>type</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>type:     <code>&quot;text&quot; | &quot;chip&quot; | &quot;textArea&quot; | &quot;switch&quot; | &quot;enum&quot; | &quot;ref&quot; | &quot;datetime&quot; | &quot;logs&quot; | &quot;file&quot; | &quot;image&quot; | &quot;images&quot; | &quot;pickList&quot; | &quot;custom&quot;</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>&quot;text&quot; | &quot;chip&quot; | &quot;textArea&quot; | &quot;switch&quot; | &quot;enum&quot; | &quot;ref&quot; | &quot;datetime&quot; | &quot;logs&quot; | &quot;file&quot; | &quot;image&quot; | &quot;images&quot; | &quot;pickList&quot; | &quot;custom&quot;</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="703" class="link-to-prism">src/component.ts:703</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Type of editor.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="upload"></a>
+                                        <b>upload</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>upload:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="758" class="link-to-prism">src/component.ts:758</a></div>
+                                        </td>
+                                    </tr>
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Need this when type is &#39;file&#39;, &#39;files&#39;, &#39;image&#39;, or &#39;images&#39;</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
+import { ConfirmationService, Message, LazyLoadEvent, SelectItem, DataTable } from &#x27;primeng/primeng&#x27;;
+import { Auth } from &#x27;@yca/auth&#x27;;
+import { fetch } from &#x27;@yct/utils&#x27;;
+import * as lodash from &#x27;lodash&#x27;;
+
+@Component({
+  selector: &#x27;yca-rest-admin&#x27;,
+  templateUrl: &#x27;./component.html&#x27;,
+  providers: [ConfirmationService]
+})
+export class RestAdminComponent implements OnInit {
+  /**
+   * Component params
+   */
+  @Input() public params: IParams;
+
+  /**
+   * Paginated data from query
+   */
+  public data: IPaginateData;
+
+  /**
+   * Current selected row
+   */
+  public selected: any;
+
+  /**
+   * Whether the modal is showing
+   */
+  public showModal: boolean;
+
+  /**
+   * Primeng Message array
+   */
+  public msgs: Message[] &#x3D; [];
+
+  /**
+   * Colum options
+   */
+  private columnOptions: SelectItem[];
+
+  /**
+   * Current Date
+   */
+  public now: Date &#x3D; new Date();
+
+  /**
+   * References
+   */
+  public refs: { [x: string]: any[] } &#x3D; {};
+
+
+  /**
+   * Point to this
+   */
+  private self: RestAdminComponent;
+
+  /**
+   * Last options used for query
+   */
+  private lastOptions: any;
+
+  /**
+   * Last filters used for query
+   */
+  private lastFilters: any;
+
+  /**
+   * Last LazyLoadEvent event
+   */
+  private lastEvent: any;
+
+  /**
+   * Files editor selected index
+   */
+  private selectedIndex: any &#x3D; {};
+
+  /**
+   * Modal width
+   */
+  private width &#x3D; window.innerWidth;
+
+  /**
+   * Modal Height
+   */
+  private height &#x3D; window.innerHeight;
+
+  constructor(
+    public confirmationService: ConfirmationService,
+    public auth: Auth
+  ) {
+    this.self &#x3D; this;
+  }
+
+  ngOnInit(): void {
+    this.columnOptions &#x3D; [];
+    for (const col of this.params.cols) {
+      this.columnOptions.push({ label: col.header, value: col });
+    }
+    this.loadData(JSON.stringify({
+      limit: 0,
+      page: 1
+    }), JSON.stringify({}));
+  }
+
+  /**
+   * Query paginated data
+   * @param options {any} query options
+   * @param filters {any} query filters
+   */
+  async loadData(options: any, filters: any): Promise&lt;void&gt; {
+    const url: string &#x3D; &#x60;${this.params.api}?_options&#x3D;${options}&amp;_filters&#x3D;${filters}&#x60;;
+    try {
+      const res &#x3D; await fetch(
+        &#x27;GET&#x27;,
+        url,
+        null,
+        { Authorization: &#x60;Bearer ${this.auth.jwt}&#x60; }
+      );
+      if (this.params.renderer) {
+        this.data &#x3D; this.params.renderer(res.data);
+      } else {
+        this.data &#x3D; res.data;
+      }
+      this.lastFilters &#x3D; filters;
+      this.lastOptions &#x3D; options;
+      if (this.params.dt)
+        this.params.dt.paginator &#x3D; true;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  /**
+   * DataTable lazy load
+   * @param event {LazyLoadEvent} LazyLoadEvent
+   * @param dt {DataTable} DataTable
+   */
+  loadLazy(event: LazyLoadEvent, dt: DataTable): void {
+    this.lastEvent &#x3D; event;
+    this.params.dt &#x3D; dt;
+    const page: number &#x3D; Math.floor(event.first / event.rows) + 1;
+    const limit: number &#x3D; event.rows &#x3D;&#x3D;&#x3D; 100 ? 99999999 : event.rows;
+    const options: any &#x3D; this.params.globalOptions || {};
+    options.limit &#x3D; limit;
+    options.page &#x3D; page;
+    if (event.sortField) {
+      let str: string &#x3D; event.sortField;
+      if (event.sortOrder &#x3D;&#x3D;&#x3D; -1) str &#x3D; &#x27;-&#x27; + str;
+      options.sort &#x3D; str;
+    }
+
+    const filters: any &#x3D; this.params.globalFilters || {};
+    for (const k of Object.keys(event.filters)) {
+      switch (event.filters[k].matchMode) {
+        case &#x27;in&#x27;:
+          filters[k] &#x3D; { $in: event.filters[k].value };
+          break;
+        case &#x27;startsWith&#x27;:
+          filters[k] &#x3D; { $regex: &#x27;^&#x27; + event.filters[k].value };
+          break;
+        case &#x27;endsWith&#x27;:
+          filters[k] &#x3D; { $regex: event.filters[k].value + &#x27;$&#x27; };
+          break;
+        case &#x27;equals&#x27;:
+          filters[k] &#x3D; event.filters[k].value;
+          break;
+        case &#x27;range&#x27;:
+          filters[k] &#x3D; { $gte: event.filters[k].value[0], $lt: event.filters[k].value[1] };
+          break;
+        case &#x27;id&#x27;:
+          if (event.filters[k].value &amp;&amp; event.filters[k].value.length &#x3D;&#x3D;&#x3D; 24) {
+            filters[k] &#x3D; event.filters[k].value;
+          } else {
+            delete filters[k];
+          }
+          break;
+      }
+    }
+    this.loadData(JSON.stringify(options), JSON.stringify(filters));
+  }
+
+  /**
+   * Select a row
+   * @param event {any} $event
+   */
+  select(event: any): void {
+    this.selected &#x3D; JSON.parse(JSON.stringify(this.selected));
+    if (this.params.preEdit)
+      this.params.preEdit(this);
+    for (let col of this.params.cols) {
+      if (col.editor) {
+        switch (col.editor.type) {
+          case &#x27;datetime&#x27;:
+            this.selected[col.field] &#x3D; new Date(this.selected[col.field]);
+            break;
+          case &#x27;chip&#x27;:
+            this.selected[col.field] &#x3D; this.selected[col.field] || [];
+            break;
+          case &#x27;pickList&#x27;:
+            this.selected[col.field] &#x3D; this.selected[col.field] || [];
+            (col.editor as any).pickListSource &#x3D; lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
+            break;
+          case &#x27;images&#x27;:
+            this.selected[col.field] &#x3D; this.selected[col.field] || [];
+            this.selectedIndex[col.field] &#x3D; 0;
+            break;
+        }
+      }
+    }
+    this.width &#x3D; window.innerWidth;
+    this.height &#x3D; window.innerHeight;
+    this.showModal &#x3D; true;
+    if (this.params.onShow) this.params.onShow(this);
+  }
+
+  /**
+   * Add a row
+   */
+  add(): void {
+    this.selected &#x3D; {};
+    if (this.params.preEdit)
+      this.params.preEdit(this);
+    for (let col of this.params.cols) {
+      if (col.editor) {
+        switch (col.editor.type) {
+          case &#x27;pickList&#x27;:
+            this.selected[col.field] &#x3D; this.selected[col.field] || [];
+            (col.editor as any).pickListSource &#x3D; lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
+            break;
+          case &#x27;images&#x27;:
+            this.selected[col.field] &#x3D; this.selected[col.field] || [];
+            this.selectedIndex[col.field] &#x3D; 0;
+            break;
+        }
+      }
+    }
+    this.width &#x3D; window.innerWidth;
+    this.height &#x3D; window.innerHeight;
+    this.showModal &#x3D; true;
+    if (this.params.onShow) this.params.onShow(this);
+  }
+
+  /**
+   * Columns to display
+   */
+  getDisplayCols(): IParamsCol[] {
+    return this.params.cols.filter(x &#x3D;&gt; {
+      if (!x.display) return true;
+      if (x.display.type &#x3D;&#x3D;&#x3D; &#x27;hide&#x27;) return false;
+      return true;
+    });
+  }
+
+  /**
+   * Columns to be edited
+   */
+  getEditorCols(): IParamsCol[] {
+    return this.params.cols.filter(x &#x3D;&gt; x.editor &amp;&amp; !x.editor.hidden);
+  }
+
+  /**
+   * On column value changed
+   * @param fn {Function} Callback
+   */
+  onChange(fn: Function): void {
+    if (!fn) return;
+    fn(this);
+  }
+
+  /**
+   * Close modal and unselect row
+   */
+  cancel(): void {
+    this.showModal &#x3D; false;
+    this.selected &#x3D; null;
+  }
+
+  /**
+   * Save a row
+   */
+  async save(): Promise&lt;any&gt; {
+    let url: string;
+    let method: string;
+    if (this.selected._id) {
+      url &#x3D; this.params.api + &#x27;/&#x27; + this.selected._id;
+      method &#x3D; &#x27;PATCH&#x27;;
+    } else {
+      url &#x3D; this.params.api;
+      method &#x3D; &#x27;POST&#x27;;
+    }
+    const params: any &#x3D; {};
+    for (const key of Object.keys(this.selected)) {
+      params[key] &#x3D; this.selected[key];
+    }
+    if (this.params.preSave) this.params.preSave(params);
+    try {
+      const res &#x3D; await fetch(method, url, params, { Authorization: &#x60;Bearer ${this.auth.jwt}&#x60; }, !this.params.formdata);
+      this.loadData(this.lastOptions, this.lastFilters);
+      this.cancel();
+      this.msgs &#x3D; [...this.msgs, {
+        severity: &#x27;success&#x27;, summary: &#x27;保存成功&#x27;
+      }];
+      return res;
+    } catch (error) {
+      console.error(error);
+      this.msgs &#x3D; [...this.msgs, {
+        severity: &#x27;error&#x27;, summary: &#x27;保存失败&#x27;, detail: error.data.message
+      }];
+      return null;
+    }
+  }
+
+  /**
+   * Delete a row
+   */
+  delete(): void {
+    this.confirmationService.confirm({
+      message: &#x27;删除后不能返回，确定删除?&#x27;,
+      accept: async () &#x3D;&gt; {
+        try {
+          const res &#x3D; await fetch(&#x27;DELETE&#x27;, &#x60;${this.params.api}/${this.selected._id}&#x60;, null, { Authorization: &#x60;Bearer ${this.auth.jwt}&#x60; });
+          this.cancel();
+          this.msgs &#x3D; [...this.msgs, {
+            severity: &#x27;success&#x27;, summary: &#x27;删除成功&#x27;
+          }];
+          this.loadData(this.lastOptions, this.lastFilters);
+        } catch (error) {
+          console.error(error);
+          this.msgs &#x3D; [...this.msgs, {
+            severity: &#x27;error&#x27;, summary: &#x27;删除失败&#x27;, detail: error.data.message
+          }];
+        }
+      }
+    });
+  }
+
+  /**
+   * Add Datetime filter range
+   * @param col {any} column
+   */
+  addDatetimeFilterRange(col: any): void {
+    const fr: Date &#x3D; col.filter.fr;
+    const to: Date &#x3D; col.filter.to;
+    if (!fr || !to) return;
+    const value: [number] &#x3D; [fr.getTime(), to.getTime()];
+    const field: Date &#x3D; col.field;
+    const mode: string &#x3D; col.filter.mode;
+    this.params.dt.filter(value, field, mode);
+  }
+
+  /**
+   * Reload data
+   */
+  reload(): void {
+    this.params.dt.filter(null, &#x27;dummy&#x27;, &#x27;in&#x27;);
+    this.params.dt.paginator &#x3D; false;
+  }
+
+  /**
+   * Get reference options
+   * @param col {any} column
+   */
+  getRefOptions(col: any): any {
+    if (this.refs[col.field]) return this.refs[col.field];
+    this.refs[col.field] &#x3D; [];
+    fetch(&#x27;GET&#x27;, col.editor.ref.path, null, { Authorization: &#x60;Bearer ${this.auth.jwt}&#x60; })
+      .then(res &#x3D;&gt; {
+        this.refs[col.field] &#x3D; res.data.docs.map(x &#x3D;&gt; {
+          return {
+            label: col.editor.ref.label.constructor &#x3D;&#x3D;&#x3D; String ? x[col.editor.ref.label] : col.editor.ref.label(x),
+            value: x._id
+          };
+        });
+        this.refs[col.field].unshift({
+          label: &#x27;请选择&#x27;,
+          value: null
+        });
+      })
+      .catch(console.error);
+    return this.refs[col.field];
+  }
+
+  /**
+   * Export csv
+   * @param dt {DataTable} DataTable
+   */
+  exportCSV(dt: DataTable): void {
+    const header: string &#x3D; dt.columns.map(x &#x3D;&gt; x.header).join(&#x27;,&#x27;);
+    const rows: any &#x3D; dt.value.map(obj &#x3D;&gt; {
+      return dt.columns.map(x &#x3D;&gt; {
+        const col: IParamsCol &#x3D; this.params.cols.find(y &#x3D;&gt; y.field &#x3D;&#x3D;&#x3D; x.field);
+        if (col.display &amp;&amp; col.display.type &#x3D;&#x3D;&#x3D; &#x27;enum&#x27;)
+          return col.display.map(dt.resolveFieldData(obj, x.field));
+        return dt.resolveFieldData(obj, x.field);
+      }).join(&#x27;,&#x27;);
+    }).join(&#x27;\n&#x27;);
+    let body: string &#x3D; [header, rows].join(&#x27;\n&#x27;);
+    const blob: Blob &#x3D; new Blob([body], {
+      type: &#x27;text/csv;charset&#x3D;utf-8;&#x27;
+    });
+    if (window.navigator.msSaveOrOpenBlob) {
+      navigator.msSaveOrOpenBlob(blob, this.params.title.list + &#x27;.csv&#x27;);
+    } else {
+      const link: HTMLAnchorElement &#x3D; document.createElement(&#x27;a&#x27;);
+      link.style.display &#x3D; &#x27;none&#x27;;
+      document.body.appendChild(link);
+      if (link.download !&#x3D;&#x3D; undefined) {
+        link.setAttribute(&#x27;href&#x27;, URL.createObjectURL(blob));
+        link.setAttribute(&#x27;download&#x27;, this.params.title.list + &#x27;.csv&#x27;);
+        document.body.appendChild(link);
+        link.click();
+      } else {
+        body &#x3D; &#x27;data:text/csv;charset&#x3D;utf-8,&#x27; + body;
+        window.open(encodeURI(body));
+      }
+      document.body.removeChild(link);
+    }
+  }
+
+  /**
+   * On file changed
+   * @param e {any} $event
+   * @param col {IParamsCol} IParamsCol
+   */
+  async onFileChange(e: any, col: IParamsCol): Promise&lt;void&gt; {
+    if (e.target.files &amp;&amp; e.target.files[0]) {
+      try {
+        const url &#x3D; await col.editor.upload(e.target.files[0]);
+        this.selected[col.field] &#x3D; url;
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }
+
+  /**
+   * On files changed
+   * @param e {any} $event
+   * @param col {IParamsCol} IParamsCol
+   * @param index {number} file index
+   */
+  async onFilesChange(e: any, col: IParamsCol, index: number): Promise&lt;void&gt; {
+    if (e.target.files &amp;&amp; e.target.files[0]) {
+      try {
+        const url &#x3D; await col.editor.upload(e.target.files[0]);
+        this.selected[col.field][index] &#x3D; url;
+        this.selectedIndex[col.field] &#x3D; index;
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }
+
+  /**
+   * View image
+   * @param url {string} url
+   */
+  viewImage(url: string) {
+    window.open(url, &#x27;_blank&#x27;);
+  }
+
+  /**
+   * Download file
+   * @param url {string} url
+   */
+  download(url: string) {
+    window.open(url, &#x27;_blank&#x27;);
+  }
+
+  /**
+   * on custom edit type clicked
+   * @param fn {any} callback
+   * @param selected {any} selected row
+   * @param key {string} column field name
+   */
+  onCustomClick(fn: any, selected: any, key: string) {
+    if (!fn) return;
+    fn(selected, key);
+  }
+}
+
+/**
+ * Component params
+ */
+export interface IParams {
+  /**
+   * ycs restful api endpoint
+   */
+  api: string;
+
+  /**
+   * Titles
+   */
+  title: {
+    /**
+     * Title in list
+     */
+    list: string;
+
+    /**
+     * Title while editing
+     */
+    edit: string;
+  };
+
+  /**
+   * Columns
+   */
+  cols: IParamsCol[];
+
+  /**
+   * Number of rows a page
+   */
+  rows?: number;
+
+  /**
+   * Event on modal show
+   */
+  onShow?: (self: RestAdminComponent) &#x3D;&gt; void;
+
+  /**
+   * Hide button add
+   */
+  hideAdd?: boolean;
+
+  /**
+   * Hide count
+   */
+  hideCount?: boolean;
+
+  /**
+   * Hide button delete
+   */
+  hideDelete?: boolean;
+
+  /**
+   * Hide button save
+   */
+  hideSave?: boolean;
+
+  /**
+   * Hide button cancel
+   */
+  hideCancel?: boolean;
+
+  /**
+   * Hide button export cvs
+   */
+  hideExport?: boolean;
+
+  /**
+   * DataTable
+   */
+  dt?: DataTable;
+
+  /**
+   * Custom buttons in list
+   */
+  customButtons?: [IParamsCustomButton];
+
+  /**
+   * Custom buttons while editing
+   */
+  editorButtons?: [IParamsEditorButton];
+
+  /**
+   * Global filters for query
+   */
+  globalFilters?: any;
+
+  /**
+   * Global options for query
+   */
+  globalOptions?: any;
+
+  /**
+   * Whether post data as formdata. Default is json.
+   */
+  formdata?: boolean;
+
+  /**
+   * Before save a row
+   */
+  preSave?: (params: any) &#x3D;&gt; void;
+
+  /**
+   * Before edit a row
+   */
+  preEdit?: (self: RestAdminComponent) &#x3D;&gt; void;
+
+  /**
+   * Render paginated data after query
+   */
+  renderer?: (data: IPaginateData) &#x3D;&gt; IPaginateData;
+}
+
+/**
+ * Custom button in list
+ */
+export interface IParamsCustomButton {
+  /**
+   * Label of button
+   */
+  label: string;
+
+  /**
+   * Click handler
+   */
+  handler: (self: RestAdminComponent) &#x3D;&gt; void;
+
+  /**
+   * css class
+   */
+  class?: string;
+
+  /**
+   * fa icon
+   */
+  icon?: string;
+
+  /**
+   * Whether it is available
+   */
+  when?: (self: RestAdminComponent) &#x3D;&gt; boolean;
+}
+
+export interface IParamsCol {
+  /**
+   * field name
+   */
+  field: string;
+
+  /**
+   * Column header
+   */
+  header: string;
+
+  /**
+   * css style
+   */
+  style?: Object;
+
+  /**
+   * Whether it is sortable
+   */
+  sortable?: boolean;
+
+  /**
+   * Column filter
+   */
+  filter?: IParamsColFilter;
+
+  /**
+   * Display
+   */
+  display?: IParamsColDisplay;
+
+  /**
+   * Editor
+   */
+  editor?: IParamsColEditor;
+}
+
+/**
+ * Custom button while editing
+ */
+export interface IParamsEditorButton {
+  /**
+   * Label of button
+   */
+  label: string;
+
+  /**
+   * Click handler
+   */
+  handler: (self: RestAdminComponent) &#x3D;&gt; void;
+
+  /**
+   * css class
+   */
+  class?: string;
+
+  /**
+   * fa icon
+   */
+  icon?: string;
+
+  /**
+   * Whether it is available
+   */
+  when?: (self: RestAdminComponent) &#x3D;&gt; boolean;
+}
+
+/**
+ * Editor
+ */
+export interface IParamsColEditor {
+  /**
+   * Type of editor.
+   */
+  type: &#x27;text&#x27; | &#x27;chip&#x27; | &#x27;textArea&#x27; | &#x27;switch&#x27; | &#x27;enum&#x27; | &#x27;ref&#x27; | &#x27;datetime&#x27; | &#x27;logs&#x27; | &#x27;file&#x27; | &#x27;image&#x27; | &#x27;images&#x27; | &#x27;pickList&#x27; | &#x27;custom&#x27;;
+
+  /**
+   * On field changed
+   */
+  onChange?: (self: RestAdminComponent) &#x3D;&gt; void;
+
+  /**
+   * Placeholder
+   */
+  placeholder?: string;
+
+  /**
+   * Set as disabled
+   */
+  disabled?: boolean;
+
+  /**
+   * Hide column while editing
+   */
+  hidden?: boolean;
+
+  /**
+   * Need this if type is &#x27;enum&#x27;
+   */
+  options?: Array&lt;{
+    /**
+     * Label
+     */
+    label: string;
+
+    /**
+     * value
+     */
+    value: any;
+  }&gt;;
+
+  /**
+   * Need this if type is &#x27;logs&#x27;
+   */
+  logs?: (item: any) &#x3D;&gt; string;
+
+  /**
+   * Need this if type is &#x27;datetime&#x27;
+   */
+  datetime?: {
+    /**
+     * eg. 2016:2020
+     */
+    yearRange: string;
+  };
+
+  /**
+   * Need this when type is &#x27;file&#x27;, &#x27;files&#x27;, &#x27;image&#x27;, or &#x27;images&#x27;
+   */
+  upload?: (file: Blob) &#x3D;&gt; Promise&lt;string&gt;;
+
+  /**
+   * Need this when type is &#x27;pickList&#x27;
+   */
+  display?: (item: any) &#x3D;&gt; string;
+
+
+  /**
+   * Need this if type is &#x27;ref&#x27;
+   */
+  ref?: {
+    /**
+     * Reference label
+     */
+    label: ((x: any) &#x3D;&gt; string) | String,
+
+    /**
+     * Reference data field
+     */
+    path: string
+  };
+
+  /**
+   * Need this if type is &#x27;custom&#x27;
+   */
+  custom?: {
+    /**
+     * Display
+     */
+    display: (selected: any, key: string) &#x3D;&gt; string;
+
+    /**
+     * Click
+     */
+    onClick: (selected: any, key: string) &#x3D;&gt; Promise&lt;any&gt;;
+  };
+}
+
+/**
+ * Column filter
+ */
+export interface IParamsColFilter {
+  /**
+   * Placeholder
+   */
+  placeholder: string;
+
+  /**
+   * Type of filter
+   */
+  type: &#x27;text&#x27; | &#x27;single&#x27; | &#x27;multiple&#x27; | &#x27;datetime-range&#x27;;
+
+  /**
+   * Filter mode
+   */
+  mode: &#x27;contains&#x27; | &#x27;startsWith&#x27; | &#x27;endsWith&#x27; | &#x27;equals&#x27; | &#x27;in&#x27; | &#x27;range&#x27; | &#x27;id&#x27;;
+
+  /**
+   * Need this when type is &#x27;single&#x27; or &#x27;multiple&#x27;
+   */
+  options?: any;
+
+  /**
+   * Optional for type &#x27;datetime-range&#x27;.
+   */
+  fr?: any;
+  /**
+   * Optional for type &#x27;datetime-range&#x27;.
+   */
+  to?: any;
+  /**
+   * Optional for type &#x27;datetime-range&#x27;. default: 2016:2020
+   */
+  yearRange?: string;
+}
+
+/**
+ * Column display options
+ */
+export interface IParamsColDisplay {
+  /**
+   * Type of display
+   */
+  type: &#x27;text&#x27; | &#x27;enum&#x27; | &#x27;switch&#x27; | &#x27;hide&#x27;;
+
+  /**
+   * Need this if type is &#x27;enum&#x27;
+   */
+  map?: (x: any) &#x3D;&gt; string;
+}
+
+/**
+ * Paginate docs
+ */
+export interface IPaginateData {
+  docs: any[];
+  total: number;
+  limit: number;
+  offset: number;
+  page: number;
+  pages: number;
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+    </body>
+</html>
