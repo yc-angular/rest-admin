@@ -1,5 +1,8 @@
 # @yca/rest-admin
 
+## Documentation
+[https://yc-angular.github.io/rest-admin/](https://yc-angular.github.io/rest-admin/)
+
 ## Installation
 
 To install this library, run:
