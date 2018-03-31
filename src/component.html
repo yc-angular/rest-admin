@@ -67,13 +67,17 @@
           <tr *ngFor="let col of getEditorCols()">
             <td style="padding: 16px 16px 16px 8px; white-space: nowrap;vertical-align: top;">{{ col.header }}</td>
             <td *ngIf="col.editor.type == 'text'" style="width: 100%;">
-              <input [disabled]="col.editor.disabled" style="width: 100%;" pInputText [(ngModel)]="selected[col.field]" />
+              <input [placeholder]="col.editor.placeholder" [disabled]="col.editor.disabled" style="width: 100%;" pInputText [(ngModel)]="selected[col.field]"
+              />
+            </td>
+            <td *ngIf="col.editor.type == 'switch'" style="width: 100%;">
+              <p-inputSwitch [onLabel]="col.editor.onLabel" [offLabel]="col.editor.offLabel" [(ngModel)]="selected[col.field]"></p-inputSwitch>
             </td>
             <td *ngIf="col.editor.type == 'chip'" style="width: 100%;">
-              <p-chips [(ngModel)]="selected[col.field]"></p-chips>
+              <p-chips [placeholder]="col.editor.placeholder" [(ngModel)]="selected[col.field]"></p-chips>
             </td>
             <td *ngIf="col.editor.type == 'textArea'" style="width: 100%;">
-              <textarea pInputTextarea style="width: 100%; height: 100px" [(ngModel)]="selected[col.field]"></textarea>
+              <textarea [placeholder]="col.editor.placeholder" pInputTextarea style="width: 100%; height: 100px" [(ngModel)]="selected[col.field]"></textarea>
             </td>
             <td *ngIf="col.editor.type == 'enum'" style="width: 100%;">
               <p-dropdown [disabled]="col.editor.disabled" [placeholder]="col.editor.placeholder" (onChange)="onChange(col.editor.onChange)"
