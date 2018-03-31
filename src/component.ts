@@ -344,7 +344,7 @@ export class RestAdminComponent implements OnInit {
     const fr: Date = col.filter.fr;
     const to: Date = col.filter.to;
     if (!fr || !to) return;
-    const value: [number] = [fr.getTime(), to.getTime()];
+    const value: number[] = [fr.getTime(), to.getTime()];
     const field: Date = col.field;
     const mode: string = col.filter.mode;
     this.params.dt.filter(value, field, mode);
@@ -792,6 +792,12 @@ export interface IParamsColEditor {
      */
     onClick: (selected: any, key: string) => Promise<any>;
   };
+
+  /**
+   * Need this if type is 'switch'
+   */
+  onLabel?: string;
+  offLabel?: string;
 }
 
 /**
