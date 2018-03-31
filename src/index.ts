@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
+  InputSwitchModule,
   InputTextModule,
   InputTextareaModule,
   ButtonModule,
@@ -27,6 +28,7 @@ export * from './component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    InputSwitchModule,
     InputTextModule,
     InputTextareaModule,
     ButtonModule,
