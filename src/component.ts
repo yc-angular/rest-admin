@@ -193,7 +193,8 @@ export class RestAdminComponent implements OnInit {
       if (col.editor) {
         switch (col.editor.type) {
           case 'datetime':
-            this.selected[col.field] = new Date(this.selected[col.field]);
+            if (this.selected[col.field])
+              this.selected[col.field] = new Date(this.selected[col.field]);
             break;
           case 'chip':
             this.selected[col.field] = this.selected[col.field] || [];
