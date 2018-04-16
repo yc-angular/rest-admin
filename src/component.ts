@@ -176,6 +176,9 @@ export class RestAdminComponent implements OnInit {
             delete filters[k];
           }
           break;
+        case 'number':
+          filters[k] = parseFloat(event.filters[k].value);
+          break;
       }
     }
     this.loadData(JSON.stringify(options), JSON.stringify(filters));
@@ -818,7 +821,7 @@ export interface IParamsColFilter {
   /**
    * Filter mode
    */
-  mode: 'contains' | 'startsWith' | 'endsWith' | 'equals' | 'in' | 'range' | 'id';
+  mode: 'contains' | 'startsWith' | 'endsWith' | 'equals' | 'in' | 'range' | 'id' | 'number';
 
   /**
    * Need this when type is 'single' or 'multiple'
