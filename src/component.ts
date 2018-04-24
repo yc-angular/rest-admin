@@ -137,7 +137,7 @@ export class RestAdminComponent implements OnInit {
    * @param event {LazyLoadEvent} LazyLoadEvent
    * @param dt {DataTable} DataTable
    */
-  loadLazy(event: LazyLoadEvent, dt: DataTable): void {
+  async loadLazy(event: LazyLoadEvent, dt: DataTable): Promise<void> {
     this.lastEvent = event;
     this.params.dt = dt;
     const page: number = Math.floor(event.first / event.rows) + 1;
@@ -178,6 +178,14 @@ export class RestAdminComponent implements OnInit {
           break;
         case 'number':
           filters[k] = parseFloat(event.filters[k].value);
+          break;
+        case 'custom':
+          const col = this.params.cols.find(x => x.field === filters[k]);
+          if(col) {
+            filters[k] = await col.filter.custom(event.filters[k].value);
+          } else {
+            delete filters[k];
+          }
           break;
       }
     }
@@ -821,7 +829,7 @@ export interface IParamsColFilter {
   /**
    * Filter mode
    */
-  mode: 'contains' | 'startsWith' | 'endsWith' | 'equals' | 'in' | 'range' | 'id' | 'number';
+  mode: 'contains' | 'startsWith' | 'endsWith' | 'equals' | 'in' | 'range' | 'id' | 'number' | 'custom';
 
   /**
    * Need this when type is 'single' or 'multiple'
@@ -840,6 +848,11 @@ export interface IParamsColFilter {
    * Optional for type 'datetime-range'. default: 2016:2020
    */
   yearRange?: string;
+
+  /**
+   * Need this when type is 'custom'
+   */
+  custom?: (x: string) => Promise<any>;
 }
 
 /**
