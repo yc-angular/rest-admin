@@ -180,7 +180,7 @@ export class RestAdminComponent implements OnInit {
           filters[k] = parseFloat(event.filters[k].value);
           break;
         case 'custom':
-          const col = this.params.cols.find(x => x.field === filters[k]);
+          const col = this.params.cols.find(x => x.field === k);
           if(col) {
             filters[k] = await col.filter.custom(event.filters[k].value);
           } else {
