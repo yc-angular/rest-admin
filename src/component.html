@@ -107,9 +107,21 @@
               </p-pickList>
             </td>
             <td *ngIf="col.editor.type == 'checkBox'" style="width: 100%;">
-              <div class="ui-g">
+              <div class="ui-g" style="padding: 12px 0">
                 <div class="ui-g-3" *ngFor="let item of col.editor.options">
                   <p-checkbox [name]="col.field" [value]="item.value" [label]="item.label" [(ngModel)]="selected[col.field]" (onChange)="onChange(col.editor.onChange)"></p-checkbox>
+                </div>
+              </div>
+            </td>
+            <td *ngIf="col.editor.type == 'layeredCheckBox'" style="width: 100%;">
+              <div class="ui-g" style="padding: 12px 0">
+                <div class="ui-g-3" *ngFor="let g of col.editor.options">
+                  <div>
+                    <p-checkbox [name]="col.field" [value]="g.value" [label]="g.label" [(ngModel)]="selected[col.field]" (onChange)="onChange(col.editor.onChange)"></p-checkbox>
+                  </div>
+                  <div style="padding-left: 20px" *ngFor="let item of g.children">
+                    <p-checkbox [name]="col.field" [value]="item.value" [label]="item.label" [(ngModel)]="selected[col.field]" (onChange)="onChange(col.editor.onChange)"></p-checkbox>
+                  </div>
                 </div>
               </div>
             </td>
