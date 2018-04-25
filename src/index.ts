@@ -20,6 +20,7 @@ import {
   PickListModule,
   CheckboxModule,
 } from 'primeng/primeng';
+import { NgxTinymceModule } from 'ngx-tinymce';
 import { RestAdminComponent } from './component';
 
 export * from './component';
@@ -46,6 +47,9 @@ export * from './component';
     ChipsModule,
     PickListModule,
     CheckboxModule,
+    NgxTinymceModule.forRoot({
+      baseURL: '//cdn.bootcss.com/tinymce/4.7.4/',
+    }),
   ],
   declarations: [
     RestAdminComponent

@@ -712,7 +712,7 @@ export interface IParamsColEditor {
   /**
    * Type of editor.
    */
-  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'file' | 'image' | 'images' | 'pickList' | 'custom' | 'checkBox' | 'layeredCheckBox';
+  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'file' | 'image' | 'images' | 'pickList' | 'custom' | 'checkBox' | 'layeredCheckBox' | 'tinymce';
 
   /**
    * On field changed
@@ -815,6 +815,11 @@ export interface IParamsColEditor {
    * for pickList
    */
   filterBy?: string;
+
+  /**
+   * for Tinymce
+   */
+  config?: any;
 }
 
 /**
