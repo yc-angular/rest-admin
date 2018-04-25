@@ -17,7 +17,8 @@ import {
   CalendarModule,
   SliderModule,
   ChipsModule,
-  PickListModule
+  PickListModule,
+  CheckboxModule,
 } from 'primeng/primeng';
 import { RestAdminComponent } from './component';
 

@@ -98,13 +98,16 @@
               <div (click)="onCustomClick(col.editor.custom.onClick, selected, col.field)">{{ col.editor.custom.display(selected, col.field) }}</div>
             </td>
             <td *ngIf="col.editor.type == 'pickList'" style="width: 100%;">
-              <p-pickList [source]="col.editor.pickListSource" [target]="selected[col.field]">
+              <p-pickList [source]="col.editor.pickListSource" [target]="selected[col.field]" [filterBy]="col.editor.filterBy">
                 <ng-template let-item pTemplate="item">
                   <div class="ui-helper-clearfix">
                     <div>{{ col.editor.display(item) }}</div>
                   </div>
                 </ng-template>
               </p-pickList>
+            </td>
+            <td *ngIf="col.editor.type == 'checkBox'" style="width: 100%;">
+              <p-checkbox ngFor="let item of col.editor.options" [name]="col.field" [value]="item.value" [label]="item.label" [(ngModel)]="selected[col.field]" (onChange)="onChange(col.editor.onChange)"></p-checkbox>
             </td>
 
             <td *ngIf="col.editor.type == 'file'" style="width: 100%;">
