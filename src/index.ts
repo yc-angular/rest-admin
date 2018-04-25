@@ -44,7 +44,8 @@ export * from './component';
     CalendarModule,
     SliderModule,
     ChipsModule,
-    PickListModule
+    PickListModule,
+    CheckboxModule,
   ],
   declarations: [
     RestAdminComponent
