@@ -125,6 +125,9 @@
                 </div>
               </div>
             </td>
+            <td *ngIf="col.editor.type == 'tinymce'" style="width: 100%;">
+              <tinymce [(ngModel)]="selected[col.field]" [config]="col.editor.config"></tinymce>
+            </td>
 
             <td *ngIf="col.editor.type == 'file'" style="width: 100%;">
               <label style="cursor: pointer;" *ngIf="!selected[col.field]">
