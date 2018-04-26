@@ -181,7 +181,7 @@ export class RestAdminComponent implements OnInit {
           break;
         case 'custom':
           const col = this.params.cols.find(x => x.field === k);
-          if(col) {
+          if (col) {
             filters[k] = await col.filter.custom(event.filters[k].value);
           } else {
             delete filters[k];
@@ -215,6 +215,7 @@ export class RestAdminComponent implements OnInit {
             (col.editor as any).pickListSource = lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
             break;
           case 'images':
+          case 'videos':
             this.selected[col.field] = this.selected[col.field] || [];
             this.selectedIndex[col.field] = 0;
             break;
@@ -242,6 +243,7 @@ export class RestAdminComponent implements OnInit {
             (col.editor as any).pickListSource = lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
             break;
           case 'images':
+          case 'videos':
             this.selected[col.field] = this.selected[col.field] || [];
             this.selectedIndex[col.field] = 0;
             break;
@@ -712,7 +714,7 @@ export interface IParamsColEditor {
   /**
    * Type of editor.
    */
-  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'file' | 'image' | 'images' | 'pickList' | 'custom' | 'checkBox' | 'layeredCheckBox' | 'tinymce';
+  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'file' | 'image' | 'images' | 'pickList' | 'custom' | 'checkBox' | 'layeredCheckBox' | 'tinymce' | 'videos';
 
   /**
    * On field changed
@@ -765,7 +767,7 @@ export interface IParamsColEditor {
   };
 
   /**
-   * Need this when type is 'file', 'files', 'image', or 'images'
+   * Need this when type is 'file', 'files', 'image', or 'images', 'videos'
    */
   upload?: (file: Blob) => Promise<string>;
 
