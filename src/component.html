@@ -212,6 +212,34 @@
                 </div>
               </div>
             </td>
+            <td *ngIf="col.editor.type == 'videos'" style="width: 100%;">
+              <label style="cursor: pointer;" *ngIf="!selected[col.field] || !selected[col.field].length">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+              </label>
+              <div *ngIf="selected[col.field] && selected[col.field].length">
+                <div style="width: 300px;background: black;cursor: pointer;">
+                    <video [src]="selected[col.field][selectedIndex[col.field]]" controls="controls"></video>
+                </div>
+                <div style="display: flex;width: 300px;overflow: scroll;background: antiquewhite;padding: 1px;">
+                  <div *ngFor="let video of selected[col.field]; let j = index" (click)="selectedIndex[col.field] = j" style="margin: 0 1px;width: 60px;background: black;cursor: pointer;">
+                  </div>
+                </div>
+                <div style="background: silver;width: 300px;padding: 5px;">
+                  <label style="cursor: pointer;">
+                    <i class="fa fa-upload" aria-hidden="true" style="margin: 0px 5px;"></i>
+                    <input (change)="onFilesChange($event, col, selectedIndex[col.field])" type="file" style="display: none;" />
+                  </label>
+                  <label style="cursor: pointer;" (click)="selected[col.field].splice(selectedIndex[col.field], 1);selectedIndex[col.field] = selectedIndex[col.field] - 1">
+                    <i class="fa fa-trash" aria-hidden="true" style="margin: 0px 5px;"></i>
+                  </label>
+                  <label style="cursor: pointer;">
+                    <i class="fa fa-plus" aria-hidden="true" style="margin: 0px 5px;"></i>
+                    <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+                  </label>
+                </div>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
