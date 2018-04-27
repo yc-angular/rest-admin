@@ -87,7 +87,7 @@ export class RestAdminComponent implements OnInit {
    */
   private height = window.innerHeight;
 
-  public blocked: boolean;
+  public blocked: boolean = true;
 
   constructor(
     public confirmationService: ConfirmationService,
