@@ -49,6 +49,8 @@ export * from './component';
     ChipsModule,
     PickListModule,
     CheckboxModule,
+    BlockUIModule,
+    ProgressSpinnerModule,
     NgxTinymceModule.forRoot({
       baseURL: '//cdn.bootcss.com/tinymce/4.7.4/',
     }),
