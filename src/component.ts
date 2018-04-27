@@ -222,6 +222,9 @@ export class RestAdminComponent implements OnInit {
             this.selected[col.field] = this.selected[col.field] || [];
             this.selectedIndex[col.field] = 0;
             break;
+          case 'autoComplete':
+            col.editor.autoComplete.prepare && col.editor.autoComplete.prepare(this, col);
+            break;
         }
       }
     }
@@ -249,6 +252,9 @@ export class RestAdminComponent implements OnInit {
           case 'videos':
             this.selected[col.field] = this.selected[col.field] || [];
             this.selectedIndex[col.field] = 0;
+            break;
+          case 'autoComplete':
+            col.editor.autoComplete.prepare && col.editor.autoComplete.prepare(this, col);
             break;
         }
       }
@@ -729,7 +735,7 @@ export interface IParamsColEditor {
   /**
    * Type of editor.
    */
-  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'file' | 'image' | 'images' | 'pickList' | 'custom' | 'checkBox' | 'layeredCheckBox' | 'tinymce' | 'videos';
+  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'file' | 'image' | 'images' | 'pickList' | 'custom' | 'checkBox' | 'layeredCheckBox' | 'tinymce' | 'videos' | 'autoComplete';
 
   /**
    * On field changed
@@ -837,6 +843,22 @@ export interface IParamsColEditor {
    * for Tinymce
    */
   config?: any;
+
+  /**
+   * for autoComplete
+   */
+  autoComplete?: IParamsColEditorAutoComplete;
+}
+
+export interface IParamsColEditorAutoComplete {
+  search: (str: string, self: RestAdminComponent, col : IParamsCol) => Promise<any[]>;
+  results: any[];
+  prepare?: (self: RestAdminComponent, col : IParamsCol) => Promise<any[]>;
+  forceSelection?: boolean;
+  multiple?: boolean;
+  placeholder?: string;
+  dataKey?: string;
+  field?: string;
 }
 
 /**

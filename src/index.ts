@@ -21,6 +21,7 @@ import {
   CheckboxModule,
   BlockUIModule,
   ProgressSpinnerModule,
+  AutoCompleteModule,
 } from 'primeng/primeng';
 import { NgxTinymceModule } from 'ngx-tinymce';
 import { RestAdminComponent } from './component';
@@ -51,6 +52,7 @@ export * from './component';
     CheckboxModule,
     BlockUIModule,
     ProgressSpinnerModule,
+    AutoCompleteModule,
     NgxTinymceModule.forRoot({
       baseURL: '//cdn.bootcss.com/tinymce/4.7.4/',
     }),
