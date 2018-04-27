@@ -7,6 +7,7 @@ import * as lodash from 'lodash';
 @Component({
   selector: 'yca-rest-admin',
   templateUrl: './component.html',
+  styleUrls: ['./component.scss'],
   providers: [ConfirmationService]
 })
 export class RestAdminComponent implements OnInit {
@@ -86,6 +87,8 @@ export class RestAdminComponent implements OnInit {
    */
   private height = window.innerHeight;
 
+  public blocked: boolean;
+
   constructor(
     public confirmationService: ConfirmationService,
     public auth: Auth
@@ -111,6 +114,7 @@ export class RestAdminComponent implements OnInit {
    */
   async loadData(options: any, filters: any): Promise<void> {
     const url: string = `${this.params.api}?_options=${options}&_filters=${filters}`;
+    this.blocked = true;
     try {
       const res = await fetch(
         'GET',
@@ -118,6 +122,7 @@ export class RestAdminComponent implements OnInit {
         null,
         { Authorization: `Bearer ${this.auth.jwt}` }
       );
+      this.blocked = false;
       if (this.params.renderer) {
         this.data = this.params.renderer(res.data);
       } else {
@@ -128,6 +133,7 @@ export class RestAdminComponent implements OnInit {
       if (this.params.dt)
         this.params.dt.paginator = true;
     } catch (e) {
+      this.blocked = false;
       console.error(e);
     }
   }
@@ -309,8 +315,10 @@ export class RestAdminComponent implements OnInit {
       params[key] = this.selected[key];
     }
     if (this.params.preSave) this.params.preSave(params);
+    this.blocked = true;
     try {
       const res = await fetch(method, url, params, { Authorization: `Bearer ${this.auth.jwt}` }, !this.params.formdata);
+      this.blocked = false;
       this.loadData(this.lastOptions, this.lastFilters);
       this.cancel();
       this.msgs = [...this.msgs, {
@@ -318,6 +326,7 @@ export class RestAdminComponent implements OnInit {
       }];
       return res;
     } catch (error) {
+      this.blocked = false;
       console.error(error);
       this.msgs = [...this.msgs, {
         severity: 'error', summary: '保存失败', detail: error.data.message
@@ -333,14 +342,17 @@ export class RestAdminComponent implements OnInit {
     this.confirmationService.confirm({
       message: '删除后不能返回，确定删除?',
       accept: async () => {
+        this.blocked = true;
         try {
           const res = await fetch('DELETE', `${this.params.api}/${this.selected._id}`, null, { Authorization: `Bearer ${this.auth.jwt}` });
+          this.blocked = false;
           this.cancel();
           this.msgs = [...this.msgs, {
             severity: 'success', summary: '删除成功'
           }];
           this.loadData(this.lastOptions, this.lastFilters);
         } catch (error) {
+          this.blocked = false;
           console.error(error);
           this.msgs = [...this.msgs, {
             severity: 'error', summary: '删除失败', detail: error.data.message
@@ -440,10 +452,13 @@ export class RestAdminComponent implements OnInit {
    */
   async onFileChange(e: any, col: IParamsCol): Promise<void> {
     if (e.target.files && e.target.files[0]) {
+      this.blocked = true;
       try {
         const url = await col.editor.upload(e.target.files[0]);
+        this.blocked = false;
         this.selected[col.field] = url;
       } catch (e) {
+        this.blocked = false;
         console.error(e);
       }
     }
@@ -457,11 +472,14 @@ export class RestAdminComponent implements OnInit {
    */
   async onFilesChange(e: any, col: IParamsCol, index: number): Promise<void> {
     if (e.target.files && e.target.files[0]) {
+      this.blocked = true;
       try {
         const url = await col.editor.upload(e.target.files[0]);
+        this.blocked = false;
         this.selected[col.field][index] = url;
         this.selectedIndex[col.field] = index;
       } catch (e) {
+        this.blocked = false;
         console.error(e);
       }
     }

@@ -19,6 +19,8 @@ import {
   ChipsModule,
   PickListModule,
   CheckboxModule,
+  BlockUIModule,
+  ProgressSpinnerModule,
 } from 'primeng/primeng';
 import { NgxTinymceModule } from 'ngx-tinymce';
 import { RestAdminComponent } from './component';
