@@ -87,7 +87,7 @@ export class RestAdminComponent implements OnInit {
    */
   private height = window.innerHeight;
 
-  public blocked: boolean = true;
+  public blocked: boolean;
 
   constructor(
     public confirmationService: ConfirmationService,
@@ -101,10 +101,12 @@ export class RestAdminComponent implements OnInit {
     for (const col of this.params.cols) {
       this.columnOptions.push({ label: col.header, value: col });
     }
-    this.loadData(JSON.stringify({
-      limit: 0,
-      page: 1
-    }), JSON.stringify({}));
+    setTimeout(() => {
+      this.loadData(JSON.stringify({
+        limit: 0,
+        page: 1
+      }), JSON.stringify({}));
+    });
   }
 
   /**
