@@ -257,3 +257,7 @@
   <p-confirmDialog header="操作确认" icon="fa fa-exclamation-triangle" width="425"></p-confirmDialog>
   <p-growl [life]="2000" [(value)]="msgs"></p-growl>
 </div>
+
+<p-blockUI [blocked]="blocked">
+  <p-progressSpinner></p-progressSpinner>
+</p-blockUI>
