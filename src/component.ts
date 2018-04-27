@@ -87,11 +87,11 @@ export class RestAdminComponent implements OnInit {
    */
   private height = window.innerHeight;
 
-  public blocked: boolean;
+  blocked: boolean;
 
   constructor(
     public confirmationService: ConfirmationService,
-    public auth: Auth
+    public auth: Auth,
   ) {
     this.self = this;
   }
@@ -101,12 +101,10 @@ export class RestAdminComponent implements OnInit {
     for (const col of this.params.cols) {
       this.columnOptions.push({ label: col.header, value: col });
     }
-    setTimeout(() => {
-      this.loadData(JSON.stringify({
-        limit: 0,
-        page: 1
-      }), JSON.stringify({}));
-    });
+    this.loadData(JSON.stringify({
+      limit: 0,
+      page: 1
+    }), JSON.stringify({}));
   }
 
   /**
@@ -116,7 +114,6 @@ export class RestAdminComponent implements OnInit {
    */
   async loadData(options: any, filters: any): Promise<void> {
     const url: string = `${this.params.api}?_options=${options}&_filters=${filters}`;
-    this.blocked = true;
     try {
       const res = await fetch(
         'GET',
@@ -124,7 +121,6 @@ export class RestAdminComponent implements OnInit {
         null,
         { Authorization: `Bearer ${this.auth.jwt}` }
       );
-      this.blocked = false;
       if (this.params.renderer) {
         this.data = this.params.renderer(res.data);
       } else {
@@ -135,7 +131,6 @@ export class RestAdminComponent implements OnInit {
       if (this.params.dt)
         this.params.dt.paginator = true;
     } catch (e) {
-      this.blocked = false;
       console.error(e);
     }
   }
