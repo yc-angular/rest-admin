@@ -61,7 +61,9 @@
   </p-dataTable>
 
   <p-dialog [header]="params.title.edit" [(visible)]="showModal" modal="modal" [width]="width" [height]="height" [resizable]="false">
-    <yca-rest-admin-field *ngIf="selected" [cols]="getEditorCols()" [selected]="selected" [rac]="self"></yca-rest-admin-field>
+    <div *ngIf="selected">
+      <yca-rest-admin-field [cols]="getEditorCols()" [selected]="selected" [rac]="self"></yca-rest-admin-field>
+    </div>
     <p-footer>
       <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
         <button *ngIf="!params.hideDelete" class="ui-button-danger" style="float: left" type="button" pButton icon="fa-trash" (click)="delete()"></button>

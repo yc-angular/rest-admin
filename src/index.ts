@@ -65,7 +65,8 @@ export * from './component';
     RestAdminFieldComponent,
   ],
   exports: [
-    RestAdminComponent
+    RestAdminComponent,
+    RestAdminFieldComponent,
   ]
 })
 export class RestAdminModule {
