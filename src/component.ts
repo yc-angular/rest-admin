@@ -73,11 +73,6 @@ export class RestAdminComponent implements OnInit {
   private lastEvent: any;
 
   /**
-   * Files editor selected index
-   */
-  private selectedIndex: any = {};
-
-  /**
    * Modal width
    */
   private width = window.innerWidth;
@@ -203,28 +198,6 @@ export class RestAdminComponent implements OnInit {
     this.selected = JSON.parse(JSON.stringify(this.selected));
     if (this.params.preEdit)
       this.params.preEdit(this);
-    for (let col of this.params.cols) {
-      if (col.editor) {
-        switch (col.editor.type) {
-          case 'datetime':
-            if (this.selected[col.field])
-              this.selected[col.field] = new Date(this.selected[col.field]);
-            break;
-          case 'chip':
-            this.selected[col.field] = this.selected[col.field] || [];
-            break;
-          case 'pickList':
-            this.selected[col.field] = this.selected[col.field] || [];
-            (col.editor as any).pickListSource = lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
-            break;
-          case 'images':
-          case 'videos':
-            this.selected[col.field] = this.selected[col.field] || [];
-            this.selectedIndex[col.field] = 0;
-            break;
-        }
-      }
-    }
     this.width = window.innerWidth;
     this.height = window.innerHeight;
     this.showModal = true;
@@ -238,21 +211,6 @@ export class RestAdminComponent implements OnInit {
     this.selected = {};
     if (this.params.preEdit)
       this.params.preEdit(this);
-    for (let col of this.params.cols) {
-      if (col.editor) {
-        switch (col.editor.type) {
-          case 'pickList':
-            this.selected[col.field] = this.selected[col.field] || [];
-            (col.editor as any).pickListSource = lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
-            break;
-          case 'images':
-          case 'videos':
-            this.selected[col.field] = this.selected[col.field] || [];
-            this.selectedIndex[col.field] = 0;
-            break;
-        }
-      }
-    }
     this.width = window.innerWidth;
     this.height = window.innerHeight;
     this.showModal = true;
@@ -275,15 +233,6 @@ export class RestAdminComponent implements OnInit {
    */
   getEditorCols(): IParamsCol[] {
     return this.params.cols.filter(x => x.editor && !x.editor.hidden);
-  }
-
-  /**
-   * On column value changed
-   * @param fn {Function} Callback
-   */
-  onChange(fn: Function): void {
-    if (!fn) return;
-    fn(this);
   }
 
   /**
@@ -440,73 +389,6 @@ export class RestAdminComponent implements OnInit {
       }
       document.body.removeChild(link);
     }
-  }
-
-  /**
-   * On file changed
-   * @param e {any} $event
-   * @param col {IParamsCol} IParamsCol
-   */
-  async onFileChange(e: any, col: IParamsCol): Promise<void> {
-    if (e.target.files && e.target.files[0]) {
-      this.blocked = true;
-      try {
-        const url = await col.editor.upload(e.target.files[0]);
-        this.blocked = false;
-        this.selected[col.field] = url;
-      } catch (e) {
-        this.blocked = false;
-        console.error(e);
-      }
-    }
-  }
-
-  /**
-   * On files changed
-   * @param e {any} $event
-   * @param col {IParamsCol} IParamsCol
-   * @param index {number} file index
-   */
-  async onFilesChange(e: any, col: IParamsCol, index: number): Promise<void> {
-    if (e.target.files && e.target.files[0]) {
-      this.blocked = true;
-      try {
-        const url = await col.editor.upload(e.target.files[0]);
-        this.blocked = false;
-        this.selected[col.field][index] = url;
-        this.selectedIndex[col.field] = index;
-      } catch (e) {
-        this.blocked = false;
-        console.error(e);
-      }
-    }
-  }
-
-  /**
-   * View image
-   * @param url {string} url
-   */
-  viewImage(url: string) {
-    window.open(url, '_blank');
-  }
-
-  /**
-   * Download file
-   * @param url {string} url
-   */
-  download(url: string) {
-    window.open(url, '_blank');
-  }
-
-  /**
-   * on custom edit type clicked
-   * @param fn {any} callback
-   * @param selected {any} selected row
-   * @param key {string} column field name
-   */
-  onCustomClick(fn: any, selected: any, key: string) {
-    if (!fn) return;
-    fn(selected, key);
   }
 }
 
@@ -729,7 +611,7 @@ export interface IParamsColEditor {
   /**
    * Type of editor.
    */
-  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'file' | 'image' | 'images' | 'pickList' | 'custom' | 'checkBox' | 'layeredCheckBox' | 'tinymce' | 'videos';
+  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'file' | 'image' | 'images' | 'pickList' | 'custom' | 'checkBox' | 'layeredCheckBox' | 'tinymce' | 'videos' | 'autoComplete' | 'object' | 'objects';
 
   /**
    * On field changed
@@ -837,6 +719,33 @@ export interface IParamsColEditor {
    * for Tinymce
    */
   config?: any;
+
+  /**
+   * for autoComplete
+   */
+  autoComplete?: IParamsColEditorAutoComplete;
+
+  /**
+   * for object and objects
+   */
+  title?: (selected: any) => string;
+  cols?: IParamsCol[];
+
+  /**
+   * custom ngClass
+   */
+  class?: any;
+}
+
+export interface IParamsColEditorAutoComplete {
+  search: (str: string, self?: RestAdminComponent, selected?: any, col? : IParamsCol) => any;
+  results: any[];
+  prepare?: (self?: RestAdminComponent, selected?: any, col? : IParamsCol) => any;
+  forceSelection?: boolean;
+  multiple?: boolean;
+  placeholder?: string;
+  dataKey?: string;
+  field?: string;
 }
 
 /**
