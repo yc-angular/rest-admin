@@ -22,9 +22,11 @@ import {
   BlockUIModule,
   ProgressSpinnerModule,
   AutoCompleteModule,
+  PanelModule,
 } from 'primeng/primeng';
 import { NgxTinymceModule } from 'ngx-tinymce';
 import { RestAdminComponent } from './component';
+import { RestAdminFieldComponent } from './field.component';
 
 export * from './component';
 
@@ -53,12 +55,14 @@ export * from './component';
     BlockUIModule,
     ProgressSpinnerModule,
     AutoCompleteModule,
+    PanelModule,
     NgxTinymceModule.forRoot({
       baseURL: '//cdn.bootcss.com/tinymce/4.7.4/',
     }),
   ],
   declarations: [
-    RestAdminComponent
+    RestAdminComponent,
+    RestAdminFieldComponent,
   ],
   exports: [
     RestAdminComponent

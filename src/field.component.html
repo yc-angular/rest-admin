@@ -1,0 +1,214 @@
+<div class="ui-g">
+  <div class="ui-g-6" [ngClass]="col.editor.class" *ngFor="let col of cols">
+    <div class="label">{{ col.header }}</div>
+    <div *ngIf="col.editor.type == 'text'">
+      <input [placeholder]="col.editor.placeholder || ''" [disabled]="col.editor.disabled" style="width: 100%;" pInputText [(ngModel)]="selected[col.field]"
+      />
+    </div>
+    <div *ngIf="col.editor.type == 'switch'">
+      <p-inputSwitch [onLabel]="col.editor.onLabel" [offLabel]="col.editor.offLabel" [(ngModel)]="selected[col.field]"></p-inputSwitch>
+    </div>
+    <div *ngIf="col.editor.type == 'chip'">
+      <p-chips [placeholder]="col.editor.placeholder" [(ngModel)]="selected[col.field]"></p-chips>
+    </div>
+    <div *ngIf="col.editor.type == 'textArea'">
+      <textarea [placeholder]="col.editor.placeholder || ''" pInputTextarea style="width: 100%; height: 100px" [(ngModel)]="selected[col.field]"></textarea>
+    </div>
+    <div *ngIf="col.editor.type == 'enum'">
+      <p-dropdown [disabled]="col.editor.disabled" [placeholder]="col.editor.placeholder || ''" (onChange)="onChange(col.editor.onChange)"
+        [style]="{ 'width': '100%' }" [options]="col.editor.options" [(ngModel)]="selected[col.field]"></p-dropdown>
+    </div>
+    <div *ngIf="col.editor.type == 'ref'">
+      <p-dropdown [disabled]="col.editor.disabled" [placeholder]="col.editor.placeholder || ''" (onChange)="onChange(col.editor.onChange)"
+        [style]="{ 'width': '100%' }" [options]="rac.getRefOptions(col)" [(ngModel)]="selected[col.field]"></p-dropdown>
+    </div>
+    <div *ngIf="col.editor.type == 'datetime'">
+      <p-calendar [defaultDate]="rac.now" selectOtherMonths="true" monthNavigator="true" yearNavigator="true" [yearRange]="col.editor.datetime ? col.editor.datetime.yearRange : '2016:2020'"
+        [(ngModel)]="selected[col.field]" showTime="showTime" hourFormat="24" styleClass="ui-column-filter"></p-calendar>
+    </div>
+    <div *ngIf="col.editor.type == 'logs'">
+      <pre>{{ col.editor.logs(selected[col.field]) }}</pre>
+    </div>
+    <div *ngIf="col.editor.type == 'custom'">
+      <div (click)="onCustomClick(col.editor.custom.onClick, selected, col.field)">{{ col.editor.custom.display(selected, col.field) }}</div>
+    </div>
+    <div *ngIf="col.editor.type == 'pickList'">
+      <p-pickList [source]="col.editor.pickListSource" [target]="selected[col.field]" [filterBy]="col.editor.filterBy">
+        <ng-template let-item pTemplate="item">
+          <div class="ui-helper-clearfix">
+            <div>{{ col.editor.display(item) }}</div>
+          </div>
+        </ng-template>
+      </p-pickList>
+    </div>
+    <div *ngIf="col.editor.type == 'checkBox'">
+      <div class="ui-g" style="padding: 12px 0">
+        <div class="ui-g-3" *ngFor="let item of col.editor.options">
+          <p-checkbox [name]="col.field" [value]="item.value" [label]="item.label" [(ngModel)]="selected[col.field]" (onChange)="onChange(col.editor.onChange)"></p-checkbox>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="col.editor.type == 'layeredCheckBox'">
+      <div class="ui-g" style="padding: 12px 0">
+        <div class="ui-g-3" *ngFor="let g of col.editor.options">
+          <div>
+            <p-checkbox [name]="col.field" [value]="g.value" [label]="g.label" [(ngModel)]="selected[col.field]" (onChange)="onChange(col.editor.onChange)"></p-checkbox>
+          </div>
+          <div style="padding-left: 20px" *ngFor="let item of g.children">
+            <p-checkbox [name]="col.field" [value]="item.value" [label]="item.label" [(ngModel)]="selected[col.field]" (onChange)="onChange(col.editor.onChange)"></p-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="col.editor.type == 'tinymce'">
+      <tinymce [(ngModel)]="selected[col.field]" [config]="col.editor.config"></tinymce>
+    </div>
+
+    <div *ngIf="col.editor.type == 'file'">
+      <label style="cursor: pointer;" *ngIf="!selected[col.field]">
+        <i class="fa fa-upload" aria-hidden="true"></i>
+        <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
+      </label>
+      <div *ngIf="selected[col.field]">
+        <div style="width: 300px;background: black;cursor: pointer;" (click)="download(selected[col.field])">
+          <div style="width: 300px;height: 200px;display:flex;align-items:center;justify-content:center;color:white;font-size:36px">
+            <i class="fa fa-file" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div style="background: silver;width: 300px;padding: 5px">
+          <label style="cursor: pointer;">
+            <i class="fa fa-upload" aria-hidden="true" style="margin: 0px 5px;"></i>
+            <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
+          </label>
+          <label style="cursor: pointer;" (click)="download(selected[col.field])">
+            <i class="fa fa-download" aria-hidden="true" style="margin: 0px 5px;"></i>
+          </label>
+          <label style="cursor: pointer;" (click)="selected[col.field] = null">
+            <i class="fa fa-trash" aria-hidden="true" style="margin: 0px 5px;"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="col.editor.type == 'image'">
+      <label style="cursor: pointer;" *ngIf="!selected[col.field]">
+        <i class="fa fa-upload" aria-hidden="true"></i>
+        <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
+      </label>
+      <div *ngIf="selected[col.field]">
+        <div style="width: 300px;background: black;cursor: pointer;" (click)="viewImage(selected[col.field])">
+          <div style="width: 300px;height: 200px;background-size: contain;background-repeat: no-repeat;background-position: center center;"
+            [ngStyle]="{'background-image': 'url(' + selected[col.field] + ')'}"></div>
+        </div>
+        <div style="background: silver;width: 300px;padding: 5px">
+          <label style="cursor: pointer;">
+            <i class="fa fa-upload" aria-hidden="true" style="margin: 0px 5px;"></i>
+            <input (change)="onFileChange($event, col)" type="file" style="display: none;" />
+          </label>
+          <label style="cursor: pointer;" (click)="viewImage(selected[col.field])">
+            <i class="fa fa-eye" aria-hidden="true" style="margin: 0px 5px;"></i>
+          </label>
+          <label style="cursor: pointer;" (click)="selected[col.field] = null">
+            <i class="fa fa-trash" aria-hidden="true" style="margin: 0px 5px;"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="col.editor.type == 'images'">
+      <label style="cursor: pointer;" *ngIf="!selected[col.field] || !selected[col.field].length">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+      </label>
+      <div *ngIf="selected[col.field] && selected[col.field].length">
+        <div style="width: 300px;background: black;cursor: pointer;" (click)="viewImage(selected[col.field][selectedIndex[col.field]])">
+          <div style="width: 300px;height: 200px;background-size: contain;background-repeat: no-repeat;background-position: center center;"
+            [ngStyle]="{'background-image': 'url(' + selected[col.field][selectedIndex[col.field]] + ')'}"></div>
+        </div>
+        <div style="display: flex;width: 300px;overflow: scroll;background: antiquewhite;padding: 1px;">
+          <div *ngFor="let image of selected[col.field]; let j = index" (click)="selectedIndex[col.field] = j" style="margin: 0 1px;width: 60px;background: black;cursor: pointer;">
+            <div style="width: 60px;height: 40px;background-size: contain;background-repeat: no-repeat;background-position: center center;"
+              [ngStyle]="{'background-image': 'url(' + selected[col.field][j] + ')'}"></div>
+          </div>
+        </div>
+        <div style="background: silver;width: 300px;padding: 5px;">
+          <label style="cursor: pointer;">
+            <i class="fa fa-upload" aria-hidden="true" style="margin: 0px 5px;"></i>
+            <input (change)="onFilesChange($event, col, selectedIndex[col.field])" type="file" style="display: none;" />
+          </label>
+          <label style="cursor: pointer;" (click)="viewImage(selected[col.field][selectedIndex[col.field]])">
+            <i class="fa fa-eye" aria-hidden="true" style="margin: 0px 5px;"></i>
+          </label>
+          <label style="cursor: pointer;" (click)="selected[col.field].splice(selectedIndex[col.field], 1);selectedIndex[col.field] = selectedIndex[col.field] - 1">
+            <i class="fa fa-trash" aria-hidden="true" style="margin: 0px 5px;"></i>
+          </label>
+          <label style="cursor: pointer;">
+            <i class="fa fa-plus" aria-hidden="true" style="margin: 0px 5px;"></i>
+            <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+          </label>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="col.editor.type == 'videos'">
+      <label style="cursor: pointer;" *ngIf="!selected[col.field] || !selected[col.field].length">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+      </label>
+      <div *ngIf="selected[col.field] && selected[col.field].length">
+        <div style="width: 300px;background: black;cursor: pointer;">
+          <video style="width: 300px;height: 200px;" [src]="selected[col.field][selectedIndex[col.field]]" controls="controls"></video>
+        </div>
+        <div style="display: flex;width: 300px;overflow: scroll;background: antiquewhite;padding: 1px;">
+          <div *ngFor="let video of selected[col.field]; let j = index" (click)="selectedIndex[col.field] = j" style="margin: 0 1px;width: 60px;height:40px;background: black;cursor: pointer;">
+          </div>
+        </div>
+        <div style="background: silver;width: 300px;padding: 5px;">
+          <label style="cursor: pointer;">
+            <i class="fa fa-upload" aria-hidden="true" style="margin: 0px 5px;"></i>
+            <input (change)="onFilesChange($event, col, selectedIndex[col.field])" type="file" style="display: none;" />
+          </label>
+          <label style="cursor: pointer;" (click)="selected[col.field].splice(selectedIndex[col.field], 1);selectedIndex[col.field] = selectedIndex[col.field] - 1">
+            <i class="fa fa-trash" aria-hidden="true" style="margin: 0px 5px;"></i>
+          </label>
+          <label style="cursor: pointer;">
+            <i class="fa fa-plus" aria-hidden="true" style="margin: 0px 5px;"></i>
+            <input (change)="onFilesChange($event, col, selected[col.field].length)" type="file" style="display: none;" />
+          </label>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="col.editor.type == 'autoComplete'">
+      <p-autoComplete [style]="{ 'width': '100%' }" [(ngModel)]="selected[col.field]" [suggestions]="col.editor.autoComplete.results" (completeMethod)="col.editor.autoComplete.search($event, self, col)"
+        [forceSelection]="col.editor.autoComplete.forceSelection" [multiple]="col.editor.autoComplete.multiple" [dataKey]="col.editor.autoComplete.dataKey"
+        [field]="col.editor.autoComplete.field" [placeholder]="col.editor.autoComplete.placeholder">
+      </p-autoComplete>
+    </div>
+    <div *ngIf="col.editor.type == 'object'">
+      <div style="padding: 8px">
+        <p-panel>
+          <p-header>
+            <div class="ui-helper-clearfix">
+              <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">{{ col.editor.title(selected[col.field]) }}</span>
+            </div>
+          </p-header>
+          <yca-rest-admin-field [cols]="col.editor.cols" [selected]="selected[col.field]" [rac]="rac"></yca-rest-admin-field>
+        </p-panel>
+      </div>
+    </div>
+    <div *ngIf="col.editor.type == 'objects'">
+      <div style="padding: 4px 0">
+        <div style="padding: 4px 0" *ngFor="let item of selected[col.field]; let j = index">
+          <p-panel>
+            <p-header>
+              <div class="ui-helper-clearfix">
+                <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">{{ col.editor.title(item) }}</span>
+                <button pButton style="float:right" class="ui-button-danger" icon="fa-trash" (click)="selected[col.field].splice(j, 1)"></button>
+              </div>
+            </p-header>
+            <yca-rest-admin-field [cols]="col.editor.cols" [selected]="item" [rac]="rac"></yca-rest-admin-field>
+          </p-panel>
+        </div>
+        <div style="padding:4px 0">
+          <button pButton class="ui-button-success" icon="fa-plus" (click)="selected[col.field].push({})"></button>
+        </div>
+      </div>
+    </div>
+  </div>
