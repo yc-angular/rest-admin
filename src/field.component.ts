@@ -59,12 +59,6 @@ export class RestAdminFieldComponent implements OnInit {
     fn(selected, key);
   }
 
-
-  /**
-   * On file changed
-   * @param e {any} $event
-   * @param col {IParamsCol} IParamsCol
-   */
   async onFileChange(e: any, col: IParamsCol): Promise<void> {
     if (e.target.files && e.target.files[0]) {
       this.rac.blocked = true;
@@ -79,12 +73,6 @@ export class RestAdminFieldComponent implements OnInit {
     }
   }
 
-  /**
-   * On files changed
-   * @param e {any} $event
-   * @param col {IParamsCol} IParamsCol
-   * @param index {number} file index
-   */
   async onFilesChange(e: any, col: IParamsCol, index: number): Promise<void> {
     if (e.target.files && e.target.files[0]) {
       this.rac.blocked = true;
@@ -100,18 +88,10 @@ export class RestAdminFieldComponent implements OnInit {
     }
   }
 
-  /**
-   * View image
-   * @param url {string} url
-   */
   viewImage(url: string) {
     window.open(url, '_blank');
   }
 
-  /**
-   * Download file
-   * @param url {string} url
-   */
   download(url: string) {
     window.open(url, '_blank');
   }

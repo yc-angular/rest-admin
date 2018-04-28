@@ -29,6 +29,7 @@ import { RestAdminComponent } from './component';
 import { RestAdminFieldComponent } from './field.component';
 
 export * from './component';
+export * from './field.component';
 
 @NgModule({
   imports: [
@@ -65,7 +66,8 @@ export * from './component';
     RestAdminFieldComponent,
   ],
   exports: [
-    RestAdminComponent
+    RestAdminComponent,
+    RestAdminFieldComponent,
   ]
 })
 export class RestAdminModule {

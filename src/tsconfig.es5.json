@@ -18,9 +18,10 @@
     "types": []
   },
   "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "yca-rest-admin.js",
+    "flatModuleOutFile": "rest-admin.js",
     "flatModuleId": "@yca/rest-admin"
   },
   "files": [
