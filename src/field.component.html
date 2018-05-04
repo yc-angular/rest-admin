@@ -211,4 +211,9 @@
         </div>
       </div>
     </div>
+
+    <div *ngIf="col.editor.type == 'virtual'">
+      <input [placeholder]="col.editor.placeholder || ''" [disabled]="true" style="width: 100%;" pInputText [ngModel]="col.editor.virtual(selected)"
+      />
+    </div>
   </div>
