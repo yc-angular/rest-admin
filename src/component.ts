@@ -1,14 +1,21 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ConfirmationService, Message, LazyLoadEvent, SelectItem, DataTable } from 'primeng/primeng';
+import {
+  ConfirmationService,
+  Message,
+  LazyLoadEvent,
+  SelectItem,
+  DataTable,
+} from 'primeng/primeng';
 import { Auth } from '@yca/auth';
 import { fetch } from '@yct/utils';
 import * as lodash from 'lodash';
+import { IPaginateData, IParams, IParamsCol } from './interfaces';
 
 @Component({
   selector: 'yca-rest-admin',
   templateUrl: './component.html',
   styleUrls: ['./component.scss'],
-  providers: [ConfirmationService]
+  providers: [ConfirmationService],
 })
 export class RestAdminComponent implements OnInit {
   /**
@@ -51,7 +58,6 @@ export class RestAdminComponent implements OnInit {
    */
   public refs: { [x: string]: any[] } = {};
 
-
   /**
    * Point to this
    */
@@ -86,7 +92,7 @@ export class RestAdminComponent implements OnInit {
 
   constructor(
     public confirmationService: ConfirmationService,
-    public auth: Auth,
+    public auth: Auth
   ) {
     this.self = this;
   }
@@ -96,10 +102,13 @@ export class RestAdminComponent implements OnInit {
     for (const col of this.params.cols) {
       this.columnOptions.push({ label: col.header, value: col });
     }
-    this.loadData(JSON.stringify({
-      limit: 0,
-      page: 1
-    }), JSON.stringify({}));
+    this.loadData(
+      JSON.stringify({
+        limit: 0,
+        page: 1,
+      }),
+      JSON.stringify({})
+    );
   }
 
   /**
@@ -108,14 +117,13 @@ export class RestAdminComponent implements OnInit {
    * @param filters {any} query filters
    */
   async loadData(options: any, filters: any): Promise<void> {
-    const url: string = `${this.params.api}?_options=${options}&_filters=${filters}`;
+    const url: string = `${
+      this.params.api
+    }?_options=${options}&_filters=${filters}`;
     try {
-      const res = await fetch(
-        'GET',
-        url,
-        null,
-        { Authorization: `Bearer ${this.auth.jwt}` }
-      );
+      const res = await fetch('GET', url, null, {
+        Authorization: `Bearer ${this.auth.jwt}`,
+      });
       if (this.params.renderer) {
         this.data = this.params.renderer(res.data);
       } else {
@@ -123,8 +131,7 @@ export class RestAdminComponent implements OnInit {
       }
       this.lastFilters = filters;
       this.lastOptions = options;
-      if (this.params.dt)
-        this.params.dt.paginator = true;
+      if (this.params.dt) this.params.dt.paginator = true;
     } catch (e) {
       console.error(e);
     }
@@ -165,7 +172,10 @@ export class RestAdminComponent implements OnInit {
           filters[k] = event.filters[k].value;
           break;
         case 'range':
-          filters[k] = { $gte: event.filters[k].value[0], $lt: event.filters[k].value[1] };
+          filters[k] = {
+            $gte: event.filters[k].value[0],
+            $lt: event.filters[k].value[1],
+          };
           break;
         case 'id':
           if (event.filters[k].value && event.filters[k].value.length === 24) {
@@ -196,8 +206,7 @@ export class RestAdminComponent implements OnInit {
    */
   select(event: any): void {
     this.selected = JSON.parse(JSON.stringify(this.selected));
-    if (this.params.preEdit)
-      this.params.preEdit(this);
+    if (this.params.preEdit) this.params.preEdit(this);
     this.width = window.innerWidth;
     this.height = window.innerHeight;
     this.showModal = true;
@@ -209,8 +218,7 @@ export class RestAdminComponent implements OnInit {
    */
   add(): void {
     this.selected = {};
-    if (this.params.preEdit)
-      this.params.preEdit(this);
+    if (this.params.preEdit) this.params.preEdit(this);
     this.width = window.innerWidth;
     this.height = window.innerHeight;
     this.showModal = true;
@@ -263,20 +271,35 @@ export class RestAdminComponent implements OnInit {
     if (this.params.preSave) this.params.preSave(params);
     this.blocked = true;
     try {
-      const res = await fetch(method, url, params, { Authorization: `Bearer ${this.auth.jwt}` }, !this.params.formdata);
+      const res = await fetch(
+        method,
+        url,
+        params,
+        { Authorization: `Bearer ${this.auth.jwt}` },
+        !this.params.formdata
+      );
       this.blocked = false;
       this.loadData(this.lastOptions, this.lastFilters);
       this.cancel();
-      this.msgs = [...this.msgs, {
-        severity: 'success', summary: '保存成功'
-      }];
+      this.msgs = [
+        ...this.msgs,
+        {
+          severity: 'success',
+          summary: '保存成功',
+        },
+      ];
       return res;
     } catch (error) {
       this.blocked = false;
       console.error(error);
-      this.msgs = [...this.msgs, {
-        severity: 'error', summary: '保存失败', detail: error.data.message
-      }];
+      this.msgs = [
+        ...this.msgs,
+        {
+          severity: 'error',
+          summary: '保存失败',
+          detail: error.data.message,
+        },
+      ];
       return null;
     }
   }
@@ -290,21 +313,35 @@ export class RestAdminComponent implements OnInit {
       accept: async () => {
         this.blocked = true;
         try {
-          const res = await fetch('DELETE', `${this.params.api}/${this.selected._id}`, null, { Authorization: `Bearer ${this.auth.jwt}` });
+          const res = await fetch(
+            'DELETE',
+            `${this.params.api}/${this.selected._id}`,
+            null,
+            { Authorization: `Bearer ${this.auth.jwt}` }
+          );
           this.blocked = false;
           this.cancel();
-          this.msgs = [...this.msgs, {
-            severity: 'success', summary: '删除成功'
-          }];
+          this.msgs = [
+            ...this.msgs,
+            {
+              severity: 'success',
+              summary: '删除成功',
+            },
+          ];
           this.loadData(this.lastOptions, this.lastFilters);
         } catch (error) {
           this.blocked = false;
           console.error(error);
-          this.msgs = [...this.msgs, {
-            severity: 'error', summary: '删除失败', detail: error.data.message
-          }];
+          this.msgs = [
+            ...this.msgs,
+            {
+              severity: 'error',
+              summary: '删除失败',
+              detail: error.data.message,
+            },
+          ];
         }
-      }
+      },
     });
   }
 
@@ -337,17 +374,22 @@ export class RestAdminComponent implements OnInit {
   getRefOptions(col: any): any {
     if (this.refs[col.field]) return this.refs[col.field];
     this.refs[col.field] = [];
-    fetch('GET', col.editor.ref.path, null, { Authorization: `Bearer ${this.auth.jwt}` })
+    fetch('GET', col.editor.ref.path, null, {
+      Authorization: `Bearer ${this.auth.jwt}`,
+    })
       .then(res => {
         this.refs[col.field] = res.data.docs.map(x => {
           return {
-            label: col.editor.ref.label.constructor === String ? x[col.editor.ref.label] : col.editor.ref.label(x),
-            value: x._id
+            label:
+              col.editor.ref.label.constructor === String
+                ? x[col.editor.ref.label]
+                : col.editor.ref.label(x),
+            value: x._id,
           };
         });
         this.refs[col.field].unshift({
           label: '请选择',
-          value: null
+          value: null,
         });
       })
       .catch(console.error);
@@ -360,17 +402,23 @@ export class RestAdminComponent implements OnInit {
    */
   exportCSV(dt: DataTable): void {
     const header: string = dt.columns.map(x => x.header).join(',');
-    const rows: any = dt.value.map(obj => {
-      return dt.columns.map(x => {
-        const col: IParamsCol = this.params.cols.find(y => y.field === x.field);
-        if (col.display && col.display.type === 'enum')
-          return col.display.map(dt.resolveFieldData(obj, x.field));
-        return dt.resolveFieldData(obj, x.field);
-      }).join(',');
-    }).join('\n');
+    const rows: any = dt.value
+      .map(obj => {
+        return dt.columns
+          .map(x => {
+            const col: IParamsCol = this.params.cols.find(
+              y => y.field === x.field
+            );
+            if (col.display && col.display.type === 'enum')
+              return col.display.map(dt.resolveFieldData(obj, x.field));
+            return dt.resolveFieldData(obj, x.field);
+          })
+          .join(',');
+      })
+      .join('\n');
     let body: string = [header, rows].join('\n');
     const blob: Blob = new Blob([body], {
-      type: 'text/csv;charset=utf-8;'
+      type: 'text/csv;charset=utf-8;',
     });
     if (window.navigator.msSaveOrOpenBlob) {
       navigator.msSaveOrOpenBlob(blob, this.params.title.list + '.csv');
@@ -390,430 +438,4 @@ export class RestAdminComponent implements OnInit {
       document.body.removeChild(link);
     }
   }
-}
-
-/**
- * Component params
- */
-export interface IParams {
-  /**
-   * ycs restful api endpoint
-   */
-  api: string;
-
-  /**
-   * Titles
-   */
-  title: {
-    /**
-     * Title in list
-     */
-    list: string;
-
-    /**
-     * Title while editing
-     */
-    edit: string;
-  };
-
-  /**
-   * Columns
-   */
-  cols: IParamsCol[];
-
-  /**
-   * Number of rows a page
-   */
-  rows?: number;
-
-  /**
-   * Event on modal show
-   */
-  onShow?: (self: RestAdminComponent) => void;
-
-  /**
-   * Hide button add
-   */
-  hideAdd?: boolean;
-
-  /**
-   * Hide count
-   */
-  hideCount?: boolean;
-
-  /**
-   * Hide button delete
-   */
-  hideDelete?: boolean;
-
-  /**
-   * Hide button save
-   */
-  hideSave?: boolean;
-
-  /**
-   * Hide button cancel
-   */
-  hideCancel?: boolean;
-
-  /**
-   * Hide button export cvs
-   */
-  hideExport?: boolean;
-
-  /**
-   * DataTable
-   */
-  dt?: DataTable;
-
-  /**
-   * Custom buttons in list
-   */
-  customButtons?: [IParamsCustomButton];
-
-  /**
-   * Custom buttons while editing
-   */
-  editorButtons?: [IParamsEditorButton];
-
-  /**
-   * Global filters for query
-   */
-  globalFilters?: any;
-
-  /**
-   * Global options for query
-   */
-  globalOptions?: any;
-
-  /**
-   * Whether post data as formdata. Default is json.
-   */
-  formdata?: boolean;
-
-  /**
-   * Before save a row
-   */
-  preSave?: (params: any) => void;
-
-  /**
-   * Before edit a row
-   */
-  preEdit?: (self: RestAdminComponent) => void;
-
-  /**
-   * Render paginated data after query
-   */
-  renderer?: (data: IPaginateData) => IPaginateData;
-}
-
-/**
- * Custom button in list
- */
-export interface IParamsCustomButton {
-  /**
-   * Label of button
-   */
-  label: string;
-
-  /**
-   * Click handler
-   */
-  handler: (self: RestAdminComponent) => void;
-
-  /**
-   * css class
-   */
-  class?: string;
-
-  /**
-   * fa icon
-   */
-  icon?: string;
-
-  /**
-   * Whether it is available
-   */
-  when?: (self: RestAdminComponent) => boolean;
-}
-
-export interface IParamsCol {
-  /**
-   * field name
-   */
-  field: string;
-
-  /**
-   * Column header
-   */
-  header: string;
-
-  /**
-   * css style
-   */
-  style?: Object;
-
-  /**
-   * Whether it is sortable
-   */
-  sortable?: boolean;
-
-  /**
-   * Column filter
-   */
-  filter?: IParamsColFilter;
-
-  /**
-   * Display
-   */
-  display?: IParamsColDisplay;
-
-  /**
-   * Editor
-   */
-  editor?: IParamsColEditor;
-}
-
-/**
- * Custom button while editing
- */
-export interface IParamsEditorButton {
-  /**
-   * Label of button
-   */
-  label: string;
-
-  /**
-   * Click handler
-   */
-  handler: (self: RestAdminComponent) => void;
-
-  /**
-   * css class
-   */
-  class?: string;
-
-  /**
-   * fa icon
-   */
-  icon?: string;
-
-  /**
-   * Whether it is available
-   */
-  when?: (self: RestAdminComponent) => boolean;
-}
-
-/**
- * Editor
- */
-export interface IParamsColEditor {
-  /**
-   * Type of editor.
-   */
-  type: 'text' | 'chip' | 'textArea' | 'switch' | 'enum' | 'ref' | 'datetime' | 'logs' | 'file' | 'image' | 'images' | 'pickList' | 'custom' | 'checkBox' | 'layeredCheckBox' | 'tinymce' | 'videos' | 'autoComplete' | 'object' | 'objects';
-
-  /**
-   * On field changed
-   */
-  onChange?: (self: RestAdminComponent) => void;
-
-  /**
-   * Placeholder
-   */
-  placeholder?: string;
-
-  /**
-   * Set as disabled
-   */
-  disabled?: boolean;
-
-  /**
-   * Hide column while editing
-   */
-  hidden?: boolean;
-
-  /**
-   * Need this if type is 'enum'
-   */
-  options?: Array<{
-    /**
-     * Label
-     */
-    label: string;
-
-    /**
-     * value
-     */
-    value: any;
-  }>;
-
-  /**
-   * Need this if type is 'logs'
-   */
-  logs?: (item: any) => string;
-
-  /**
-   * Need this if type is 'datetime'
-   */
-  datetime?: {
-    /**
-     * eg. 2016:2020
-     */
-    yearRange: string;
-  };
-
-  /**
-   * Need this when type is 'file', 'files', 'image', or 'images', 'videos'
-   */
-  upload?: (file: Blob) => Promise<string>;
-
-  /**
-   * Need this when type is 'pickList'
-   */
-  display?: (item: any) => string;
-
-
-  /**
-   * Need this if type is 'ref'
-   */
-  ref?: {
-    /**
-     * Reference label
-     */
-    label: ((x: any) => string) | String,
-
-    /**
-     * Reference data field
-     */
-    path: string
-  };
-
-  /**
-   * Need this if type is 'custom'
-   */
-  custom?: {
-    /**
-     * Display
-     */
-    display: (selected: any, key: string) => string;
-
-    /**
-     * Click
-     */
-    onClick: (selected: any, key: string) => Promise<any>;
-  };
-
-  /**
-   * Need this if type is 'switch'
-   */
-  onLabel?: string;
-  offLabel?: string;
-
-  /**
-   * for pickList
-   */
-  filterBy?: string;
-
-  /**
-   * for Tinymce
-   */
-  config?: any;
-
-  /**
-   * for autoComplete
-   */
-  autoComplete?: IParamsColEditorAutoComplete;
-
-  /**
-   * for object and objects
-   */
-  title?: (selected: any) => string;
-  cols?: IParamsCol[];
-
-  /**
-   * custom ngClass
-   */
-  class?: any;
-}
-
-export interface IParamsColEditorAutoComplete {
-  search: (str: string, self?: RestAdminComponent, selected?: any, col? : IParamsCol) => any;
-  results: any[];
-  prepare?: (self?: RestAdminComponent, selected?: any, col? : IParamsCol) => any;
-  forceSelection?: boolean;
-  multiple?: boolean;
-  placeholder?: string;
-  dataKey?: string;
-  field?: string;
-}
-
-/**
- * Column filter
- */
-export interface IParamsColFilter {
-  /**
-   * Placeholder
-   */
-  placeholder: string;
-
-  /**
-   * Type of filter
-   */
-  type: 'text' | 'single' | 'multiple' | 'datetime-range';
-
-  /**
-   * Filter mode
-   */
-  mode: 'contains' | 'startsWith' | 'endsWith' | 'equals' | 'in' | 'range' | 'id' | 'number' | 'custom';
-
-  /**
-   * Need this when type is 'single' or 'multiple'
-   */
-  options?: any;
-
-  /**
-   * Optional for type 'datetime-range'.
-   */
-  fr?: any;
-  /**
-   * Optional for type 'datetime-range'.
-   */
-  to?: any;
-  /**
-   * Optional for type 'datetime-range'. default: 2016:2020
-   */
-  yearRange?: string;
-
-  /**
-   * Need this when type is 'custom'
-   */
-  custom?: (x: string) => Promise<any>;
-}
-
-/**
- * Column display options
- */
-export interface IParamsColDisplay {
-  /**
-   * Type of display
-   */
-  type: 'text' | 'enum' | 'switch' | 'hide';
-
-  /**
-   * Need this if type is 'enum'
-   */
-  map?: (x: any) => string;
-}
-
-/**
- * Paginate docs
- */
-export interface IPaginateData {
-  docs: any[];
-  total: number;
-  limit: number;
-  offset: number;
-  page: number;
-  pages: number;
 }
