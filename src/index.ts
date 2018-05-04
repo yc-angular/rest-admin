@@ -30,6 +30,7 @@ import { RestAdminFieldComponent } from './field.component';
 
 export * from './component';
 export * from './field.component';
+export * from './interfaces';
 
 @NgModule({
   imports: [
@@ -61,14 +62,8 @@ export * from './field.component';
       baseURL: '//cdn.bootcss.com/tinymce/4.7.4/',
     }),
   ],
-  declarations: [
-    RestAdminComponent,
-    RestAdminFieldComponent,
-  ],
-  exports: [
-    RestAdminComponent,
-    RestAdminFieldComponent,
-  ]
+  declarations: [RestAdminComponent, RestAdminFieldComponent],
+  exports: [RestAdminComponent, RestAdminFieldComponent],
 })
 export class RestAdminModule {
   static forRoot(): ModuleWithProviders {

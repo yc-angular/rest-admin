@@ -1,15 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ConfirmationService, Message, LazyLoadEvent, SelectItem, DataTable } from 'primeng/primeng';
+import {
+  ConfirmationService,
+  Message,
+  LazyLoadEvent,
+  SelectItem,
+  DataTable,
+} from 'primeng/primeng';
 import { Auth } from '@yca/auth';
 import { fetch } from '@yct/utils';
 import * as lodash from 'lodash';
-import { IParamsCol, RestAdminComponent } from './component';
+import { RestAdminComponent } from './component';
+import { IParamsCol } from './interfaces';
 
 @Component({
   selector: 'yca-rest-admin-field',
   templateUrl: './field.component.html',
   styleUrls: ['./field.component.scss'],
-  providers: [ConfirmationService]
+  providers: [ConfirmationService],
 })
 export class RestAdminFieldComponent implements OnInit {
   @Input() cols: IParamsCol[];
@@ -30,7 +37,11 @@ export class RestAdminFieldComponent implements OnInit {
             break;
           case 'pickList':
             this.selected[col.field] = this.selected[col.field] || [];
-            (col.editor as any).pickListSource = lodash.differenceWith(col.editor.options, this.selected[col.field], lodash.isEqual);
+            (col.editor as any).pickListSource = lodash.differenceWith(
+              col.editor.options,
+              this.selected[col.field],
+              lodash.isEqual
+            );
             break;
           case 'images':
           case 'videos':
@@ -39,7 +50,8 @@ export class RestAdminFieldComponent implements OnInit {
             this.selectedIndex[col.field] = 0;
             break;
           case 'autoComplete':
-            col.editor.autoComplete.prepare && col.editor.autoComplete.prepare(this.rac, this.selected, col);
+            col.editor.autoComplete.prepare &&
+              col.editor.autoComplete.prepare(this.rac, this.selected, col);
             break;
           case 'object':
             this.selected[col.field] = this.selected[col.field] || {};
@@ -49,7 +61,9 @@ export class RestAdminFieldComponent implements OnInit {
     }
   }
 
-  onChange(fn: (rac?: RestAdminComponent, selected?: any, cols?: IParamsCol[]) => any): void {
+  onChange(
+    fn: (rac?: RestAdminComponent, selected?: any, cols?: IParamsCol[]) => any
+  ): void {
     if (!fn) return;
     fn(this.rac, this.selected, this.cols);
   }
