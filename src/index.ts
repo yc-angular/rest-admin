@@ -27,10 +27,12 @@ import {
 import { NgxTinymceModule } from 'ngx-tinymce';
 import { RestAdminComponent } from './component';
 import { RestAdminFieldComponent } from './field.component';
+import { SafePipe } from './pipe';
 
 export * from './component';
 export * from './field.component';
 export * from './interfaces';
+export * from './pipe';
 
 @NgModule({
   imports: [
@@ -62,8 +64,8 @@ export * from './interfaces';
       baseURL: '//cdn.bootcss.com/tinymce/4.7.4/',
     }),
   ],
-  declarations: [RestAdminComponent, RestAdminFieldComponent],
-  exports: [RestAdminComponent, RestAdminFieldComponent],
+  declarations: [RestAdminComponent, RestAdminFieldComponent, SafePipe],
+  exports: [RestAdminComponent, RestAdminFieldComponent, SafePipe],
 })
 export class RestAdminModule {
   static forRoot(): ModuleWithProviders {

@@ -30,7 +30,9 @@
       <pre>{{ col.editor.logs(selected[col.field]) }}</pre>
     </div>
     <div *ngIf="col.editor.type == 'custom'">
-      <div (click)="onCustomClick(col.editor.custom.onClick, selected, col.field)">{{ col.editor.custom.display(selected, col.field) }}</div>
+      <div (click)="onCustomClick(col.editor.custom.onClick, selected, col.field)">
+        <p [innerHtml]="col.editor.custom.display(selected, col.field) | safe"></p>
+      </div>
     </div>
     <div *ngIf="col.editor.type == 'pickList'">
       <p-pickList [source]="col.editor.pickListSource" [target]="selected[col.field]" [filterBy]="col.editor.filterBy">
