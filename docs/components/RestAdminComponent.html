@@ -1,0 +1,2799 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@yca/rest-admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@yca/rest-admin</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <nav>
+
+    <ul class="list">
+
+        <li class="title">
+            <a href="index.html" data-type="index-link">@yca/rest-admin</a>
+        </li>
+
+        <li class="divider"></li>
+
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
+            <ul class="links">
+                    <li class="link">
+                        <a 
+                            
+                             href="overview.html" 
+                             href="overview.html" 
+                            data-type="chapter-link">
+                            <span class="fa fa-fw fa-th"></span>Overview
+                        </a>
+                    </li>
+                    <li class="link">
+                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter modules">
+            <a data-type="chapter-link" href="modules.html">
+                <div class="menu-toggler linked" data-toggle="collapse"
+                        data-target="#xs-modules-links"
+                >
+                    <span class="fa fa-fw fa-archive"></span>
+                    <span class="link-name">Modules</span>
+                    <span class="fa fa-angle-down"></span>
+                </div>
+            </a>
+            <ul class="links collapse"
+                    id="xs-modules-links"
+                >
+                    <li class="link">
+                        <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#xs-components-links-module-AppModule-e8522f28-5b26-4f0e-bc25-d1a1a64a6d24"
+                                    >
+                                    <span class="fa fa-fw fa-cogs"></span>
+                                    <span>Components</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="xs-components-links-module-AppModule-e8522f28-5b26-4f0e-bc25-d1a1a64a6d24"
+                                    >
+                                        <li class="link">
+                                            <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                    </li>
+                    <li class="link">
+                        <a href="modules/RestAdminModule.html" data-type="entity-link">RestAdminModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#xs-components-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+                                    >
+                                    <span class="fa fa-fw fa-cogs"></span>
+                                    <span>Components</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="xs-components-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+                                    >
+                                        <li class="link">
+                                            <a href="components/RestAdminComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">RestAdminComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/RestAdminFieldComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">RestAdminFieldComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#xs-pipes-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+                                    >
+                                    <span class="fa fa-fw fa-plus"></span>
+                                    <span>Pipes</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="xs-pipes-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+                                    >
+                                        <li class="link">
+                                            <a href="pipes/SafePipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">SafePipe</a>
+                                        </li>
+                                </ul>
+                            </li>
+                    </li>
+            </ul>
+        </li>
+
+
+
+
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#xs-interfaces-links"
+                >
+                <span class="fa fa-fw fa-info"></span>
+                <span>Interfaces</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="xs-interfaces-links"
+                >
+                    <li class="link">
+                        <a href="interfaces/IPaginateData.html" data-type="entity-link">IPaginateData</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParams.html" data-type="entity-link">IParams</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsCol.html" data-type="entity-link">IParamsCol</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColDisplay.html" data-type="entity-link">IParamsColDisplay</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColEditor.html" data-type="entity-link">IParamsColEditor</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColEditorAutoComplete.html" data-type="entity-link">IParamsColEditorAutoComplete</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColFilter.html" data-type="entity-link">IParamsColFilter</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsCustomButton.html" data-type="entity-link">IParamsCustomButton</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsEditorButton.html" data-type="entity-link">IParamsEditorButton</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#xs-miscellaneous-links"
+                >
+                <span class="fa fa-fw fa-cubes"></span>
+                <span>Miscellaneous</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="xs-miscellaneous-links"
+                >
+                    <li class="link">
+                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
+        </li>
+
+
+    </ul>
+
+</nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+
+    <ul class="list">
+
+        <li class="title">
+            <a href="index.html" data-type="index-link">@yca/rest-admin</a>
+        </li>
+
+        <li class="divider"></li>
+
+            <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
+            <ul class="links">
+                    <li class="link">
+                        <a 
+                            
+                             href="overview.html" 
+                             href="overview.html" 
+                            data-type="chapter-link">
+                            <span class="fa fa-fw fa-th"></span>Overview
+                        </a>
+                    </li>
+                    <li class="link">
+                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter modules">
+            <a data-type="chapter-link" href="modules.html">
+                <div class="menu-toggler linked" data-toggle="collapse"
+                        data-target="#modules-links"
+                >
+                    <span class="fa fa-fw fa-archive"></span>
+                    <span class="link-name">Modules</span>
+                    <span class="fa fa-angle-down"></span>
+                </div>
+            </a>
+            <ul class="links collapse"
+                    id="modules-links"
+>
+                    <li class="link">
+                        <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#components-links-module-AppModule-e8522f28-5b26-4f0e-bc25-d1a1a64a6d24"
+>
+                                    <span class="fa fa-fw fa-cogs"></span>
+                                    <span>Components</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="components-links-module-AppModule-e8522f28-5b26-4f0e-bc25-d1a1a64a6d24"
+>
+                                        <li class="link">
+                                            <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                    </li>
+                    <li class="link">
+                        <a href="modules/RestAdminModule.html" data-type="entity-link">RestAdminModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#components-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+>
+                                    <span class="fa fa-fw fa-cogs"></span>
+                                    <span>Components</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="components-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+>
+                                        <li class="link">
+                                            <a href="components/RestAdminComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">RestAdminComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/RestAdminFieldComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">RestAdminFieldComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#pipes-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+>
+                                    <span class="fa fa-fw fa-plus"></span>
+                                    <span>Pipes</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="pipes-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+>
+                                        <li class="link">
+                                            <a href="pipes/SafePipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">SafePipe</a>
+                                        </li>
+                                </ul>
+                            </li>
+                    </li>
+            </ul>
+        </li>
+
+
+
+
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#interfaces-links"
+>
+                <span class="fa fa-fw fa-info"></span>
+                <span>Interfaces</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="interfaces-links"
+>
+                    <li class="link">
+                        <a href="interfaces/IPaginateData.html" data-type="entity-link">IPaginateData</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParams.html" data-type="entity-link">IParams</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsCol.html" data-type="entity-link">IParamsCol</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColDisplay.html" data-type="entity-link">IParamsColDisplay</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColEditor.html" data-type="entity-link">IParamsColEditor</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColEditorAutoComplete.html" data-type="entity-link">IParamsColEditorAutoComplete</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColFilter.html" data-type="entity-link">IParamsColFilter</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsCustomButton.html" data-type="entity-link">IParamsCustomButton</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsEditorButton.html" data-type="entity-link">IParamsEditorButton</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#miscellaneous-links"
+>
+                <span class="fa fa-fw fa-cubes"></span>
+                <span>Miscellaneous</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="miscellaneous-links"
+>
+                    <li class="link">
+                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
+        </li>
+
+
+    </ul>
+
+</nav>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>RestAdminComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+    </li>
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code>ConfirmationService</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>yca-rest-admin</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#auth">auth</a>
+                            </li>
+                            <li>
+                                <a href="#blocked">blocked</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#columnOptions">columnOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#confirmationService">confirmationService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#data">data</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#height">height</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#lastEvent">lastEvent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#lastFilters">lastFilters</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#lastOptions">lastOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#msgs">msgs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#now">now</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#refs">refs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selected">selected</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#self">self</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showModal">showModal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#width">width</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#add">add</a>
+                            </li>
+                            <li>
+                                <a href="#addDatetimeFilterRange">addDatetimeFilterRange</a>
+                            </li>
+                            <li>
+                                <a href="#cancel">cancel</a>
+                            </li>
+                            <li>
+                                <a href="#delete">delete</a>
+                            </li>
+                            <li>
+                                <a href="#exportCSV">exportCSV</a>
+                            </li>
+                            <li>
+                                <a href="#getDisplayCols">getDisplayCols</a>
+                            </li>
+                            <li>
+                                <a href="#getEditorCols">getEditorCols</a>
+                            </li>
+                            <li>
+                                <a href="#getRefOptions">getRefOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#loadData">loadData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#loadLazy">loadLazy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#reload">reload</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#save">save</a>
+                            </li>
+                            <li>
+                                <a href="#select">select</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#params">params</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(confirmationService: ConfirmationService, auth: Auth)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/component.ts:91</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                    <td>confirmationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfirmationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                    <td>auth</td>
+                                                  
+                                                        <td>
+                                                                    <code>Auth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="params"></a>
+                        <code>params</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Component params</p>
+</div>
+                            <p>
+                            <em>Type:</em>    <code><a href="../interfaces/IParams.html" target="_self" >IParams</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/component.ts:24</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="add"></a>
+                        <span class="name">
+                            <b>
+                            add
+                            </b>
+                            <a href="#add"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>add()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="219" class="link-to-prism">src/component.ts:219</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Add a row</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addDatetimeFilterRange"></a>
+                        <span class="name">
+                            <b>
+                            addDatetimeFilterRange
+                            </b>
+                            <a href="#addDatetimeFilterRange"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>addDatetimeFilterRange(col: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="352" class="link-to-prism">src/component.ts:352</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Add Datetime filter range</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>col</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>column</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cancel"></a>
+                        <span class="name">
+                            <b>
+                            cancel
+                            </b>
+                            <a href="#cancel"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>cancel()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="249" class="link-to-prism">src/component.ts:249</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Close modal and unselect row</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="delete"></a>
+                        <span class="name">
+                            <b>
+                            delete
+                            </b>
+                            <a href="#delete"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>delete()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="310" class="link-to-prism">src/component.ts:310</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Delete a row</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="exportCSV"></a>
+                        <span class="name">
+                            <b>
+                            exportCSV
+                            </b>
+                            <a href="#exportCSV"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>exportCSV(dt: DataTable)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="403" class="link-to-prism">src/component.ts:403</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Export csv</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dt</td>
+                                                        <td>
+                                                                    <code>DataTable</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>DataTable</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getDisplayCols"></a>
+                        <span class="name">
+                            <b>
+                            getDisplayCols
+                            </b>
+                            <a href="#getDisplayCols"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getDisplayCols()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="231" class="link-to-prism">src/component.ts:231</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Columns to display</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>[]</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getEditorCols"></a>
+                        <span class="name">
+                            <b>
+                            getEditorCols
+                            </b>
+                            <a href="#getEditorCols"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getEditorCols()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="242" class="link-to-prism">src/component.ts:242</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Columns to be edited</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>[]</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getRefOptions"></a>
+                        <span class="name">
+                            <b>
+                            getRefOptions
+                            </b>
+                            <a href="#getRefOptions"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getRefOptions(col: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="374" class="link-to-prism">src/component.ts:374</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Get reference options</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>col</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>column</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadData"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier"></span>
+                            loadData
+                            </b>
+                            <a href="#loadData"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>loadData(options: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, filters: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/component.ts:119</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Query paginated data</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>options</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>query options</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>filters</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>query filters</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loadLazy"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier"></span>
+                            loadLazy
+                            </b>
+                            <a href="#loadLazy"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>loadLazy(event: LazyLoadEvent, dt: DataTable)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="145" class="link-to-prism">src/component.ts:145</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>DataTable lazy load</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code>LazyLoadEvent</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>LazyLoadEvent</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>dt</td>
+                                                        <td>
+                                                                    <code>DataTable</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>DataTable</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/component.ts:100</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reload"></a>
+                        <span class="name">
+                            <b>
+                            reload
+                            </b>
+                            <a href="#reload"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>reload()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="365" class="link-to-prism">src/component.ts:365</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Reload data</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="save"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier"></span>
+                            save
+                            </b>
+                            <a href="#save"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>save()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="257" class="link-to-prism">src/component.ts:257</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Save a row</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="select"></a>
+                        <span class="name">
+                            <b>
+                            select
+                            </b>
+                            <a href="#select"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>select(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="207" class="link-to-prism">src/component.ts:207</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Select a row</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>$event</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="auth"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            auth
+                            </b>
+                            <a href="#auth"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>auth:     <code>Auth</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Auth</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/component.ts:95</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="blocked"></a>
+                        <span class="name">
+                            <b>
+                            blocked
+                            </b>
+                            <a href="#blocked"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>blocked:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/component.ts:91</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="columnOptions"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            columnOptions
+                            </b>
+                            <a href="#columnOptions"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>columnOptions:     <code>SelectItem[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>SelectItem[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Colum options</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="confirmationService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            confirmationService
+                            </b>
+                            <a href="#confirmationService"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>confirmationService:     <code>ConfirmationService</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ConfirmationService</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/component.ts:94</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="data"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            data
+                            </b>
+                            <a href="#data"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>data:     <code><a href="../interfaces/IPaginateData.html" target="_self" >IPaginateData</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/IPaginateData.html" target="_self" >IPaginateData</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Paginated data from query</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="height"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            height
+                            </b>
+                            <a href="#height"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>height:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>window.innerHeight</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/component.ts:89</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Modal Height</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lastEvent"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            lastEvent
+                            </b>
+                            <a href="#lastEvent"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>lastEvent:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/component.ts:79</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Last LazyLoadEvent event</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lastFilters"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            lastFilters
+                            </b>
+                            <a href="#lastFilters"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>lastFilters:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/component.ts:74</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Last filters used for query</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lastOptions"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            lastOptions
+                            </b>
+                            <a href="#lastOptions"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>lastOptions:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/component.ts:69</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Last options used for query</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="msgs"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            msgs
+                            </b>
+                            <a href="#msgs"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>msgs:     <code>Message[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Message[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Primeng Message array</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="now"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            now
+                            </b>
+                            <a href="#now"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>now:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Date()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Current Date</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="refs"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            refs
+                            </b>
+                            <a href="#refs"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>refs:     <code>literal type</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>literal type</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/component.ts:59</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>References</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selected"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            selected
+                            </b>
+                            <a href="#selected"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>selected:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Current selected row</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="self"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            self
+                            </b>
+                            <a href="#self"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>self:     <code><a href="../components/RestAdminComponent.html" target="_self" >RestAdminComponent</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../components/RestAdminComponent.html" target="_self" >RestAdminComponent</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Point to this</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showModal"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            showModal
+                            </b>
+                            <a href="#showModal"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>showModal:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Whether the modal is showing</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="width"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            width
+                            </b>
+                            <a href="#width"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>width:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>window.innerWidth</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/component.ts:84</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Modal width</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
+import {
+  ConfirmationService,
+  Message,
+  LazyLoadEvent,
+  SelectItem,
+  DataTable,
+} from &#x27;primeng/primeng&#x27;;
+import { Auth } from &#x27;@yca/auth&#x27;;
+import { fetch } from &#x27;@yct/utils&#x27;;
+import * as lodash from &#x27;lodash&#x27;;
+import { IPaginateData, IParams, IParamsCol } from &#x27;./interfaces&#x27;;
+
+@Component({
+  selector: &#x27;yca-rest-admin&#x27;,
+  templateUrl: &#x27;./component.html&#x27;,
+  styleUrls: [&#x27;./component.scss&#x27;],
+  providers: [ConfirmationService],
+})
+export class RestAdminComponent implements OnInit {
+  /**
+   * Component params
+   */
+  @Input() public params: IParams;
+
+  /**
+   * Paginated data from query
+   */
+  public data: IPaginateData;
+
+  /**
+   * Current selected row
+   */
+  public selected: any;
+
+  /**
+   * Whether the modal is showing
+   */
+  public showModal: boolean;
+
+  /**
+   * Primeng Message array
+   */
+  public msgs: Message[] &#x3D; [];
+
+  /**
+   * Colum options
+   */
+  private columnOptions: SelectItem[];
+
+  /**
+   * Current Date
+   */
+  public now: Date &#x3D; new Date();
+
+  /**
+   * References
+   */
+  public refs: { [x: string]: any[] } &#x3D; {};
+
+  /**
+   * Point to this
+   */
+  private self: RestAdminComponent;
+
+  /**
+   * Last options used for query
+   */
+  private lastOptions: any;
+
+  /**
+   * Last filters used for query
+   */
+  private lastFilters: any;
+
+  /**
+   * Last LazyLoadEvent event
+   */
+  private lastEvent: any;
+
+  /**
+   * Modal width
+   */
+  private width &#x3D; window.innerWidth;
+
+  /**
+   * Modal Height
+   */
+  private height &#x3D; window.innerHeight;
+
+  blocked: boolean;
+
+  constructor(
+    public confirmationService: ConfirmationService,
+    public auth: Auth
+  ) {
+    this.self &#x3D; this;
+  }
+
+  ngOnInit(): void {
+    this.columnOptions &#x3D; [];
+    for (const col of this.params.cols) {
+      this.columnOptions.push({ label: col.header, value: col });
+    }
+    this.loadData(
+      JSON.stringify({
+        limit: 0,
+        page: 1,
+      }),
+      JSON.stringify({})
+    );
+  }
+
+  /**
+   * Query paginated data
+   * @param options {any} query options
+   * @param filters {any} query filters
+   */
+  async loadData(options: any, filters: any): Promise&lt;void&gt; {
+    const url: string &#x3D; &#x60;${
+      this.params.api
+    }?_options&#x3D;${options}&amp;_filters&#x3D;${filters}&#x60;;
+    try {
+      const res &#x3D; await fetch(&#x27;GET&#x27;, url, null, {
+        Authorization: &#x60;Bearer ${this.auth.jwt}&#x60;,
+      });
+      if (this.params.renderer) {
+        this.data &#x3D; this.params.renderer(res.data);
+      } else {
+        this.data &#x3D; res.data;
+      }
+      this.lastFilters &#x3D; filters;
+      this.lastOptions &#x3D; options;
+      if (this.params.dt) this.params.dt.paginator &#x3D; true;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  /**
+   * DataTable lazy load
+   * @param event {LazyLoadEvent} LazyLoadEvent
+   * @param dt {DataTable} DataTable
+   */
+  async loadLazy(event: LazyLoadEvent, dt: DataTable): Promise&lt;void&gt; {
+    this.lastEvent &#x3D; event;
+    this.params.dt &#x3D; dt;
+    const page: number &#x3D; Math.floor(event.first / event.rows) + 1;
+    const limit: number &#x3D; event.rows &#x3D;&#x3D;&#x3D; 100 ? 99999999 : event.rows;
+    const options: any &#x3D; this.params.globalOptions || {};
+    options.limit &#x3D; limit;
+    options.page &#x3D; page;
+    if (event.sortField) {
+      let str: string &#x3D; event.sortField;
+      if (event.sortOrder &#x3D;&#x3D;&#x3D; -1) str &#x3D; &#x27;-&#x27; + str;
+      options.sort &#x3D; str;
+    }
+
+    const filters: any &#x3D; this.params.globalFilters || {};
+    for (const k of Object.keys(event.filters)) {
+      switch (event.filters[k].matchMode) {
+        case &#x27;in&#x27;:
+          filters[k] &#x3D; { $in: event.filters[k].value };
+          break;
+        case &#x27;startsWith&#x27;:
+          filters[k] &#x3D; { $regex: &#x27;^&#x27; + event.filters[k].value };
+          break;
+        case &#x27;endsWith&#x27;:
+          filters[k] &#x3D; { $regex: event.filters[k].value + &#x27;$&#x27; };
+          break;
+        case &#x27;equals&#x27;:
+          filters[k] &#x3D; event.filters[k].value;
+          break;
+        case &#x27;range&#x27;:
+          filters[k] &#x3D; {
+            $gte: event.filters[k].value[0],
+            $lt: event.filters[k].value[1],
+          };
+          break;
+        case &#x27;id&#x27;:
+          if (event.filters[k].value &amp;&amp; event.filters[k].value.length &#x3D;&#x3D;&#x3D; 24) {
+            filters[k] &#x3D; event.filters[k].value;
+          } else {
+            delete filters[k];
+          }
+          break;
+        case &#x27;number&#x27;:
+          filters[k] &#x3D; parseFloat(event.filters[k].value);
+          break;
+        case &#x27;custom&#x27;:
+          const col &#x3D; this.params.cols.find(x &#x3D;&gt; x.field &#x3D;&#x3D;&#x3D; k);
+          if (col) {
+            filters[k] &#x3D; await col.filter.custom(event.filters[k].value);
+          } else {
+            delete filters[k];
+          }
+          break;
+      }
+    }
+    this.loadData(JSON.stringify(options), JSON.stringify(filters));
+  }
+
+  /**
+   * Select a row
+   * @param event {any} $event
+   */
+  select(event: any): void {
+    this.selected &#x3D; JSON.parse(JSON.stringify(this.selected));
+    if (this.params.preEdit) this.params.preEdit(this);
+    this.width &#x3D; window.innerWidth;
+    this.height &#x3D; window.innerHeight;
+    this.showModal &#x3D; true;
+    if (this.params.onShow) this.params.onShow(this);
+  }
+
+  /**
+   * Add a row
+   */
+  add(): void {
+    this.selected &#x3D; {};
+    if (this.params.preEdit) this.params.preEdit(this);
+    this.width &#x3D; window.innerWidth;
+    this.height &#x3D; window.innerHeight;
+    this.showModal &#x3D; true;
+    if (this.params.onShow) this.params.onShow(this);
+  }
+
+  /**
+   * Columns to display
+   */
+  getDisplayCols(): IParamsCol[] {
+    return this.params.cols.filter(x &#x3D;&gt; {
+      if (!x.display) return true;
+      if (x.display.type &#x3D;&#x3D;&#x3D; &#x27;hide&#x27;) return false;
+      return true;
+    });
+  }
+
+  /**
+   * Columns to be edited
+   */
+  getEditorCols(): IParamsCol[] {
+    return this.params.cols.filter(x &#x3D;&gt; x.editor &amp;&amp; !x.editor.hidden);
+  }
+
+  /**
+   * Close modal and unselect row
+   */
+  cancel(): void {
+    this.showModal &#x3D; false;
+    this.selected &#x3D; null;
+  }
+
+  /**
+   * Save a row
+   */
+  async save(): Promise&lt;any&gt; {
+    let url: string;
+    let method: string;
+    if (this.selected._id) {
+      url &#x3D; this.params.api + &#x27;/&#x27; + this.selected._id;
+      method &#x3D; &#x27;PATCH&#x27;;
+    } else {
+      url &#x3D; this.params.api;
+      method &#x3D; &#x27;POST&#x27;;
+    }
+    const params: any &#x3D; {};
+    for (const key of Object.keys(this.selected)) {
+      params[key] &#x3D; this.selected[key];
+    }
+    if (this.params.preSave) this.params.preSave(params);
+    this.blocked &#x3D; true;
+    try {
+      const res &#x3D; await fetch(
+        method,
+        url,
+        params,
+        { Authorization: &#x60;Bearer ${this.auth.jwt}&#x60; },
+        !this.params.formdata
+      );
+      this.blocked &#x3D; false;
+      this.loadData(this.lastOptions, this.lastFilters);
+      this.cancel();
+      this.msgs &#x3D; [
+        ...this.msgs,
+        {
+          severity: &#x27;success&#x27;,
+          summary: &#x27;保存成功&#x27;,
+        },
+      ];
+      return res;
+    } catch (error) {
+      this.blocked &#x3D; false;
+      console.error(error);
+      this.msgs &#x3D; [
+        ...this.msgs,
+        {
+          severity: &#x27;error&#x27;,
+          summary: &#x27;保存失败&#x27;,
+          detail: error.data.message,
+        },
+      ];
+      return null;
+    }
+  }
+
+  /**
+   * Delete a row
+   */
+  delete(): void {
+    this.confirmationService.confirm({
+      message: &#x27;删除后不能返回，确定删除?&#x27;,
+      accept: async () &#x3D;&gt; {
+        this.blocked &#x3D; true;
+        try {
+          const res &#x3D; await fetch(
+            &#x27;DELETE&#x27;,
+            &#x60;${this.params.api}/${this.selected._id}&#x60;,
+            null,
+            { Authorization: &#x60;Bearer ${this.auth.jwt}&#x60; }
+          );
+          this.blocked &#x3D; false;
+          this.cancel();
+          this.msgs &#x3D; [
+            ...this.msgs,
+            {
+              severity: &#x27;success&#x27;,
+              summary: &#x27;删除成功&#x27;,
+            },
+          ];
+          this.loadData(this.lastOptions, this.lastFilters);
+        } catch (error) {
+          this.blocked &#x3D; false;
+          console.error(error);
+          this.msgs &#x3D; [
+            ...this.msgs,
+            {
+              severity: &#x27;error&#x27;,
+              summary: &#x27;删除失败&#x27;,
+              detail: error.data.message,
+            },
+          ];
+        }
+      },
+    });
+  }
+
+  /**
+   * Add Datetime filter range
+   * @param col {any} column
+   */
+  addDatetimeFilterRange(col: any): void {
+    const fr: Date &#x3D; col.filter.fr;
+    const to: Date &#x3D; col.filter.to;
+    if (!fr || !to) return;
+    const value: number[] &#x3D; [fr.getTime(), to.getTime()];
+    const field: Date &#x3D; col.field;
+    const mode: string &#x3D; col.filter.mode;
+    this.params.dt.filter(value, field, mode);
+  }
+
+  /**
+   * Reload data
+   */
+  reload(): void {
+    this.params.dt.filter(null, &#x27;dummy&#x27;, &#x27;in&#x27;);
+    this.params.dt.paginator &#x3D; false;
+  }
+
+  /**
+   * Get reference options
+   * @param col {any} column
+   */
+  getRefOptions(col: any): any {
+    if (this.refs[col.field]) return this.refs[col.field];
+    this.refs[col.field] &#x3D; [];
+    fetch(&#x27;GET&#x27;, col.editor.ref.path, null, {
+      Authorization: &#x60;Bearer ${this.auth.jwt}&#x60;,
+    })
+      .then(res &#x3D;&gt; {
+        this.refs[col.field] &#x3D; res.data.docs.map(x &#x3D;&gt; {
+          return {
+            label:
+              col.editor.ref.label.constructor &#x3D;&#x3D;&#x3D; String
+                ? x[col.editor.ref.label]
+                : col.editor.ref.label(x),
+            value: x._id,
+          };
+        });
+        this.refs[col.field].unshift({
+          label: &#x27;请选择&#x27;,
+          value: null,
+        });
+      })
+      .catch(console.error);
+    return this.refs[col.field];
+  }
+
+  /**
+   * Export csv
+   * @param dt {DataTable} DataTable
+   */
+  exportCSV(dt: DataTable): void {
+    const header: string &#x3D; dt.columns.map(x &#x3D;&gt; x.header).join(&#x27;,&#x27;);
+    const rows: any &#x3D; dt.value
+      .map(obj &#x3D;&gt; {
+        return dt.columns
+          .map(x &#x3D;&gt; {
+            const col: IParamsCol &#x3D; this.params.cols.find(
+              y &#x3D;&gt; y.field &#x3D;&#x3D;&#x3D; x.field
+            );
+            if (col.display &amp;&amp; col.display.type &#x3D;&#x3D;&#x3D; &#x27;enum&#x27;)
+              return col.display.map(dt.resolveFieldData(obj, x.field));
+            return dt.resolveFieldData(obj, x.field);
+          })
+          .join(&#x27;,&#x27;);
+      })
+      .join(&#x27;\n&#x27;);
+    let body: string &#x3D; [header, rows].join(&#x27;\n&#x27;);
+    const blob: Blob &#x3D; new Blob([body], {
+      type: &#x27;text/csv;charset&#x3D;utf-8;&#x27;,
+    });
+    if (window.navigator.msSaveOrOpenBlob) {
+      navigator.msSaveOrOpenBlob(blob, this.params.title.list + &#x27;.csv&#x27;);
+    } else {
+      const link: HTMLAnchorElement &#x3D; document.createElement(&#x27;a&#x27;);
+      link.style.display &#x3D; &#x27;none&#x27;;
+      document.body.appendChild(link);
+      if (link.download !&#x3D;&#x3D; undefined) {
+        link.setAttribute(&#x27;href&#x27;, URL.createObjectURL(blob));
+        link.setAttribute(&#x27;download&#x27;, this.params.title.list + &#x27;.csv&#x27;);
+        document.body.appendChild(link);
+        link.click();
+      } else {
+        body &#x3D; &#x27;data:text/csv;charset&#x3D;utf-8,&#x27; + body;
+        window.open(encodeURI(body));
+      }
+      document.body.removeChild(link);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;data&quot;&gt;
+  &lt;p-toolbar [style]&#x3D;&quot;{&#x27;border-radius&#x27;: 0, &#x27;border-color&#x27;: &#x27;black&#x27;, background: &#x27;black&#x27;, padding: &#x27;16px&#x27;}&quot;&gt;
+    &lt;div class&#x3D;&quot;ui-toolbar-group-left&quot;&gt;
+      &lt;div style&#x3D;&quot;font-size: 26px; padding-left: 8px; color: white&quot;&gt;{{ params.title.list }}&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;ui-toolbar-group-right&quot;&gt;
+      &lt;button *ngFor&#x3D;&quot;let b of params.customButtons&quot; [class]&#x3D;&quot;b.class&quot; type&#x3D;&quot;button&quot; pButton [icon]&#x3D;&quot;b.icon&quot; (click)&#x3D;&quot;b.handler(self)&quot;
+        [label]&#x3D;&quot;b.label&quot; [hidden]&#x3D;&quot;b.when &amp;&amp; !b.when(self)&quot;&gt;&lt;/button&gt;
+      &lt;button *ngIf&#x3D;&quot;!params.hideAdd&quot; class&#x3D;&quot;ui-button-success&quot; type&#x3D;&quot;button&quot; pButton icon&#x3D;&quot;fa-plus&quot; (click)&#x3D;&quot;add()&quot;&gt;&lt;/button&gt;
+      &lt;button *ngIf&#x3D;&quot;!params.hideExport&quot; type&#x3D;&quot;button&quot; pButton icon&#x3D;&quot;fa-file-o&quot; iconPos&#x3D;&quot;left&quot; label&#x3D;&quot;CSV&quot; (click)&#x3D;&quot;exportCSV(dt)&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/p-toolbar&gt;
+  &lt;p-dataTable #dt [value]&#x3D;&quot;data.docs&quot; scrollable&#x3D;&quot;true&quot; selectionMode&#x3D;&quot;single&quot; [(selection)]&#x3D;&quot;selected&quot; (onRowSelect)&#x3D;&quot;select($event)&quot;
+    [lazy]&#x3D;&quot;true&quot; [rows]&#x3D;&quot;params.rows || 10&quot; [paginator]&#x3D;&quot;true&quot; [totalRecords]&#x3D;&quot;data.total&quot; (onLazyLoad)&#x3D;&quot;loadLazy($event, dt)&quot;&gt;
+    &lt;p-header&gt;
+      &lt;div style&#x3D;&quot;display: flex; align-items: center; justify-content: space-between&quot;&gt;
+        &lt;p-multiSelect [options]&#x3D;&quot;columnOptions&quot; [(ngModel)]&#x3D;&quot;params.cols&quot;&gt;&lt;/p-multiSelect&gt;
+
+        &lt;div *ngIf&#x3D;&quot;!params.hideCount&quot; style&#x3D;&quot;padding: 0 8px;white-space: nowrap;&quot;&gt;
+          &lt;i class&#x3D;&quot;fa fa-database&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; {{ data?.total }}&lt;/div&gt;
+
+        &lt;div style&#x3D;&quot;flex: 0 0 200px&quot;&gt;
+          &lt;div style&#x3D;&quot;padding-bottom: 8px&quot;&gt;
+            &lt;i class&#x3D;&quot;fa fa-th-list&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; {{ params.rows &#x3D;&#x3D;&#x3D; 100 ? &#x27;&#x27; : params.rows }}&lt;/div&gt;
+          &lt;p-slider [(ngModel)]&#x3D;&quot;params.rows&quot; animate&#x3D;&quot;true&quot; [min]&#x3D;&quot;5&quot; (onSlideEnd)&#x3D;&quot;reload()&quot;&gt;&lt;/p-slider&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/p-header&gt;
+    &lt;p-column *ngFor&#x3D;&quot;let col of getDisplayCols()&quot; [field]&#x3D;&quot;col.field&quot; [header]&#x3D;&quot;col.header&quot; [style]&#x3D;&quot;col.style&quot; [sortable]&#x3D;&quot;col.sortable&quot;
+      [filter]&#x3D;&quot;col.filter&quot; [filterMatchMode]&#x3D;&quot;col.filter ? col.filter.mode : null&quot;&gt;
+      &lt;ng-template *ngIf&#x3D;&quot;col.display &amp;&amp; col.display.type &#x3D;&#x3D; &#x27;enum&#x27;&quot; let-data&#x3D;&quot;rowData&quot; pTemplate&#x3D;&quot;body&quot;&gt;
+        &lt;span&gt;{{ col.display.map(data[col.field]) }}&lt;/span&gt;
+      &lt;/ng-template&gt;
+
+      &lt;ng-template *ngIf&#x3D;&quot;col.filter &amp;&amp; col.filter.type &#x3D;&#x3D; &#x27;multiple&#x27;&quot; pTemplate&#x3D;&quot;filter&quot;&gt;
+        &lt;p-multiSelect [options]&#x3D;&quot;col.filter.options&quot; [defaultLabel]&#x3D;&quot;col.filter.placeholder&quot; (onChange)&#x3D;&quot;dt.filter($event.value,col.field,col.filter.mode)&quot;
+          styleClass&#x3D;&quot;ui-column-filter&quot;&gt;&lt;/p-multiSelect&gt;
+      &lt;/ng-template&gt;
+      &lt;ng-template *ngIf&#x3D;&quot;col.filter &amp;&amp; col.filter.type &#x3D;&#x3D; &#x27;datetime-range&#x27;&quot; pTemplate&#x3D;&quot;filter&quot;&gt;
+        &lt;div style&#x3D;&quot;padding-top: 8px; display: flex; align-items: center; justify-content: center&quot;&gt;
+          &lt;div&gt;
+            &lt;i class&#x3D;&quot;fa fa-circle&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;p-calendar [defaultDate]&#x3D;&quot;col.filter.fr&quot; selectOtherMonths&#x3D;&quot;true&quot; monthNavigator&#x3D;&quot;true&quot; yearNavigator&#x3D;&quot;true&quot; [yearRange]&#x3D;&quot;col.filter.yearRange || &#x27;2016:2020&#x27;&quot;
+            [(ngModel)]&#x3D;&quot;col.filter.fr&quot; showTime&#x3D;&quot;showTime&quot; hourFormat&#x3D;&quot;24&quot; styleClass&#x3D;&quot;ui-column-filter&quot;&gt;&lt;/p-calendar&gt;
+        &lt;/div&gt;
+        &lt;div style&#x3D;&quot;display: flex; align-items: center; justify-content: center&quot;&gt;
+          &lt;div&gt;
+            &lt;i class&#x3D;&quot;fa fa-arrow-right&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;p-calendar [defaultDate]&#x3D;&quot;col.filter.to&quot; selectOtherMonths&#x3D;&quot;true&quot; monthNavigator&#x3D;&quot;true&quot; yearNavigator&#x3D;&quot;true&quot; [yearRange]&#x3D;&quot;col.filter.yearRange || &#x27;2016:2020&#x27;&quot;
+            [(ngModel)]&#x3D;&quot;col.filter.to&quot; showTime&#x3D;&quot;showTime&quot; hourFormat&#x3D;&quot;24&quot; styleClass&#x3D;&quot;ui-column-filter&quot;&gt;
+          &lt;/p-calendar&gt;
+        &lt;/div&gt;
+        &lt;div style&#x3D;&quot;text-align: center;padding-top: 12px&quot;&gt;
+          &lt;button class&#x3D;&quot;ui-button-secondary&quot; pButton type&#x3D;&quot;button&quot; label&#x3D;&quot;筛选&quot; (click)&#x3D;&quot;addDatetimeFilterRange(col)&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/ng-template&gt;
+    &lt;/p-column&gt;
+
+  &lt;/p-dataTable&gt;
+
+  &lt;p-dialog [header]&#x3D;&quot;params.title.edit&quot; [(visible)]&#x3D;&quot;showModal&quot; modal&#x3D;&quot;modal&quot; [width]&#x3D;&quot;width&quot; [height]&#x3D;&quot;height&quot; [resizable]&#x3D;&quot;false&quot;&gt;
+    &lt;div *ngIf&#x3D;&quot;selected&quot;&gt;
+      &lt;yca-rest-admin-field [cols]&#x3D;&quot;getEditorCols()&quot; [selected]&#x3D;&quot;selected&quot; [rac]&#x3D;&quot;self&quot;&gt;&lt;/yca-rest-admin-field&gt;
+    &lt;/div&gt;
+    &lt;p-footer&gt;
+      &lt;div class&#x3D;&quot;ui-dialog-buttonpane ui-widget-content ui-helper-clearfix&quot;&gt;
+        &lt;button *ngIf&#x3D;&quot;!params.hideDelete&quot; class&#x3D;&quot;ui-button-danger&quot; style&#x3D;&quot;float: left&quot; type&#x3D;&quot;button&quot; pButton icon&#x3D;&quot;fa-trash&quot; (click)&#x3D;&quot;delete()&quot;&gt;&lt;/button&gt;
+        &lt;button *ngIf&#x3D;&quot;!params.hideCancel&quot; class&#x3D;&quot;ui-button-secondary&quot; type&#x3D;&quot;button&quot; pButton icon&#x3D;&quot;fa-close&quot; (click)&#x3D;&quot;cancel()&quot;&gt;&lt;/button&gt;
+        &lt;button *ngIf&#x3D;&quot;!params.hideSave&quot; class&#x3D;&quot;ui-button-info&quot; type&#x3D;&quot;button&quot; pButton icon&#x3D;&quot;fa-check&quot; (click)&#x3D;&quot;save()&quot;&gt;&lt;/button&gt;
+        &lt;button *ngFor&#x3D;&quot;let b of params.editorButtons&quot; [class]&#x3D;&quot;b.class&quot; type&#x3D;&quot;button&quot; pButton [icon]&#x3D;&quot;b.icon&quot; (click)&#x3D;&quot;b.handler(self)&quot;
+          [label]&#x3D;&quot;b.label&quot; [hidden]&#x3D;&quot;b.when &amp;&amp; !b.when(self)&quot;&gt;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/p-footer&gt;
+  &lt;/p-dialog&gt;
+  &lt;p-confirmDialog header&#x3D;&quot;操作确认&quot; icon&#x3D;&quot;fa fa-exclamation-triangle&quot; width&#x3D;&quot;425&quot;&gt;&lt;/p-confirmDialog&gt;
+  &lt;p-growl [life]&#x3D;&quot;2000&quot; [(value)]&#x3D;&quot;msgs&quot;&gt;&lt;/p-growl&gt;
+&lt;/div&gt;
+
+&lt;p-blockUI [blocked]&#x3D;&quot;blocked&quot;&gt;
+  &lt;p-progressSpinner&gt;&lt;/p-progressSpinner&gt;
+&lt;/p-blockUI&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="data">  <p-toolbar [style]="{\'border-radius\': 0, \'border-color\': \'black\', background: \'black\', padding: \'16px\'}">    <div class="ui-toolbar-group-left">      <div style="font-size: 26px; padding-left: 8px; color: white">{{ params.title.list }}</div>    </div>    <div class="ui-toolbar-group-right">      <button *ngFor="let b of params.customButtons" [class]="b.class" type="button" pButton [icon]="b.icon" (click)="b.handler(self)"        [label]="b.label" [hidden]="b.when && !b.when(self)"></button>      <button *ngIf="!params.hideAdd" class="ui-button-success" type="button" pButton icon="fa-plus" (click)="add()"></button>      <button *ngIf="!params.hideExport" type="button" pButton icon="fa-file-o" iconPos="left" label="CSV" (click)="exportCSV(dt)"></button>    </div>  </p-toolbar>  <p-dataTable #dt [value]="data.docs" scrollable="true" selectionMode="single" [(selection)]="selected" (onRowSelect)="select($event)"    [lazy]="true" [rows]="params.rows || 10" [paginator]="true" [totalRecords]="data.total" (onLazyLoad)="loadLazy($event, dt)">    <p-header>      <div style="display: flex; align-items: center; justify-content: space-between">        <p-multiSelect [options]="columnOptions" [(ngModel)]="params.cols"></p-multiSelect>        <div *ngIf="!params.hideCount" style="padding: 0 8px;white-space: nowrap;">          <i class="fa fa-database" aria-hidden="true"></i> {{ data?.total }}</div>        <div style="flex: 0 0 200px">          <div style="padding-bottom: 8px">            <i class="fa fa-th-list" aria-hidden="true"></i> {{ params.rows === 100 ? \'\' : params.rows }}</div>          <p-slider [(ngModel)]="params.rows" animate="true" [min]="5" (onSlideEnd)="reload()"></p-slider>        </div>      </div>    </p-header>    <p-column *ngFor="let col of getDisplayCols()" [field]="col.field" [header]="col.header" [style]="col.style" [sortable]="col.sortable"      [filter]="col.filter" [filterMatchMode]="col.filter ? col.filter.mode : null">      <ng-template *ngIf="col.display && col.display.type == \'enum\'" let-data="rowData" pTemplate="body">        <span>{{ col.display.map(data[col.field]) }}</span>      </ng-template>      <ng-template *ngIf="col.filter && col.filter.type == \'multiple\'" pTemplate="filter">        <p-multiSelect [options]="col.filter.options" [defaultLabel]="col.filter.placeholder" (onChange)="dt.filter($event.value,col.field,col.filter.mode)"          styleClass="ui-column-filter"></p-multiSelect>      </ng-template>      <ng-template *ngIf="col.filter && col.filter.type == \'datetime-range\'" pTemplate="filter">        <div style="padding-top: 8px; display: flex; align-items: center; justify-content: center">          <div>            <i class="fa fa-circle" aria-hidden="true"></i>          </div>          <p-calendar [defaultDate]="col.filter.fr" selectOtherMonths="true" monthNavigator="true" yearNavigator="true" [yearRange]="col.filter.yearRange || \'2016:2020\'"            [(ngModel)]="col.filter.fr" showTime="showTime" hourFormat="24" styleClass="ui-column-filter"></p-calendar>        </div>        <div style="display: flex; align-items: center; justify-content: center">          <div>            <i class="fa fa-arrow-right" aria-hidden="true"></i>          </div>          <p-calendar [defaultDate]="col.filter.to" selectOtherMonths="true" monthNavigator="true" yearNavigator="true" [yearRange]="col.filter.yearRange || \'2016:2020\'"            [(ngModel)]="col.filter.to" showTime="showTime" hourFormat="24" styleClass="ui-column-filter">          </p-calendar>        </div>        <div style="text-align: center;padding-top: 12px">          <button class="ui-button-secondary" pButton type="button" label="筛选" (click)="addDatetimeFilterRange(col)"></button>        </div>      </ng-template>    </p-column>  </p-dataTable>  <p-dialog [header]="params.title.edit" [(visible)]="showModal" modal="modal" [width]="width" [height]="height" [resizable]="false">    <div *ngIf="selected">      <yca-rest-admin-field [cols]="getEditorCols()" [selected]="selected" [rac]="self"></yca-rest-admin-field>    </div>    <p-footer>      <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">        <button *ngIf="!params.hideDelete" class="ui-button-danger" style="float: left" type="button" pButton icon="fa-trash" (click)="delete()"></button>        <button *ngIf="!params.hideCancel" class="ui-button-secondary" type="button" pButton icon="fa-close" (click)="cancel()"></button>        <button *ngIf="!params.hideSave" class="ui-button-info" type="button" pButton icon="fa-check" (click)="save()"></button>        <button *ngFor="let b of params.editorButtons" [class]="b.class" type="button" pButton [icon]="b.icon" (click)="b.handler(self)"          [label]="b.label" [hidden]="b.when && !b.when(self)"></button>      </div>    </p-footer>  </p-dialog>  <p-confirmDialog header="操作确认" icon="fa fa-exclamation-triangle" width="425"></p-confirmDialog>  <p-growl [life]="2000" [(value)]="msgs"></p-growl></div><p-blockUI [blocked]="blocked">  <p-progressSpinner></p-progressSpinner></p-blockUI></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app'},{'name': 'RestAdminComponent', 'selector': 'yca-rest-admin'},{'name': 'RestAdminFieldComponent', 'selector': 'yca-rest-admin-field'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'RestAdminComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+        <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_URL = 'RestAdminComponent.html';
+        </script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+
+    </body>
+</html>

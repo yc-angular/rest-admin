@@ -81,12 +81,12 @@ export interface IParams {
   /**
    * Custom buttons in list
    */
-  customButtons?: [IParamsCustomButton];
+  customButtons?: IParamsCustomButton[];
 
   /**
    * Custom buttons while editing
    */
-  editorButtons?: [IParamsEditorButton];
+  editorButtons?: IParamsEditorButton[];
 
   /**
    * Global filters for query

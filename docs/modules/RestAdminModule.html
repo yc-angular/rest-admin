@@ -1,0 +1,731 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@yca/rest-admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@yca/rest-admin</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <nav>
+
+    <ul class="list">
+
+        <li class="title">
+            <a href="index.html" data-type="index-link">@yca/rest-admin</a>
+        </li>
+
+        <li class="divider"></li>
+
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
+            <ul class="links">
+                    <li class="link">
+                        <a 
+                            
+                             href="overview.html" 
+                             href="overview.html" 
+                            data-type="chapter-link">
+                            <span class="fa fa-fw fa-th"></span>Overview
+                        </a>
+                    </li>
+                    <li class="link">
+                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter modules">
+            <a data-type="chapter-link" href="modules.html">
+                <div class="menu-toggler linked" data-toggle="collapse"
+                        data-target="#xs-modules-links"
+                >
+                    <span class="fa fa-fw fa-archive"></span>
+                    <span class="link-name">Modules</span>
+                    <span class="fa fa-angle-down"></span>
+                </div>
+            </a>
+            <ul class="links collapse"
+                    id="xs-modules-links"
+                >
+                    <li class="link">
+                        <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#xs-components-links-module-AppModule-e8522f28-5b26-4f0e-bc25-d1a1a64a6d24"
+                                    >
+                                    <span class="fa fa-fw fa-cogs"></span>
+                                    <span>Components</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="xs-components-links-module-AppModule-e8522f28-5b26-4f0e-bc25-d1a1a64a6d24"
+                                    >
+                                        <li class="link">
+                                            <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                    </li>
+                    <li class="link">
+                        <a href="modules/RestAdminModule.html" data-type="entity-link">RestAdminModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#xs-components-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+                                    >
+                                    <span class="fa fa-fw fa-cogs"></span>
+                                    <span>Components</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="xs-components-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+                                    >
+                                        <li class="link">
+                                            <a href="components/RestAdminComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">RestAdminComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/RestAdminFieldComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">RestAdminFieldComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#xs-pipes-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+                                    >
+                                    <span class="fa fa-fw fa-plus"></span>
+                                    <span>Pipes</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="xs-pipes-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+                                    >
+                                        <li class="link">
+                                            <a href="pipes/SafePipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">SafePipe</a>
+                                        </li>
+                                </ul>
+                            </li>
+                    </li>
+            </ul>
+        </li>
+
+
+
+
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#xs-interfaces-links"
+                >
+                <span class="fa fa-fw fa-info"></span>
+                <span>Interfaces</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="xs-interfaces-links"
+                >
+                    <li class="link">
+                        <a href="interfaces/IPaginateData.html" data-type="entity-link">IPaginateData</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParams.html" data-type="entity-link">IParams</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsCol.html" data-type="entity-link">IParamsCol</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColDisplay.html" data-type="entity-link">IParamsColDisplay</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColEditor.html" data-type="entity-link">IParamsColEditor</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColEditorAutoComplete.html" data-type="entity-link">IParamsColEditorAutoComplete</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColFilter.html" data-type="entity-link">IParamsColFilter</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsCustomButton.html" data-type="entity-link">IParamsCustomButton</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsEditorButton.html" data-type="entity-link">IParamsEditorButton</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#xs-miscellaneous-links"
+                >
+                <span class="fa fa-fw fa-cubes"></span>
+                <span>Miscellaneous</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="xs-miscellaneous-links"
+                >
+                    <li class="link">
+                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
+        </li>
+
+
+    </ul>
+
+</nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+
+    <ul class="list">
+
+        <li class="title">
+            <a href="index.html" data-type="index-link">@yca/rest-admin</a>
+        </li>
+
+        <li class="divider"></li>
+
+            <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
+            <ul class="links">
+                    <li class="link">
+                        <a 
+                            
+                             href="overview.html" 
+                             href="overview.html" 
+                            data-type="chapter-link">
+                            <span class="fa fa-fw fa-th"></span>Overview
+                        </a>
+                    </li>
+                    <li class="link">
+                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter modules">
+            <a data-type="chapter-link" href="modules.html">
+                <div class="menu-toggler linked" data-toggle="collapse"
+                        data-target="#modules-links"
+                >
+                    <span class="fa fa-fw fa-archive"></span>
+                    <span class="link-name">Modules</span>
+                    <span class="fa fa-angle-down"></span>
+                </div>
+            </a>
+            <ul class="links collapse"
+                    id="modules-links"
+>
+                    <li class="link">
+                        <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#components-links-module-AppModule-e8522f28-5b26-4f0e-bc25-d1a1a64a6d24"
+>
+                                    <span class="fa fa-fw fa-cogs"></span>
+                                    <span>Components</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="components-links-module-AppModule-e8522f28-5b26-4f0e-bc25-d1a1a64a6d24"
+>
+                                        <li class="link">
+                                            <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                    </li>
+                    <li class="link">
+                        <a href="modules/RestAdminModule.html" data-type="entity-link">RestAdminModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#components-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+>
+                                    <span class="fa fa-fw fa-cogs"></span>
+                                    <span>Components</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="components-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+>
+                                        <li class="link">
+                                            <a href="components/RestAdminComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">RestAdminComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/RestAdminFieldComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">RestAdminFieldComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#pipes-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+>
+                                    <span class="fa fa-fw fa-plus"></span>
+                                    <span>Pipes</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="pipes-links-module-RestAdminModule-c81e459f-a764-4b8e-9870-e938e800601c"
+>
+                                        <li class="link">
+                                            <a href="pipes/SafePipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">SafePipe</a>
+                                        </li>
+                                </ul>
+                            </li>
+                    </li>
+            </ul>
+        </li>
+
+
+
+
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#interfaces-links"
+>
+                <span class="fa fa-fw fa-info"></span>
+                <span>Interfaces</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="interfaces-links"
+>
+                    <li class="link">
+                        <a href="interfaces/IPaginateData.html" data-type="entity-link">IPaginateData</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParams.html" data-type="entity-link">IParams</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsCol.html" data-type="entity-link">IParamsCol</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColDisplay.html" data-type="entity-link">IParamsColDisplay</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColEditor.html" data-type="entity-link">IParamsColEditor</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColEditorAutoComplete.html" data-type="entity-link">IParamsColEditorAutoComplete</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsColFilter.html" data-type="entity-link">IParamsColFilter</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsCustomButton.html" data-type="entity-link">IParamsCustomButton</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/IParamsEditorButton.html" data-type="entity-link">IParamsEditorButton</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#miscellaneous-links"
+>
+                <span class="fa fa-fw fa-cubes"></span>
+                <span>Miscellaneous</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="miscellaneous-links"
+>
+                    <li class="link">
+                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
+        </li>
+
+
+    </ul>
+
+</nav>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+  <li>Modules</li>
+  <li>RestAdminModule</li>
+</ol>
+
+      <div class="text-center module-graph-container">
+          <div id="module-graph-svg">
+              <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: dependencies Pages: 1 -->
+<svg width="504pt" height="349pt"
+ viewBox="0.00 0.00 504.00 349.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 345)">
+<title>dependencies</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-345 500,-345 500,4 -4,4"/>
+<text text-anchor="start" x="227.0091" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00" fill="#000000">Legend</text>
+<polygon fill="#ffffb3" stroke="transparent" points="14,-10 14,-30 34,-30 34,-10 14,-10"/>
+<text text-anchor="start" x="37.629" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Declarations</text>
+<polygon fill="#8dd3c7" stroke="transparent" points="127,-10 127,-30 147,-30 147,-10 127,-10"/>
+<text text-anchor="start" x="150.7251" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Module</text>
+<polygon fill="#80b1d3" stroke="transparent" points="213,-10 213,-30 233,-30 233,-10 213,-10"/>
+<text text-anchor="start" x="236.7812" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Bootstrap</text>
+<polygon fill="#fdb462" stroke="transparent" points="310,-10 310,-30 330,-30 330,-10 310,-10"/>
+<text text-anchor="start" x="333.6732" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Providers</text>
+<polygon fill="#fb8072" stroke="transparent" points="406,-10 406,-30 426,-30 426,-10 406,-10"/>
+<text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
+<g id="clust1" class="cluster">
+<title>cluster_RestAdminModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="16.5,-70 16.5,-333 479.5,-333 479.5,-70 16.5,-70"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_RestAdminModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="26.5,-143 26.5,-195 463.5,-195 463.5,-143 26.5,-143"/>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_RestAdminModule_RestAdminComponent_providers</title>
+<polygon fill="none" stroke="#000000" points="271.5,-78 271.5,-130 471.5,-130 471.5,-78 271.5,-78"/>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_RestAdminModule_exports</title>
+<polygon fill="none" stroke="#000000" points="24.5,-273 24.5,-325 471.5,-325 471.5,-273 24.5,-273"/>
+</g>
+<!-- RestAdminComponent -->
+<g id="node1" class="node">
+<title>RestAdminComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="455.1066,-187 309.8934,-187 309.8934,-151 455.1066,-151 455.1066,-187"/>
+<text text-anchor="middle" x="382.5" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">RestAdminComponent</text>
+</g>
+<!-- RestAdminModule -->
+<g id="node4" class="node">
+<title>RestAdminModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="268.3244,-252 265.3244,-256 244.3244,-256 241.3244,-252 144.6756,-252 144.6756,-216 268.3244,-216 268.3244,-252"/>
+<text text-anchor="middle" x="206.5" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">RestAdminModule</text>
+</g>
+<!-- RestAdminComponent&#45;&gt;RestAdminModule -->
+<g id="edge1" class="edge">
+<title>RestAdminComponent&#45;&gt;RestAdminModule</title>
+<path fill="none" stroke="#000000" d="M408.4344,-187.0225C408.4344,-204.3734 408.4344,-228 408.4344,-228 408.4344,-228 278.1842,-228 278.1842,-228"/>
+<polygon fill="#000000" stroke="#000000" points="278.1843,-224.5001 268.1842,-228 278.1842,-231.5001 278.1843,-224.5001"/>
+</g>
+<!-- RestAdminFieldComponent -->
+<g id="node2" class="node">
+<title>RestAdminFieldComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="292.385,-187 118.615,-187 118.615,-151 292.385,-151 292.385,-187"/>
+<text text-anchor="middle" x="205.5" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">RestAdminFieldComponent</text>
+</g>
+<!-- RestAdminFieldComponent&#45;&gt;RestAdminModule -->
+<g id="edge3" class="edge">
+<title>RestAdminFieldComponent&#45;&gt;RestAdminModule</title>
+<path fill="none" stroke="#000000" d="M206.5,-187.1061C206.5,-187.1061 206.5,-205.991 206.5,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="203.0001,-205.9909 206.5,-215.991 210.0001,-205.991 203.0001,-205.9909"/>
+</g>
+<!-- SafePipe -->
+<g id="node3" class="node">
+<title>SafePipe</title>
+<polygon fill="#ffffb3" stroke="#000000" points="100.2606,-187 34.7394,-187 34.7394,-151 100.2606,-151 100.2606,-187"/>
+<text text-anchor="middle" x="67.5" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">SafePipe</text>
+</g>
+<!-- SafePipe&#45;&gt;RestAdminModule -->
+<g id="edge4" class="edge">
+<title>SafePipe&#45;&gt;RestAdminModule</title>
+<path fill="none" stroke="#000000" d="M78.46,-187.0225C78.46,-204.3734 78.46,-228 78.46,-228 78.46,-228 134.7303,-228 134.7303,-228"/>
+<polygon fill="#000000" stroke="#000000" points="134.7303,-231.5001 144.7303,-228 134.7303,-224.5001 134.7303,-231.5001"/>
+</g>
+<!-- RestAdminComponent  -->
+<g id="node6" class="node">
+<title>RestAdminComponent </title>
+<polygon fill="#fb8072" stroke="#000000" points="463.6071,-317 315.3929,-317 315.3929,-281 463.6071,-281 463.6071,-317"/>
+<text text-anchor="middle" x="389.5" y="-294.8" font-family="Times,serif" font-size="14.00" fill="#000000">RestAdminComponent </text>
+</g>
+<!-- RestAdminModule&#45;&gt;RestAdminComponent  -->
+<g id="edge5" class="edge">
+<title>RestAdminModule&#45;&gt;RestAdminComponent </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M268.3311,-240C311.6436,-240 361.8156,-240 361.8156,-240 361.8156,-240 361.8156,-270.9775 361.8156,-270.9775"/>
+<polygon fill="#000000" stroke="#000000" points="358.3157,-270.9774 361.8156,-280.9775 365.3157,-270.9775 358.3157,-270.9774"/>
+</g>
+<!-- RestAdminFieldComponent  -->
+<g id="node7" class="node">
+<title>RestAdminFieldComponent </title>
+<polygon fill="#fb8072" stroke="#000000" points="297.3854,-317 119.6146,-317 119.6146,-281 297.3854,-281 297.3854,-317"/>
+<text text-anchor="middle" x="208.5" y="-294.8" font-family="Times,serif" font-size="14.00" fill="#000000">RestAdminFieldComponent </text>
+</g>
+<!-- RestAdminModule&#45;&gt;RestAdminFieldComponent  -->
+<g id="edge6" class="edge">
+<title>RestAdminModule&#45;&gt;RestAdminFieldComponent </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M206.5,-252.1061C206.5,-252.1061 206.5,-270.991 206.5,-270.991"/>
+<polygon fill="#000000" stroke="#000000" points="203.0001,-270.9909 206.5,-280.991 210.0001,-270.991 203.0001,-270.9909"/>
+</g>
+<!-- SafePipe  -->
+<g id="node8" class="node">
+<title>SafePipe </title>
+<polygon fill="#fb8072" stroke="#000000" points="102.2607,-317 32.7393,-317 32.7393,-281 102.2607,-281 102.2607,-317"/>
+<text text-anchor="middle" x="67.5" y="-294.8" font-family="Times,serif" font-size="14.00" fill="#000000">SafePipe </text>
+</g>
+<!-- RestAdminModule&#45;&gt;SafePipe  -->
+<g id="edge7" class="edge">
+<title>RestAdminModule&#45;&gt;SafePipe </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M144.6397,-240C103.3315,-240 56.54,-240 56.54,-240 56.54,-240 56.54,-270.9775 56.54,-270.9775"/>
+<polygon fill="#000000" stroke="#000000" points="53.0399,-270.9775 56.54,-280.9775 60.0399,-270.9774 53.0399,-270.9775"/>
+</g>
+<!-- ConfirmationService -->
+<g id="node5" class="node">
+<title>ConfirmationService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="371.5" cy="-104" rx="92.0509" ry="18"/>
+<text text-anchor="middle" x="371.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ConfirmationService</text>
+</g>
+<!-- ConfirmationService&#45;&gt;RestAdminComponent -->
+<g id="edge2" class="edge">
+<title>ConfirmationService&#45;&gt;RestAdminComponent</title>
+<path fill="none" stroke="#000000" d="M382.5,-122.1061C382.5,-122.1061 382.5,-140.991 382.5,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="379.0001,-140.9909 382.5,-150.991 386.0001,-140.991 379.0001,-140.9909"/>
+</g>
+</g>
+</svg>
+
+          </div>
+          <i id="fullscreen" class="fa fa-expand module-graph-fullscreen-btn" aria-hidden="true"></i>
+          <div class="btn-group">
+              <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
+              <button id="reset" class="btn btn-default btn-sm">Reset</button>
+              <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
+          </div>
+      </div>
+      <script src="../js/libs/svg-pan-zoom.min.js"></script>
+      <script src="../js/svg-pan-zoom.controls.js"></script>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/index.ts</code>
+        </p>
+
+
+        
+
+        <div class="container-fluid module">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3>Declarations<a href="https://angular.io/api/core/NgModule#declarations" target="_blank" title="Official documentation about module declarations"><span class="fa fa-info-circle"></span></a></h3>
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="../components/RestAdminComponent.html">RestAdminComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/RestAdminFieldComponent.html">RestAdminFieldComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../pipes/SafePipe.html">SafePipe</a>
+                            </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span class="fa fa-info-circle"></a></h3>
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                                    <a href="../components/RestAdminComponent.html" >RestAdminComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                    <a href="../components/RestAdminFieldComponent.html" >RestAdminFieldComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                    <a href="../pipes/SafePipe.html" >SafePipe</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tab-pane fade tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule, ModuleWithProviders } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import {
+  InputSwitchModule,
+  InputTextModule,
+  InputTextareaModule,
+  ButtonModule,
+  DataTableModule,
+  PaginatorModule,
+  DialogModule,
+  ConfirmDialogModule,
+  DropdownModule,
+  GrowlModule,
+  ToolbarModule,
+  MultiSelectModule,
+  CalendarModule,
+  SliderModule,
+  ChipsModule,
+  PickListModule,
+  CheckboxModule,
+  BlockUIModule,
+  ProgressSpinnerModule,
+  AutoCompleteModule,
+  PanelModule,
+} from &#x27;primeng/primeng&#x27;;
+import { NgxTinymceModule } from &#x27;ngx-tinymce&#x27;;
+import { RestAdminComponent } from &#x27;./component&#x27;;
+import { RestAdminFieldComponent } from &#x27;./field.component&#x27;;
+import { SafePipe } from &#x27;./pipe&#x27;;
+
+export * from &#x27;./component&#x27;;
+export * from &#x27;./field.component&#x27;;
+export * from &#x27;./interfaces&#x27;;
+export * from &#x27;./pipe&#x27;;
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InputSwitchModule,
+    InputTextModule,
+    InputTextareaModule,
+    ButtonModule,
+    DataTableModule,
+    PaginatorModule,
+    DialogModule,
+    ConfirmDialogModule,
+    DropdownModule,
+    GrowlModule,
+    ToolbarModule,
+    MultiSelectModule,
+    CalendarModule,
+    SliderModule,
+    ChipsModule,
+    PickListModule,
+    CheckboxModule,
+    BlockUIModule,
+    ProgressSpinnerModule,
+    AutoCompleteModule,
+    PanelModule,
+    NgxTinymceModule.forRoot({
+      baseURL: &#x27;//cdn.bootcss.com/tinymce/4.7.4/&#x27;,
+    }),
+  ],
+  declarations: [RestAdminComponent, RestAdminFieldComponent, SafePipe],
+  exports: [RestAdminComponent, RestAdminFieldComponent, SafePipe],
+})
+export class RestAdminModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: RestAdminModule,
+    };
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+        <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_URL = 'RestAdminModule.html';
+        </script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+
+    </body>
+</html>
