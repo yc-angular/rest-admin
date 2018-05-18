@@ -25,7 +25,7 @@ export class RestAdminFieldComponent implements OnInit {
   selectedIndex: any = {};
 
   ngOnInit() {
-    for (let col of this.getFilteredCols()) {
+    for (let col of this.cols) {
       if (col.editor) {
         switch (col.editor.type) {
           case 'datetime':
@@ -108,13 +108,5 @@ export class RestAdminFieldComponent implements OnInit {
 
   download(url: string) {
     window.open(url, '_blank');
-  }
-
-  getFilteredCols() {
-    return this.cols.filter(x => {
-      if (x.editor.hidden)
-        return !x.editor.hidden(this.rac);
-      return false;
-    });
   }
 }
