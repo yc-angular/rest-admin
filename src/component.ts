@@ -239,8 +239,15 @@ export class RestAdminComponent implements OnInit {
   /**
    * Columns to be edited
    */
+  isEditorHidden(editor) {
+    if(typeof editor.hidden === 'function') {
+      return editor.hidden(this);
+    } else {
+      return editor.hidden;
+    }
+  }
   getEditorCols(): IParamsCol[] {
-    return this.params.cols.filter(x => x.editor && !x.editor.hidden);
+    return this.params.cols.filter(x => x.editor && !this.isEditorHidden(x.editor));
   }
 
   /**
