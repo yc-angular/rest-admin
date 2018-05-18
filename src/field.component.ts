@@ -112,7 +112,7 @@ export class RestAdminFieldComponent implements OnInit {
 
   getFilteredCols() {
     return this.cols.filter(x => {
-      if (x.editor.hidden)
+      if (x.editor && x.editor.hidden)
         return !x.editor.hidden(this.rac);
       return false;
     });
