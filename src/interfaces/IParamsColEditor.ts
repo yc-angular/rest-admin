@@ -46,7 +46,7 @@ export interface IParamsColEditor {
   /**
    * Hide column while editing
    */
-  hidden?: boolean | ((self: RestAdminComponent) => boolean);
+  hidden?: (self: RestAdminComponent) => boolean;
 
   /**
    * Need this if type is 'enum'
