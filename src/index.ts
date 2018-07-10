@@ -60,9 +60,7 @@ export * from './pipe';
     ProgressSpinnerModule,
     AutoCompleteModule,
     PanelModule,
-    NgxTinymceModule.forRoot({
-      baseURL: '//cdn.bootcss.com/tinymce/4.7.4/',
-    }),
+    NgxTinymceModule.forRoot({ }),
   ],
   declarations: [RestAdminComponent, RestAdminFieldComponent, SafePipe],
   exports: [RestAdminComponent, RestAdminFieldComponent, SafePipe],
