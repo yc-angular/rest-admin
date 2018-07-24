@@ -23,7 +23,7 @@
         [style]="{ 'width': '100%' }" [options]="rac.getRefOptions(col)" [(ngModel)]="selected[col.field]"></p-dropdown>
     </div>
     <div *ngIf="col.editor.type == 'datetime'">
-      <p-calendar [defaultDate]="rac.now" selectOtherMonths="true" monthNavigator="true" yearNavigator="true" [yearRange]="col.editor.datetime ? col.editor.datetime.yearRange : '2016:2020'"
+      <p-calendar  [defaultDate]="rac.now" selectOtherMonths="true" monthNavigator="true" yearNavigator="true" [locale]="col.editor.datetime.locale" [yearRange]="col.editor.datetime ? col.editor.datetime.yearRange : '2016:2020'"
         [(ngModel)]="selected[col.field]" showTime="showTime" hourFormat="24" styleClass="ui-column-filter"></p-calendar>
     </div>
     <div *ngIf="col.editor.type == 'logs'">
